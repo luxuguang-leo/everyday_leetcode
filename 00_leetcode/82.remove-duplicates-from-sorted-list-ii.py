@@ -15,5 +15,14 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        
+        dummy = ListNode(0)
+        dummy.next, node = head, dummy
+        while node.next  is not None and node.next.next is not None:
+            if node.next.val == node.next.next.val:
+                pre_value = node.next.val
+                while node.next is not None and pre_value == node.next.val:
+                    node.next = node.next.next
+            else:
+                node = node.next
+        return dummy.next
 
