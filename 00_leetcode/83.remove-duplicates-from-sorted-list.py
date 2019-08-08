@@ -15,6 +15,7 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
+        '''
         if not head or not head.next:
             return head
         p = head
@@ -25,6 +26,15 @@ class Solution(object):
                 continue
             p = p.next
         return head
-            
+        '''
+        #elegant soluction
+        cur = head
+        while cur:
+            if cur.next and cur.val == cur.next.val:
+                cur.next = cur.next.next
+            else:
+                cur = cur.next
+        return head
+        
         
 
