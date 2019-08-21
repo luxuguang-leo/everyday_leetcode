@@ -14,12 +14,12 @@ Leetcode
 - [ ] 119	Pascal's Triangle II	很少考
 - [ ] 169	Majority Element	很少考
 - [ ] 229	Majority Element II	很少考
-- [x] 274	H-Index	
+- [x] 274	H-Index
 - [x] 275	H-Index II	Binary Search
 - [ ] 243	~~Shortest Word Distance~~ #locked
-- [ ] 244	Shortest Word Distance II	
-- [ ] 245	Shortest Word Distance III	
-- [ ] 217	Contains Duplicate	
+- [ ] 244	~~Shortest Word Distance II~~ #locked
+- [ ] 245	~~Shortest Word Distance III~~ #locked
+- [x] 217	Contains Duplicate	
 - [ ] 219	Contains Duplicate II	很少考
 - [ ] 220	Contains Duplicate III	很少考
 - [ ] 55	Jump Game	
