@@ -6,7 +6,7 @@ Leetcode
 - [x] 26	Remove Duplicates from Sorted Array
 - [x] 80	Remove Duplicates from Sorted Array II	
 - [ ] 277	~~Find the Celebrity~~	#locked 
-- [ ] 189	Rotate Array	
+- [x] 189	Rotate Array	
 - [x] 41	First Missing Positive
 - [ ] 299	Bulls and Cows	
 - [ ] 134	Gas Station	

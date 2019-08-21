@@ -27,27 +27,39 @@ class Solution(object):
         return nums
         '''
         #method 2, cyclic replacement
-        k = k % len(nums)
-        cnt, start = 0, 0
-        while cnt < len(nums):
-            cur = start
-            pre = nums[start]
-            while True:
-                nxt = (cur + k) % len(nums)
-                nums[cur], nums[nxt] = nums[nxt], nums[cur]
-                cur = nxt
+        '''
+        k, l = k % len(nums), len(nums)
+        cnt = 0#total in all we need to move l steps
+        for i in range(l):
+            cur_idx = i
+            cur_val = nums[i]
+            loop_start = False
+            while not loop_start or i != cur_idx:
+                loop_start = True
+                next_idx = (cur_idx + k) % l
+                next_val = nums[next_idx]
+                nums[next_idx] = cur_val
+                cur_idx = next_idx
+                cur_val = next_val
                 cnt += 1
-
-                if start == cur:
+                if cnt == l:
+                    return
+        '''
+        k, l = k % len(nums), len(nums)
+        cnt = 0
+        for i in range(l):
+            cur_idx = i
+            cur_val = nums[i]
+            while True:
+                next_idx = (cur_idx + k) % l
+                next_val = nums[next_idx]
+                nums[next_idx] = cur_val
+                cur_idx = next_idx
+                cur_val = next_val
+                cnt += 1
+                if cur_idx == i:
                     break
-
-
-            start += 1
-
-
-
-
-        
-
-        
+            if cnt == l:
+                return
+     
 
