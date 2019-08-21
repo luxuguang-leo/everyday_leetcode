@@ -4,8 +4,8 @@ Leetcode
 
 - [x] 27	Remove Element
 - [x] 26	Remove Duplicates from Sorted Array
-- [ ] 80	Remove Duplicates from Sorted Array II	
-- [ ] 277	Find the Celebrity	
+- [x] 80	Remove Duplicates from Sorted Array II	
+- [ ] 277	~~Find the Celebrity~~	#locked 
 - [ ] 189	Rotate Array	
 - [x] 41	First Missing Positive
 - [ ] 299	Bulls and Cows	
