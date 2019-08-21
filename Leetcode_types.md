@@ -14,7 +14,7 @@ Leetcode
 - [ ] 119	Pascal's Triangle II	很少考
 - [ ] 169	Majority Element	很少考
 - [ ] 229	Majority Element II	很少考
-- [ ] 274	H-Index	
+- [x] 274	H-Index	
 - [ ] 275	H-Index II	Binary Search
 - [ ] 243	Shortest Word Distance	
 - [ ] 244	Shortest Word Distance II	
