@@ -15,8 +15,8 @@ Leetcode
 - [ ] 169	Majority Element	很少考
 - [ ] 229	Majority Element II	很少考
 - [x] 274	H-Index	
-- [ ] 275	H-Index II	Binary Search
-- [ ] 243	Shortest Word Distance	
+- [x] 275	H-Index II	Binary Search
+- [ ] 243	~~Shortest Word Distance~~ #locked
 - [ ] 244	Shortest Word Distance II	
 - [ ] 245	Shortest Word Distance III	
 - [ ] 217	Contains Duplicate	
