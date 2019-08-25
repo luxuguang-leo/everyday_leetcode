@@ -24,7 +24,7 @@ Leetcode
 - [ ] 220	Contains Duplicate III	很少考
 - [ ] 55	Jump Game	
 - [ ] 45	Jump Game II	
-- [ ] 121	Best Time to Buy and Sell Stock	
+- [x] 121	Best Time to Buy and Sell Stock	
 - [ ] 122	Best Time to Buy and Sell Stock II	
 - [ ] 123	Best Time to Buy and Sell Stock III	
 - [ ] 188	Best Time to Buy and Sell Stock IV	
