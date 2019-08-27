@@ -39,14 +39,14 @@ Leetcode
 - [ ] 330	Patching Array	很少考
 
 ### 提高		
-- [ ] 4	    Median of Two Sorted Arrays	
+- [x] 4	    Median of Two Sorted Arrays	
 - [ ] 321	Create Maximum Number	很少考
 - [ ] 327	Count of Range Sum	很少考
 - [ ] 289	Game of Life	
 
 ### Interval
 - [ ] 57	Insert Interval	
-- [ ] 56	Merge Intervals	
+- [x] 56	Merge Intervals	
 - [ ] 252	Meeting Rooms	
 - [ ] 253	Meeting Rooms II	
 - [ ] 352	Data Stream as Disjoint Intervals	TreeMap
