@@ -20,7 +20,7 @@ Leetcode
 - [ ] 244	~~Shortest Word Distance II~~ #locked
 - [ ] 245	~~Shortest Word Distance III~~ #locked
 - [x] 217	Contains Duplicate	
-- [ ] 219	Contains Duplicate II	很少考
+- [x] 219	Contains Duplicate II	很少考
 - [ ] 220	Contains Duplicate III	很少考
 - [ ] 55	Jump Game	
 - [ ] 45	Jump Game II	
@@ -114,7 +114,7 @@ Leetcode
 ### Substring		
 - [ ] 76	Minimum Window Substring	Sliding Window
 - [ ] 30    Substring with Concatenation of All Words	Sliding Window
-- [ ] 3	    Longest Substring Without Repeating Characters	Sliding Window
+- [x] 3	    Longest Substring Without Repeating Characters	Sliding Window
 - [ ] 340   Longest Substring with At Most K Distinct Characters	Sliding Window
 - [ ] 395   Longest Substring with At Least K Repeating Characters	Sliding Window
 - [ ] 159   Longest Substring with At Most Two Distinct Characters	Sliding Window
