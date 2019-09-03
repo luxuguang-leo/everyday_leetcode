@@ -76,7 +76,7 @@ Leetcode
 - [x] 28	Implement strStr()	
 - [x] 14	Longest Common Prefix
 - [x] 58	Length of Last Word	
-- [ ] 387   First Unique Character in a String	
+- [x] 387   First Unique Character in a String	
 - [ ] 383   Ransom Note	
 - [ ] 344   Reverse String	
 - [ ] 151   Reverse Words in a String	
