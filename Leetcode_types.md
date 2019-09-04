@@ -86,7 +86,7 @@ Leetcode
 - [ ] 293   ~~Flip Game~~ #locked
 - [ ] 294   ~~Flip Game II~~#locked
 - [x] 290   Word Pattern	
-- [ ] 242   Valid Anagram	
+- [x] 242   Valid Anagram	
 - [ ] 49	Group Anagrams	
 - [ ] 249   Group Shifted Strings	
 - [ ] 87	Scramble String	
