@@ -82,7 +82,7 @@ Leetcode
 - [x] 151   Reverse Words in a String	
 - [ ] 186   ~~Reverse Words in a String II~~
 - [x] 345   Reverse Vowels of a String	
-- [ ] 205   Isomorphic Strings	
+- [x] 205   Isomorphic Strings	
 - [ ] 293   Flip Game	
 - [ ] 294   Flip Game II	
 - [ ] 290   Word Pattern	
