@@ -87,12 +87,12 @@ Leetcode
 - [ ] 294   ~~Flip Game II~~#locked
 - [x] 290   Word Pattern	
 - [x] 242   Valid Anagram	
-- [ ] 49	Group Anagrams	
-- [ ] 249   Group Shifted Strings	
+- [x] 49	Group Anagrams	
+- [ ] 249   ~~Group Shifted Strings~~
 - [ ] 87	Scramble String	
 - [ ] 179   Largest Number	很少考
 - [ ] 6     ZigZag Conversion	很少考
-- [ ] 161   One Edit Distance	
+- [ ] 161   ~~One Edit Distance~~
 - [ ] 38	Count and Say	
 - [ ] 358   Rearrange String k Distance Apart	
 - [ ] 316   Remove Duplicate Letters	
