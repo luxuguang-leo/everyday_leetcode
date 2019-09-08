@@ -98,7 +98,7 @@ Leetcode
 - [x] 316   Remove Duplicate Letters	
 - [ ] 271   ~~Encode and Decode Strings~~
 - [x] 168   Excel Sheet Column Title	
-- [ ] 171   Excel Sheet Column Number	
+- [x] 171   Excel Sheet Column Number	
 - [x] 13	Roman to Integer
 - [ ] 12	Integer to Roman	
 - [ ] 273   Integer to English Words	
