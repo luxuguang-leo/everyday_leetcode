@@ -96,8 +96,8 @@ Leetcode
 - [x] 38	Count and Say	
 - [ ] 358   ~~Rearrange String k Distance Apart~~
 - [x] 316   Remove Duplicate Letters	
-- [ ] 271   Encode and Decode Strings	
-- [ ] 168   Excel Sheet Column Title	
+- [ ] 271   ~~Encode and Decode Strings~~
+- [x] 168   Excel Sheet Column Title	
 - [ ] 171   Excel Sheet Column Number	
 - [x] 13	Roman to Integer
 - [ ] 12	Integer to Roman	
