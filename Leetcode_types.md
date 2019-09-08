@@ -93,7 +93,7 @@ Leetcode
 - [ ] 179   Largest Number	很少考
 - [x] 6     ZigZag Conversion	很少考
 - [ ] 161   ~~One Edit Distance~~
-- [ ] 38	Count and Say	
+- [x] 38	Count and Say	
 - [ ] 358   Rearrange String k Distance Apart	
 - [ ] 316   Remove Duplicate Letters	
 - [ ] 271   Encode and Decode Strings	
