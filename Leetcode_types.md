@@ -94,8 +94,8 @@ Leetcode
 - [x] 6     ZigZag Conversion	很少考
 - [ ] 161   ~~One Edit Distance~~
 - [x] 38	Count and Say	
-- [ ] 358   Rearrange String k Distance Apart	
-- [ ] 316   Remove Duplicate Letters	
+- [ ] 358   ~~Rearrange String k Distance Apart~~
+- [x] 316   Remove Duplicate Letters	
 - [ ] 271   Encode and Decode Strings	
 - [ ] 168   Excel Sheet Column Title	
 - [ ] 171   Excel Sheet Column Number	
