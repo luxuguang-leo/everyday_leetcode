@@ -120,7 +120,7 @@ Leetcode
 - [ ] 159   Longest Substring with At Most Two Distinct Characters	Sliding Window
 
 ### Palindrome		
-- [ ] 125   Valid Palindrome	
+- [x] 125   Valid Palindrome	
 - [ ] 266   Palindrome Permutation	
 - [ ] 5     Longest Palindromic Substring	
 - [ ] 9     Palindrome Number	
