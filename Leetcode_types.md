@@ -123,8 +123,8 @@ Leetcode
 - [x] 125   Valid Palindrome	
 - [ ] 266   ~~Palindrome Permutation~~
 - [x] 5     Longest Palindromic Substring	
-- [ ] 9     Palindrome Number	
-- [ ] 214   Shortest Palindrome	
+- [x] 9     Palindrome Number	
+- [x] 214   Shortest Palindrome	
 - [ ] 336   Palindrome Pairs	
 - [ ] 131   Palindrome Partitioning	
 - [ ] 132   Palindrome Partitioning II	
