@@ -126,7 +126,7 @@ Leetcode
 - [x] 9     Palindrome Number	
 - [x] 214   Shortest Palindrome	
 - [ ] 336   Palindrome Pairs	
-- [ ] 131   Palindrome Partitioning	
+- [x] 131   Palindrome Partitioning	
 - [ ] 132   Palindrome Partitioning II	
 - [ ] 267   Palindrome Permutation II	
 
