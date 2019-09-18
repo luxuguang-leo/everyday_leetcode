@@ -278,7 +278,7 @@ Leetcode
 ## Dynamic Programming
 
 ### 一维
-- [ ] 70	Climbing Stairs
+- [x] 70	Climbing Stairs
 - [ ] 62	Unique Paths
 - [ ] 63	Unique Paths II
 - [ ] 120	Triangle	很少考
