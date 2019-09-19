@@ -281,7 +281,7 @@ Leetcode
 - [x] 70	Climbing Stairs
 - [x] 62	Unique Paths
 - [x] 63	Unique Paths II
-- [ ] 120	Triangle	很少考
+- [x] 120	Triangle	很少考
 - [ ] 279	Perfect Squares
 - [ ] 139	Word Break
 - [ ] 375	Guess Number Higher or Lower II
