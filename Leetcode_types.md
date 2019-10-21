@@ -134,7 +134,7 @@ Leetcode
 - [x] 20    Valid Parentheses	
 - [x] 22    Generate Parentheses	
 - [x] 32    Longest Valid Parentheses	
-- [ ] 241   Different Ways to Add Parentheses	
+- [x] 241   Different Ways to Add Parentheses	
 - [ ] 301   Remove Invalid Parentheses	
 
 ### Subsequence		
