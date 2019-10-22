@@ -282,7 +282,7 @@ Leetcode
 - [x] 62	Unique Paths
 - [x] 63	Unique Paths II
 - [x] 120	Triangle	很少考
-- [ ] 279	Perfect Squares
+- [x] 279	Perfect Squares
 - [ ] 139	Word Break
 - [ ] 375	Guess Number Higher or Lower II
 - [ ] 312	Burst Balloons
@@ -453,7 +453,7 @@ Leetcode
 - [ ] 391	Perfect Rectangle	很少考
 - [ ] 223	Rectangle Area	很少考
 
-## Union FInd
+## Union Find
 - [ ] 261	Graph Valid Tree
 - [ ] 323	Number of Connected Components in an Undirected Graph
 - [ ] 305	Number of Islands II
