@@ -337,7 +337,7 @@ Leetcode
 
 ## Binary Search
 ### 基础
-- [ ] 278	First Bad Version
+- [x] 278	First Bad Version
 - [ ] 35	Search Insert Position
 - [x] 33	Search in Rotated Sorted Array
 - [ ] 81	Search in Rotated Sorted Array II
