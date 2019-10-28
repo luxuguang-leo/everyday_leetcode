@@ -341,8 +341,8 @@ Leetcode
 - [x] 35	Search Insert Position
 - [x] 33	Search in Rotated Sorted Array
 - [x] 81	Search in Rotated Sorted Array II
-- [ ] 153	Find Minimum in Rotated Sorted Array
-- [ ] 154	Find Minimum in Rotated Sorted Array II
+- [x] 153	Find Minimum in Rotated Sorted Array
+- [x] 154	Find Minimum in Rotated Sorted Array II
 - [ ] 162	Find Peak Element
 - [ ] 374	Guess Number Higher or Lower
 - [ ] 34	Search for a Range
@@ -368,8 +368,8 @@ Leetcode
 - [ ] 361	Bomb Enemy
 - [ ] 317	Shortest Distance from All Buildings
 - [ ] 302	Smallest Rectangle Enclosing Black Pixels
-- [ ] 36	Valid Sudoku
-- [ ] 37	Sudoku Solver
+- [x] 36	Valid Sudoku
+- [x] 37	Sudoku Solver
 
 ## DFS&BFS
 ### 基础
