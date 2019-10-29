@@ -343,7 +343,7 @@ Leetcode
 - [x] 81	Search in Rotated Sorted Array II
 - [x] 153	Find Minimum in Rotated Sorted Array
 - [x] 154	Find Minimum in Rotated Sorted Array II
-- [ ] 162	Find Peak Element
+- [x] 162	Find Peak Element
 - [ ] 374	Guess Number Higher or Lower
 - [ ] 34	Search for a Range
 - [ ] 349	Intersection of Two Arrays
