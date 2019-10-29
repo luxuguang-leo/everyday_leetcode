@@ -346,8 +346,8 @@ Leetcode
 - [x] 162	Find Peak Element
 - [x] 374	Guess Number Higher or Lower
 - [x] 34	Search for a Range
-- [ ] 349	Intersection of Two Arrays
-- [ ] 350	Intersection of Two Arrays II
+- [x] 349	Intersection of Two Arrays
+- [x] 350	Intersection of Two Arrays II
 - [ ] 315	Count of Smaller Numbers After Self
 - [ ] 300	Longest Increasing Subsequence
 - [ ] 354	Russian Doll Envelopes
