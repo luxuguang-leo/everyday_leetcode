@@ -345,7 +345,7 @@ Leetcode
 - [x] 154	Find Minimum in Rotated Sorted Array II
 - [x] 162	Find Peak Element
 - [x] 374	Guess Number Higher or Lower
-- [ ] 34	Search for a Range
+- [x] 34	Search for a Range
 - [ ] 349	Intersection of Two Arrays
 - [ ] 350	Intersection of Two Arrays II
 - [ ] 315	Count of Smaller Numbers After Self
