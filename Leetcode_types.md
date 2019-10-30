@@ -349,7 +349,7 @@ Leetcode
 - [x] 349	Intersection of Two Arrays
 - [x] 350	Intersection of Two Arrays II
 - [ ] 315	Count of Smaller Numbers After Self
-- [ ] 300	Longest Increasing Subsequence
+- [x] 300	Longest Increasing Subsequence
 - [ ] 354	Russian Doll Envelopes
 
 ## Matrix
