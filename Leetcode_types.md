@@ -353,7 +353,7 @@ Leetcode
 - [ ] 354	Russian Doll Envelopes
 
 ## Matrix
-- [ ] 48	Rotate Image
+- [x] 48	Rotate Image
 - [ ] 54	Spiral Matrix
 - [ ] 59	Spiral Matrix II
 - [ ] 73	Set Matrix Zeroes
