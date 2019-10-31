@@ -354,7 +354,7 @@ Leetcode
 
 ## Matrix
 - [x] 48	Rotate Image
-- [ ] 54	Spiral Matrix
+- [x] 54	Spiral Matrix
 - [ ] 59	Spiral Matrix II
 - [ ] 73	Set Matrix Zeroes
 - [ ] 311	Sparse Matrix Multiplication
