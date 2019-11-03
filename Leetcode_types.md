@@ -373,11 +373,11 @@ Leetcode
 
 ## DFS&BFS
 ### 基础
-- [ ] 200	Number of Islands
-- [ ] 286	Walls and Gates
+- [x] 200	Number of Islands
+- [ ] 286	~~Walls and Gates~~
 - [x] 130	Surrounded Regions
-- [ ] 339	Nested List Weight Sum
-- [ ] 364	Nested List Weight Sum II
+- [ ] 339	~~Nested List Weight Sum~~
+- [ ] 364	~~Nested List Weight Sum II~~
 - [ ] 127	Word Ladder
 - [ ] 51	N-Queens
 - [ ] 52	N-Queens II
