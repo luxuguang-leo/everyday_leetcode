@@ -378,7 +378,7 @@ Leetcode
 - [x] 130	Surrounded Regions
 - [ ] 339	~~Nested List Weight Sum~~
 - [ ] 364	~~Nested List Weight Sum II~~
-- [ ] 127	Word Ladder
+- [x] 127	Word Ladder
 - [ ] 51	N-Queens
 - [ ] 52	N-Queens II
 - [ ] 126	Word Ladder II
