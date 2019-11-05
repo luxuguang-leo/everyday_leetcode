@@ -380,7 +380,7 @@ Leetcode
 - [ ] 364	~~Nested List Weight Sum II~~
 - [x] 127	Word Ladder
 - [x] 51	N-Queens
-- [ ] 52	N-Queens II
+- [x] 52	N-Queens II
 - [ ] 126	Word Ladder II
 
 ## Stack & PriorityQueue
