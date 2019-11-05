@@ -379,7 +379,7 @@ Leetcode
 - [ ] 339	~~Nested List Weight Sum~~
 - [ ] 364	~~Nested List Weight Sum II~~
 - [x] 127	Word Ladder
-- [ ] 51	N-Queens
+- [x] 51	N-Queens
 - [ ] 52	N-Queens II
 - [ ] 126	Word Ladder II
 
