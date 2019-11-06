@@ -385,8 +385,8 @@ Leetcode
 
 ## Stack & PriorityQueue
 ### Stack		
-- [ ] 155	Min Stack	
-- [ ] 232	Implement Queue using Stacks	
+- [X] 155	Min Stack	
+- [x] 232	Implement Queue using Stacks	
 - [ ] 225	Implement Stack using Queues	
 - [ ] 150	Evaluate Reverse Polish Notation	
 - [ ] 71	Simplify Path	
