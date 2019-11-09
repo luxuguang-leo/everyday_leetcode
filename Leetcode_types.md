@@ -390,7 +390,7 @@ Leetcode
 - [x] 225	Implement Stack using Queues	
 - [x] 150	Evaluate Reverse Polish Notation	
 - [x] 71	Simplify Path	
-- [ ] 388	Longest Absolute File Path	
+- [x] 388	Longest Absolute File Path	
 - [ ] 394	Decode String	
 - [ ] 224	Basic Calculator	
 - [ ] 227	Basic Calculator II	
