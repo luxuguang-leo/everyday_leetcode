@@ -388,7 +388,7 @@ Leetcode
 - [X] 155	Min Stack	
 - [x] 232	Implement Queue using Stacks	
 - [x] 225	Implement Stack using Queues	
-- [ ] 150	Evaluate Reverse Polish Notation	
+- [x] 150	Evaluate Reverse Polish Notation	
 - [ ] 71	Simplify Path	
 - [ ] 388	Longest Absolute File Path	
 - [ ] 394	Decode String	
