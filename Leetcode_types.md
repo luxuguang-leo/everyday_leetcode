@@ -391,7 +391,7 @@ Leetcode
 - [x] 150	Evaluate Reverse Polish Notation	
 - [x] 71	Simplify Path	
 - [x] 388	Longest Absolute File Path	
-- [ ] 394	Decode String	
+- [x] 394	Decode String	
 - [ ] 224	Basic Calculator	
 - [ ] 227	Basic Calculator II	
 - [ ] 385	Mini Parser	
