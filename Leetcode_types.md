@@ -398,7 +398,7 @@ Leetcode
 - [ ] 84	Largest Rectangle in Histogram
 
 ### PriorityQueue
-- [ ] 215	Kth Largest Element in an Array
+- [x] 215	Kth Largest Element in an Array
 - [ ] 347	Top K Frequent Elements
 - [ ] 313	Super Ugly Number	很少考
 - [ ] 373	Find K Pairs with Smallest Sums	很少考
