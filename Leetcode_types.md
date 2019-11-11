@@ -178,7 +178,7 @@ Leetcode
 - [ ] 202	Happy Number
 - [ ] 400	Nth Digit
 - [x] 263	Ugly Number
-- [ ] 264	Ugly Number II
+- [x] 264	Ugly Number II
 - [ ] 306	Additive Number
 - [ ] 172	Factorial Trailing Zeroes
 - [ ] 343	Integer Break
