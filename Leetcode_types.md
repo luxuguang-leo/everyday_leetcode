@@ -400,7 +400,7 @@ Leetcode
 ### PriorityQueue
 - [x] 215	Kth Largest Element in an Array
 - [x] 347	Top K Frequent Elements
-- [ ] 313	Super Ugly Number	很少考
+- [x] 313	Super Ugly Number	很少考
 - [ ] 373	Find K Pairs with Smallest Sums	很少考
 - [ ] 218	The Skyline Problem
 - [ ] 332	Reconstruct Itinerary
