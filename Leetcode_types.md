@@ -410,7 +410,7 @@ Leetcode
 ## Bit Manipulation
 ### 基础
 - [x] 389	Find the Difference
-- [ ] 136	Single Number
+- [x] 136	Single Number
 - [ ] 318	Maximum Product of Word Lengths
 
 ### 很少考
