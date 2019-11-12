@@ -399,7 +399,7 @@ Leetcode
 
 ### 很少考
 - [ ] 393	UTF-8 Validation
-- [ ] 201	Bitwise AND of Numbers Range
+- [x] 201	Bitwise AND of Numbers Range
 - [ ] 371	Sum of Two Integers
 - [ ] 338	Counting Bits
 - [ ] 89	Gray Code
