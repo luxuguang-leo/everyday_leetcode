@@ -401,7 +401,7 @@ Leetcode
 - [ ] 393	UTF-8 Validation
 - [x] 201	Bitwise AND of Numbers Range
 - [ ] 371	Sum of Two Integers
-- [ ] 338	Counting Bits
+- [x] 338	Counting Bits
 - [ ] 89	Gray Code
 - [ ] 268	Missing Number
 - [ ] 191	Number of 1 Bits
