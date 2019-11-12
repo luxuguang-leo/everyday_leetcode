@@ -5,7 +5,6 @@ Leetcode
 - [x] 27	Remove Element
 - [x] 26	Remove Duplicates from Sorted Array
 - [x] 80	Remove Duplicates from Sorted Array II	
-- [ ] 277	~~Find the Celebrity~~	#locked 
 - [x] 189	Rotate Array	
 - [x] 41	First Missing Positive
 - [ ] 299	Bulls and Cows	
@@ -16,9 +15,6 @@ Leetcode
 - [ ] 229	Majority Element II	很少考
 - [x] 274	H-Index
 - [x] 275	H-Index II	Binary Search
-- [ ] 243	~~Shortest Word Distance~~ #locked
-- [ ] 244	~~Shortest Word Distance II~~ #locked
-- [ ] 245	~~Shortest Word Distance III~~ #locked
 - [x] 217	Contains Duplicate	
 - [x] 219	Contains Duplicate II	很少考
 - [ ] 220	Contains Duplicate III	很少考
@@ -55,7 +51,6 @@ Leetcode
 - [x] 239	Sliding Window Maximum	
 - [ ] 295	Find Median from Data Stream	
 - [x] 53	Maximum Subarray
-- [ ] 325	~~Maximum Size Subarray Sum Equals k~~
 - [x] 209	Minimum Size Subarray Sum	
 - [ ] 238	Product of Array Except Self	
 - [ ] 152	Maximum Product Subarray	
@@ -80,23 +75,16 @@ Leetcode
 - [x] 383   Ransom Note	
 - [x] 344   Reverse String	
 - [x] 151   Reverse Words in a String	
-- [ ] 186   ~~Reverse Words in a String II~~
 - [x] 345   Reverse Vowels of a String	
 - [x] 205   Isomorphic Strings	
-- [ ] 293   ~~Flip Game~~ #locked
-- [ ] 294   ~~Flip Game II~~#locked
 - [x] 290   Word Pattern	
 - [x] 242   Valid Anagram	
 - [x] 49	Group Anagrams	
-- [ ] 249   ~~Group Shifted Strings~~
 - [ ] 87	Scramble String	
 - [ ] 179   Largest Number	很少考
 - [x] 6     ZigZag Conversion	很少考
-- [ ] 161   ~~One Edit Distance~~
 - [x] 38	Count and Say	
-- [ ] 358   ~~Rearrange String k Distance Apart~~
 - [x] 316   Remove Duplicate Letters	
-- [ ] 271   ~~Encode and Decode Strings~~
 - [x] 168   Excel Sheet Column Title	
 - [x] 171   Excel Sheet Column Number	
 - [x] 13	Roman to Integer
@@ -121,7 +109,6 @@ Leetcode
 
 ### Palindrome		
 - [x] 125   Valid Palindrome	
-- [ ] 266   ~~Palindrome Permutation~~
 - [x] 5     Longest Palindromic Substring	
 - [x] 9     Palindrome Number	
 - [x] 214   Shortest Palindrome	
@@ -374,10 +361,7 @@ Leetcode
 ## DFS&BFS
 ### 基础
 - [x] 200	Number of Islands
-- [ ] 286	~~Walls and Gates~~
 - [x] 130	Surrounded Regions
-- [ ] 339	~~Nested List Weight Sum~~
-- [ ] 364	~~Nested List Weight Sum II~~
 - [x] 127	Word Ladder
 - [x] 51	N-Queens
 - [x] 52	N-Queens II
