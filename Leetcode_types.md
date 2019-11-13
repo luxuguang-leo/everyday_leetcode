@@ -403,7 +403,7 @@ Leetcode
 - [ ] 371	Sum of Two Integers
 - [x] 338	Counting Bits
 - [x] 89	Gray Code
-- [ ] 268	Missing Number
+- [x] 268	Missing Number
 - [ ] 191	Number of 1 Bits
 - [ ] 190	Reverse Bits
 - [ ] 137	Single Number II
