@@ -404,7 +404,7 @@ Leetcode
 - [x] 338	Counting Bits
 - [x] 89	Gray Code
 - [x] 268	Missing Number
-- [ ] 191	Number of 1 Bits
+- [x] 191	Number of 1 Bits
 - [ ] 190	Reverse Bits
 - [ ] 137	Single Number II
 - [ ] 260	Single Number III
