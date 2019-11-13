@@ -405,7 +405,7 @@ Leetcode
 - [x] 89	Gray Code
 - [x] 268	Missing Number
 - [x] 191	Number of 1 Bits
-- [ ] 190	Reverse Bits
+- [x] 190	Reverse Bits
 - [ ] 137	Single Number II
 - [ ] 260	Single Number III
 
