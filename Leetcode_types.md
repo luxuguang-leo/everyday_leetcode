@@ -406,7 +406,7 @@ Leetcode
 - [x] 268	Missing Number
 - [x] 191	Number of 1 Bits
 - [x] 190	Reverse Bits
-- [ ] 137	Single Number II
+- [x] 137	Single Number II
 - [ ] 260	Single Number III
 
 ## Topological Sort
