@@ -402,7 +402,7 @@ Leetcode
 - [x] 201	Bitwise AND of Numbers Range
 - [ ] 371	Sum of Two Integers
 - [x] 338	Counting Bits
-- [ ] 89	Gray Code
+- [x] 89	Gray Code
 - [ ] 268	Missing Number
 - [ ] 191	Number of 1 Bits
 - [ ] 190	Reverse Bits
