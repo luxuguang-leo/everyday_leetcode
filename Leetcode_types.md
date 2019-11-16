@@ -417,7 +417,7 @@ Leetcode
 ## Random
 ### 基础
 - [x] 384	Shuffle an Array
-- [ ] 398	Random Pick Index
+- [x] 398	Random Pick Index
 - [ ] 382	Linked List Random Node
 - [ ] 380	Insert Delete GetRandom O(1)
 - [ ] 381	Insert Delete GetRandom O(1) - Duplicates allowed
