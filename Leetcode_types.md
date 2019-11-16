@@ -413,11 +413,10 @@ Leetcode
 ### 基础
 - [x] 207	Course Schedule
 - [x] 210	Course Schedule II
-- [ ] 269	Alien Dictionary
 
 ## Random
 ### 基础
-- [ ] 384	Shuffle an Array
+- [x] 384	Shuffle an Array
 - [ ] 398	Random Pick Index
 - [ ] 382	Linked List Random Node
 - [ ] 380	Insert Delete GetRandom O(1)
