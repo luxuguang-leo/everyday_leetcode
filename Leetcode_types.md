@@ -411,7 +411,7 @@ Leetcode
 
 ## Topological Sort
 ### 基础
-- [ ] 207	Course Schedule
+- [x] 207	Course Schedule
 - [ ] 210	Course Schedule II
 - [ ] 269	Alien Dictionary
 
