@@ -27,6 +27,8 @@ class Solution(object):
         :type prerequisites: List[List[int]]
         :rtype: bool
         """
+        #DFS,使用深搜标记有无访问过来遍历整个DAG
+        '''
         graph = collections.defaultdict(list)
         l_visit = [-1]*numCourses
         for v, k in prerequisites:
@@ -35,6 +37,32 @@ class Solution(object):
             if(self.dfs(node, graph, l_visit)):
                 return False
         return True
+        '''
+        #BFS,利用优先队列，根据入度是否为零来判断，如果入度为0，则入队列
+        #出队列后更新整个inDegree结果，继续在结果中找到入度为0的元素
+        #知道整个队列为空，如果有环，则最终结束的时候inDegree数组并不为空
+        #我遇到的难点是如何在队列中inDegree为0的值更新整个map
+        graph = collections.defaultdict(list)
+        dq = collections.deque()
+        inDegree = [0]*numCourses
+        for pair in prerequisites:
+            graph[pair[1]].append(pair[0])
+            inDegree[pair[0]] +=1
+        for i in range(len(inDegree)):
+            if inDegree[i] == 0:
+                dq.append(i)
+        cnt = 0
+        while dq:
+            node = dq.popleft()
+            cnt +=1
+            for neigh in graph[node]:
+                inDegree[neigh] -=1
+                if inDegree[neigh]==0:
+                    dq.append(neigh)
+        return cnt == numCourses
+        #'''
+
+
         
 # @lc code=end
 

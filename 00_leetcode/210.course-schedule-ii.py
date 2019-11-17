@@ -38,6 +38,8 @@ class Solution(object):
         :type prerequisites: List[List[int]]
         :rtype: List[int]
         """
+        #DFS
+        '''
         graph = collections.defaultdict(list)
         for pair in prerequisites:
             graph[pair[1]].append(pair[0])
@@ -47,5 +49,29 @@ class Solution(object):
             if not self.dfs(node, graph, visiting):
                 return []
         return self.ret
+        '''
+        #BFS
+        ret = []
+        graph = collections.defaultdict(list)
+        dq = collections.deque()
+        inDegree = [0]*numCourses
+        for pair in prerequisites:
+            graph[pair[1]].append(pair[0])
+            inDegree[pair[0]] +=1
+        for i in range(len(inDegree)):
+            if inDegree[i] == 0:
+                dq.append(i)
+        cnt = 0
+        while dq:
+            node = dq.popleft()
+            ret.append(node)
+            cnt +=1
+            for neigh in graph[node]:
+                inDegree[neigh] -=1
+                if inDegree[neigh]==0:
+                    dq.append(neigh)
+        if cnt != numCourses:
+            return []
+        return ret
 # @lc code=end
 
