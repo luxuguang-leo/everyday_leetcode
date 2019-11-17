@@ -420,7 +420,7 @@ Leetcode
 - [x] 398	Random Pick Index
 - [x] 382	Linked List Random Node
 - [x] 380	Insert Delete GetRandom O(1)
-- [ ] 381	Insert Delete GetRandom O(1) - Duplicates allowed
+- [x] 381	Insert Delete GetRandom O(1) - Duplicates allowed
 - [ ] 138	Copy List with Random Pointer
 
 ## Graph
@@ -432,14 +432,13 @@ Leetcode
 ### 图形学
 - [ ] 335	Self Crossing	很少考
 - [ ] 149	Max Points on a Line
-- [ ] 356	Line Reflection	很少考
 - [ ] 391	Perfect Rectangle	很少考
 - [ ] 223	Rectangle Area	很少考
 
 ## Union Find
-- [ ] 261	Graph Valid Tree
-- [ ] 323	Number of Connected Components in an Undirected Graph
-- [ ] 305	Number of Islands II
+- [ ] 261	~~Graph Valid Tree~~
+- [ ] 323	~~Number of Connected Components in an Undirected Graph~~
+- [ ] 305	~~Number of Islands II~~
 
 ## Trie
 - [ ] 211	Add and Search Word - Data structure design
