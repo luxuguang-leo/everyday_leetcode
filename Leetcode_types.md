@@ -421,7 +421,7 @@ Leetcode
 - [x] 382	Linked List Random Node
 - [x] 380	Insert Delete GetRandom O(1)
 - [x] 381	Insert Delete GetRandom O(1) - Duplicates allowed
-- [ ] 138	Copy List with Random Pointer
+- [x] 138	Copy List with Random Pointer
 
 ## Graph
 ### 基础
