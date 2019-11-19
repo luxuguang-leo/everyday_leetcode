@@ -12,7 +12,7 @@ Leetcode
 - [x] 118	Pascal's Triangle	很少考
 - [x] 119	Pascal's Triangle II	很少考
 - [x] 169	Majority Element	很少考
-- [ ] 229	Majority Element II	很少考
+- [x] 229	Majority Element II	很少考
 - [x] 274	H-Index
 - [x] 275	H-Index II	Binary Search
 - [x] 217	Contains Duplicate	

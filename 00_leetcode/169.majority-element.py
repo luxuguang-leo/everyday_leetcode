@@ -23,6 +23,17 @@ class Solution(object):
         return None
         '''
         #2.sorted
-        return sorted(nums)[len(nums)//2]
+        #return sorted(nums)[len(nums)//2]
+        #.moore voting
+        maj_idx, cnt = 0, 1
+        for i in range(1, len(nums)):
+            if nums[i] == nums[maj_idx]:
+                cnt +=1
+            else:
+                cnt -=1
+                if cnt == 0:
+                    maj_idx = i
+                    cnt = 1
+        return nums[maj_idx]
 # @lc code=end
 
