@@ -53,7 +53,7 @@ Leetcode
 - [x] 53	Maximum Subarray
 - [x] 209	Minimum Size Subarray Sum	
 - [ ] 238	Product of Array Except Self	
-- [ ] 152	Maximum Product Subarray	
+- [x] 152	Maximum Product Subarray	
 - [ ] 228	Summary Ranges	
 - [ ] 163	Missing Ranges	
 
