@@ -55,7 +55,6 @@ Leetcode
 - [ ] 238	Product of Array Except Self	
 - [x] 152	Maximum Product Subarray	
 - [ ] 228	Summary Ranges	
-- [ ] 163	Missing Ranges	
 
 ### Sort		
 - [ ] 88	Merge Sorted Array	
@@ -400,7 +399,7 @@ Leetcode
 ### 很少考
 - [ ] 393	UTF-8 Validation
 - [x] 201	Bitwise AND of Numbers Range
-- [ ] 371	Sum of Two Integers
+- [x] 371	Sum of Two Integers
 - [x] 338	Counting Bits
 - [x] 89	Gray Code
 - [x] 268	Missing Number
