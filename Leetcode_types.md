@@ -7,7 +7,7 @@ Leetcode
 - [x] 80	Remove Duplicates from Sorted Array II	
 - [x] 189	Rotate Array	
 - [x] 41	First Missing Positive
-- [ ] 299	Bulls and Cows	
+- [x] 299	Bulls and Cows	
 - [ ] 134	Gas Station	
 - [ ] 118	Pascal's Triangle	很少考
 - [ ] 119	Pascal's Triangle II	很少考
