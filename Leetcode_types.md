@@ -10,7 +10,7 @@ Leetcode
 - [x] 299	Bulls and Cows	
 - [ ] 134	Gas Station	
 - [x] 118	Pascal's Triangle	很少考
-- [ ] 119	Pascal's Triangle II	很少考
+- [x] 119	Pascal's Triangle II	很少考
 - [ ] 169	Majority Element	很少考
 - [ ] 229	Majority Element II	很少考
 - [x] 274	H-Index
