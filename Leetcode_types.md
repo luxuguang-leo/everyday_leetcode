@@ -17,7 +17,7 @@ Leetcode
 - [x] 275	H-Index II	Binary Search
 - [x] 217	Contains Duplicate	
 - [x] 219	Contains Duplicate II	很少考
-- [ ] 220	Contains Duplicate III	很少考
+- [x] 220	Contains Duplicate III	很少考
 - [ ] 55	Jump Game	
 - [ ] 45	Jump Game II	
 - [x] 121	Best Time to Buy and Sell Stock	
