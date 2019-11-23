@@ -349,7 +349,7 @@ Leetcode
 - [ ] 74	Search a 2D Matrix
 - [ ] 240	Search a 2D Matrix II
 - [ ] 370	Range Addition
-- [ ] 79	Word Search
+- [x] 79	Word Search
 - [ ] 296	Best Meeting Point
 - [ ] 361	Bomb Enemy
 - [ ] 317	Shortest Distance from All Buildings
