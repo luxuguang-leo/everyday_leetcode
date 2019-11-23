@@ -28,7 +28,7 @@ Leetcode
 - [x] 11	Container With Most Water
 - [ ] 42	Trapping Rain Water	
 - [ ] 334	Increasing Triplet Subsequence	
-- [ ] 128	Longest Consecutive Sequence	
+- [x] 128	Longest Consecutive Sequence #union find
 - [ ] 164	Maximum Gap	Bucket
 - [ ] 287	Find the Duplicate Number	
 - [ ] 135	Candy	很少考
