@@ -426,7 +426,7 @@ Leetcode
 ### 基础
 - [x] 133	Clone Graph
 - [x] 399	Evaluate Division
-- [ ] 310	Minimum Height Trees
+- [x] 310	Minimum Height Trees
 
 ### 图形学
 - [ ] 335	Self Crossing	很少考
