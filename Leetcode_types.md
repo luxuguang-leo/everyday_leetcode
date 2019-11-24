@@ -442,7 +442,7 @@ Leetcode
 ## Trie
 - [x] 211	Add and Search Word - Data structure design
 - [x] 208	Implement Trie (Prefix Tree)
-- [ ] 212	Word Search II
+- [x] 212	Word Search II
 
 ## Design
 ### 基础
