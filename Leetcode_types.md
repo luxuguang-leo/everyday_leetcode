@@ -279,7 +279,7 @@ Leetcode
 - [ ] 256	Paint House
 - [ ] 265	Paint House II
 - [ ] 64	Minimum Path Sum
-- [ ] 72	Edit Distance
+- [x] 72	Edit Distance
 - [ ] 97	Interleaving String
 - [ ] 174	Dungeon Game
 - [ ] 221	Maximal Square
