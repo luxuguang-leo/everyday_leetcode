@@ -105,6 +105,7 @@ Leetcode
 - [ ] 340   Longest Substring with At Most K Distinct Characters	Sliding Window
 - [ ] 395   Longest Substring with At Least K Repeating Characters	Sliding Window
 - [ ] 159   Longest Substring with At Most Two Distinct Characters	Sliding Window
+- [x] 1143  Lonest Common Subsequence. #DP #2 
 
 ### Palindrome		
 - [x] 125   Valid Palindrome	
