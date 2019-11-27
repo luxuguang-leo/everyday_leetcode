@@ -19,7 +19,7 @@ Leetcode
 - [x] 219	Contains Duplicate II	很少考
 - [x] 220	Contains Duplicate III	很少考
 - [x] 55	Jump Game	
-- [ ] 45	Jump Game II	
+- [x] 45	Jump Game II	
 - [x] 121	Best Time to Buy and Sell Stock	
 - [x] 122	Best Time to Buy and Sell Stock II	
 - [x] 123	Best Time to Buy and Sell Stock III	
