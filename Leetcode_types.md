@@ -282,7 +282,7 @@ Leetcode
 - [x] 72	Edit Distance
 - [ ] 97	Interleaving String
 - [ ] 174	Dungeon Game
-- [ ] 221	Maximal Square
+- [x] 221	Maximal Square
 - [ ] 85	Maximal Rectangle
 - [ ] 363	Max Sum of Rectangle No Larger Than K	TreeSet
 
