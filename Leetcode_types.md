@@ -379,7 +379,7 @@ Leetcode
 - [ ] 224	Basic Calculator	
 - [ ] 227	Basic Calculator II	
 - [ ] 385	Mini Parser	
-- [ ] 84	Largest Rectangle in Histogram
+- [x] 84	Largest Rectangle in Histogram
 
 ### PriorityQueue
 - [x] 215	Kth Largest Element in an Array
