@@ -270,7 +270,7 @@ Leetcode
 - [x] 63	Unique Paths II
 - [x] 120	Triangle	很少考
 - [x] 279	Perfect Squares
-- [ ] 139	Word Break
+- [x] 139	Word Break
 - [ ] 375	Guess Number Higher or Lower II
 - [ ] 312	Burst Balloons
 - [ ] 322	Coin Change
