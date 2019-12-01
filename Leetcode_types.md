@@ -259,7 +259,7 @@ Leetcode
 - [ ] 320	Generalized Abbreviation	要重录
 - [ ] 93    Restore IP Addresses	很少考
 - [ ] 282	Expression Add Operators	
-- [ ] 140	Word Break II	
+- [x] 140	Word Break II	
 - [ ] 351	Android Unlock Patterns
 
 ## Dynamic Programming
