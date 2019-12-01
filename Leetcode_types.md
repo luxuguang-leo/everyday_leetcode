@@ -301,7 +301,7 @@ Leetcode
 - [x] 24	Swap Nodes in Pairs
 - [ ] 328	Odd Even Linked List
 - [x] 92	Reverse Linked List II
-- [ ] 237	Delete Node in a Linked List
+- [x] 237	Delete Node in a Linked List
 - [x] 19	Remove Nth Node From End of List
 - [x] 83	Remove Duplicates from Sorted List
 - [x] 203	Remove Linked List Elements
