@@ -273,11 +273,11 @@ Leetcode
 - [x] 139	Word Break
 - [ ] 375	Guess Number Higher or Lower II
 - [ ] 312	Burst Balloons
-- [ ] 322	Coin Change
+- [x] 322	Coin Change
 
 ### 二维
-- [ ] 256	Paint House
-- [ ] 265	Paint House II
+- [ ] 256	~~Paint House~~
+- [ ] 265	~~Paint House II~~
 - [x] 64	Minimum Path Sum
 - [x] 72	Edit Distance
 - [ ] 97	Interleaving String
