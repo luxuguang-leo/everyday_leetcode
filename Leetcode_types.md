@@ -319,7 +319,7 @@ Leetcode
 - [ ] 25	Reverse Nodes in k-Group
 - [ ] 61	Rotate List
 - [ ] 86	Partition List
-- [ ] 23	Merge k Sorted Lists
+- [x] 23	Merge k Sorted Lists
 - [ ] 147	Insertion Sort List
 
 ## Binary Search
