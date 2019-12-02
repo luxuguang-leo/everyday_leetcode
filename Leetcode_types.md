@@ -52,7 +52,7 @@ Leetcode
 - [ ] 295	Find Median from Data Stream	
 - [x] 53	Maximum Subarray
 - [x] 209	Minimum Size Subarray Sum	
-- [ ] 238	Product of Array Except Self	
+- [x] 238	Product of Array Except Self	
 - [x] 152	Maximum Product Subarray	
 - [ ] 228	Summary Ranges	
 
