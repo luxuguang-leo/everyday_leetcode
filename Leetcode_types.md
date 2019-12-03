@@ -58,7 +58,7 @@ Leetcode
 
 ### Sort		
 - [x] 88	Merge Sorted Array	
-- [ ] 75	Sort Colors	
+- [x] 75	Sort Colors	
 - [ ] 283	Move Zeroes	
 - [ ] 376	Wiggle Subsequence	
 - [ ] 280	Wiggle Sort	
