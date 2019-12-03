@@ -59,7 +59,7 @@ Leetcode
 ### Sort		
 - [x] 88	Merge Sorted Array	
 - [x] 75	Sort Colors	
-- [ ] 283	Move Zeroes	
+- [x] 283	Move Zeroes	
 - [ ] 376	Wiggle Subsequence	
 - [ ] 280	Wiggle Sort	
 - [ ] 324	Wiggle Sort II
@@ -307,7 +307,7 @@ Leetcode
 - [x] 203	Remove Linked List Elements
 - [x] 82	Remove Duplicates from Sorted List II
 - [ ] 369	Plus One Linked List
-- [x] 2	Add Two Numbers
+- [x] 2	    Add Two Numbers
 - [ ] 160	Intersection of Two Linked Lists
 - [x] 21	Merge Two Sorted Lists
 
