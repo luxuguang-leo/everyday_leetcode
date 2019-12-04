@@ -80,7 +80,7 @@ Leetcode
 - [x] 242   Valid Anagram	
 - [x] 49	Group Anagrams	
 - [ ] 87	Scramble String	
-- [ ] 179   Largest Number	很少考
+- [x] 179   Largest Number	很少考
 - [x] 6     ZigZag Conversion	很少考
 - [x] 38	Count and Say	
 - [x] 316   Remove Duplicate Letters	
