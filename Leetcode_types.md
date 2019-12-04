@@ -61,7 +61,6 @@ Leetcode
 - [x] 75	Sort Colors	
 - [x] 283	Move Zeroes	
 - [x] 376	Wiggle Subsequence	
-- [ ] 280	~~Wiggle Sort~~
 - [ ] 324	Wiggle Sort II
 
 ## String
@@ -88,10 +87,8 @@ Leetcode
 - [x] 171   Excel Sheet Column Number	
 - [x] 13	Roman to Integer
 - [x] 12	Integer to Roman	
-- [ ] 273   Integer to English Words	
-- [ ] 246   Strobogrammatic Number	
-- [ ] 247   Strobogrammatic Number II	
-- [ ] 248   Strobogrammatic Number III	很少考
+- [x] 273   Integer to English Words	
+
 ### 提高		
 - [ ] 68	Text Justification	
 - [ ] 65    Valid Number	
@@ -276,8 +273,6 @@ Leetcode
 - [x] 322	Coin Change
 
 ### 二维
-- [ ] 256	~~Paint House~~
-- [ ] 265	~~Paint House II~~
 - [x] 64	Minimum Path Sum
 - [x] 72	Edit Distance
 - [x] 97	Interleaving String
