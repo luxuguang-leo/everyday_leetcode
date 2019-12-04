@@ -87,7 +87,7 @@ Leetcode
 - [x] 168   Excel Sheet Column Title	
 - [x] 171   Excel Sheet Column Number	
 - [x] 13	Roman to Integer
-- [ ] 12	Integer to Roman	
+- [x] 12	Integer to Roman	
 - [ ] 273   Integer to English Words	
 - [ ] 246   Strobogrammatic Number	
 - [ ] 247   Strobogrammatic Number II	
