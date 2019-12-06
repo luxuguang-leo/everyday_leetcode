@@ -96,7 +96,7 @@ Leetcode
 - [ ] 158   Read N Characters Given Read4 II - Call multiple times	
 
 ### Substring		
-- [ ] 76	Minimum Window Substring	Sliding Window
+- [x] 76	Minimum Window Substring	Sliding Window
 - [ ] 30    Substring with Concatenation of All Words	Sliding Window
 - [x] 3	    Longest Substring Without Repeating Characters	Sliding Window
 - [ ] 340   Longest Substring with At Most K Distinct Characters	Sliding Window
