@@ -97,7 +97,7 @@ Leetcode
 
 ### Substring		
 - [x] 76	Minimum Window Substring	Sliding Window
-- [ ] 30    Substring with Concatenation of All Words	Sliding Window
+- [x] 30    Substring with Concatenation of All Words	Sliding Window
 - [x] 3	    Longest Substring Without Repeating Characters	Sliding Window
 - [ ] 340   Longest Substring with At Most K Distinct Characters	Sliding Window
 - [ ] 395   Longest Substring with At Least K Repeating Characters	Sliding Window
