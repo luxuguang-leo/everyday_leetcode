@@ -99,9 +99,9 @@ Leetcode
 - [x] 76	Minimum Window Substring	Sliding Window
 - [x] 30    Substring with Concatenation of All Words	Sliding Window
 - [x] 3	    Longest Substring Without Repeating Characters	Sliding Window
-- [ ] 340   Longest Substring with At Most K Distinct Characters	Sliding Window
+- [x] 340   Longest Substring with At Most K Distinct Characters	Sliding Window
 - [x] 395   Longest Substring with At Least K Repeating Characters	Sliding Window
-- [ ] 159   Longest Substring with At Most Two Distinct Characters	Sliding Window
+- [x] 159   Longest Substring with At Most Two Distinct Characters	Sliding Window
 - [x] 438   Find all anagrams in a string #Sliding Window
 - [x] 1143  Lonest Common Subsequence. #DP #2 
 
