@@ -123,7 +123,7 @@ Leetcode
 - [ ] 301   Remove Invalid Parentheses	
 
 ### Subsequence		
-- [ ] 392   Is Subsequence	
+- [x] 392   Is Subsequence	
 - [ ] 115   Distinct Subsequences	
 - [ ] 187   Repeated DNA Sequences	很少考
 
