@@ -1,4 +1,4 @@
-l#
+#
 # @lc app=leetcode id=30 lang=python
 #
 # [30] Substring with Concatenation of All Words
