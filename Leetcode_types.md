@@ -41,7 +41,7 @@ Leetcode
 - [ ] 289	Game of Life	
 
 ### Interval
-- [ ] 57	Insert Interval	
+- [x] 57	Insert Interval	
 - [x] 56	Merge Intervals	
 - [x] 252	Meeting Rooms	
 - [x] 253	Meeting Rooms II	
