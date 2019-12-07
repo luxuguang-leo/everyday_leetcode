@@ -9,11 +9,8 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-
-        #use sliding window, two pointers, and 
-        #left = 0
-        #hashtable, hashtable{'a':0, 'b':1, 'c':2}
-        #max_len = i - left
+        #method 1， sliding window
+        '''
         left = max_len = 0
         hTable = {}
         for i in range(len(s)):
@@ -23,13 +20,23 @@ class Solution(object):
                 max_len = max(max_len, i - left +1)
             hTable[s[i]] = i
         return max_len
-        #sliding window, but little hard to image
+        '''
+        #method 2, sliding window,use pattern
+        if len(s) <= 1:
+            return len(s)
+        l = max_len = 0
+        m = {}
+        for i in range(len(s)):
+            m[s[i]] = m.get(s[i], 0) +1
+            while m[s[i]] != 1:
+                #左移窗口，更新map中的值
+                m[s[l]] -=1
+                l += 1
+            max_len = max(max_len, i-l+1)
+            #print(m, l, i, max_len)
+        return max_len
 
-        '''
-        错误点在于
-        1.更新窗口的时候，abc之后，来了一个‘a’，这个时候需要将left往右移动一位而不是直接移动到再次出现‘a’的位置，
-        2.然后所有每次操作都需要更新最大长度，是当前位置-left +1，记得要加1
-        3.hashtable保存的是字符和出现的位置，只是用来判断有误重复用，hashtable并没有特别之处
-        '''
+
+
         
 
