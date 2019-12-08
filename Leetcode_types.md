@@ -78,7 +78,7 @@ Leetcode
 - [x] 290   Word Pattern	
 - [x] 242   Valid Anagram	
 - [x] 49	Group Anagrams	
-- [ ] 87	Scramble String	
+- [x] 87	Scramble String	
 - [x] 179   Largest Number	很少考
 - [x] 6     ZigZag Conversion	很少考
 - [x] 38	Count and Say	
