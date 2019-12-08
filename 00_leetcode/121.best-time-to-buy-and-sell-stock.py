@@ -21,7 +21,7 @@ class Solution(object):
         return max_profit
         '''
 
-        #method 2, DP, 
+        #method 2, DP, 注意约束条件是只能买卖一次，也就是买之前不需要考虑卖的情况
         #buy  -> -prices[i]
         #sell -> prices[i]
         #状态，买 buy = max(buy, -prices[i])

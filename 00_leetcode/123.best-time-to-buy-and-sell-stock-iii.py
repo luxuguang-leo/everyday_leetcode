@@ -16,11 +16,11 @@ class Solution(object):
         #secondSell = max(secondSell, secondBuy + prices[i])
         if len(prices) <= 1:
             return 0
-        firstBuy = - 0xFFFFFFFF
+        firstBuy = - prices[0]
         firstSell = 0
-        secondBuy = -0xFFFFFFFF
+        secondBuy = -prices[0]
         secondSell = 0
-        for i in range(0, len(prices)):
+        for i in range(1, len(prices)):
             firstBuy = max(firstBuy, -prices[i])
             firstSell = max(firstSell, firstBuy + prices[i])
             secondBuy = max(secondBuy, firstSell - prices[i])
