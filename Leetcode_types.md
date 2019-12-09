@@ -135,7 +135,7 @@ Leetcode
 - [x] 66    Plus One
 - [x] 8	    String to Integer (atoi)
 - [x] 258   Add Digits
-- [ ] 67    Add Binary
+- [x] 67    Add Binary
 - [ ] 43    Multiply Strings
 - [ ] 29    Divide Two Integers
 - [ ] 69    Sqrt(x)
