@@ -3,42 +3,26 @@
 #
 # [7] Reverse Integer
 #
+
+# @lc code=start
 class Solution(object):
     def reverse(self, x):
         """
         :type x: int
         :rtype: int
         """
+        sign = 1
         if x < 0:
             sign = -1
             x = 0 - x
-        else:
-            sign = 1
         ret = 0
         while x > 0:
-            dig = x%10
+            digit = x%10
             x = x/10
-            ret = ret*10+dig
+            ret = ret*10 + digit
         if ret > 0x7FFFFFFF:
             return 0
-        return sign*ret
-
-        #1) 123
-        #dig = 3
-        #x = 12
-        #ret = 3
-
-        #12 
-        #dig = 2
-        #x = 1
-        #result = 3*10 + 2 = 32
-
-        #2) 1
-        #dig = 1
-        #x = 0
-        #result = 320+1 = 321
-
+        return sign * ret
         
-
-        
+# @lc code=end
 

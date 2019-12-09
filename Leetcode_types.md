@@ -113,7 +113,7 @@ Leetcode
 - [ ] 336   Palindrome Pairs	
 - [x] 131   Palindrome Partitioning	
 - [ ] 132   Palindrome Partitioning II	
-- [ ] 267   Palindrome Permutation II	
+- [ ] 267   ~~Palindrome Permutation II~~
 
 ### Parentheses		
 - [x] 20    Valid Parentheses	
@@ -130,7 +130,7 @@ Leetcode
 ## Math
 
 ### 基础
-- [ ] 7	    Reverse Integer
+- [x] 7	    Reverse Integer
 - [x] 165   Compare Version Numbers
 - [ ] 66    Plus One
 - [ ] 8	    String to Integer (atoi)
