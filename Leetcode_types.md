@@ -137,7 +137,7 @@ Leetcode
 - [x] 258   Add Digits
 - [x] 67    Add Binary
 - [x] 43    Multiply Strings
-- [ ] 29    Divide Two Integers
+- [x] 29    Divide Two Integers
 - [ ] 69    Sqrt(x)
 - [ ] 50    Pow(x, n)
 - [ ] 367   Valid Perfect Square
