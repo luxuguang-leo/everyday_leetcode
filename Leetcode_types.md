@@ -132,7 +132,7 @@ Leetcode
 ### 基础
 - [x] 7	    Reverse Integer
 - [x] 165   Compare Version Numbers
-- [ ] 66    Plus One
+- [x] 66    Plus One
 - [ ] 8	    String to Integer (atoi)
 - [ ] 258   Add Digits
 - [ ] 67    Add Binary
