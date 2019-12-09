@@ -133,7 +133,7 @@ Leetcode
 - [x] 7	    Reverse Integer
 - [x] 165   Compare Version Numbers
 - [x] 66    Plus One
-- [ ] 8	    String to Integer (atoi)
+- [x] 8	    String to Integer (atoi)
 - [ ] 258   Add Digits
 - [ ] 67    Add Binary
 - [ ] 43    Multiply Strings
