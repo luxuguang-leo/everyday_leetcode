@@ -142,7 +142,7 @@ Leetcode
 - [x] 50    Pow(x, n)
 - [x] 367   Valid Perfect Square
 - [ ] 365   Water and Jug Problem
-- [ ] 204   Count Primes
+- [x] 204   Count Primes
 
 ### Sum
 - [x] 1	    Two Sum
@@ -191,15 +191,15 @@ Leetcode
 - [x] 112	Path Sum	preorder
 - [x] 113	Path Sum II	preorder
 - [ ] 129	Sum Root to Leaf Numbers	preorder
-- [ ] 298	Binary Tree Longest Consecutive Sequence	preorder
+- [ ] 298	~~Binary Tree Longest Consecutive Sequence	preorder~~
 - [x] 111	Minimum Depth of Binary Tree	preorder
 
 ## Postorder
 - [x] 104	Maximum Depth of Binary Tree	postorder
 - [x] 110	Balanced Binary Tree	postorder
 - [x] 124	Binary Tree Maximum Path Sum	postorder
-- [ ] 250	Count Univalue Subtrees	postorder
-- [ ] 366	Find Leaves of Binary Tree	postorder
+- [ ] 250	~~Count Univalue Subtrees	postorder~~
+- [ ] 366	~~Find Leaves of Binary Tree	postorder~~
 - [ ] 337	House Robber III	postorder + preorder
 
 ### BFS
