@@ -11,11 +11,12 @@
 #         self.right = None
 
 class Solution(object):
-    def postorderHelper(self, root, ret):
-        if root:
-            self.postorderHelper(root.left, ret)
-            self.postorderHelper(root.right, ret)
-            ret.append(root.val)
+    def dfs(self, root, ret):
+        if not root:
+            return
+        self.postorderHelper(root.left, ret)
+        self.postorderHelper(root.right, ret)
+        ret.append(root.val)
         
     def postorderTraversal(self, root):
         """
@@ -26,7 +27,7 @@ class Solution(object):
         '''
         ret = []
         if root:
-            self.postorderHelper(root, ret)
+        dfs(root, ret)
         return ret
         '''
         #method 2
@@ -45,16 +46,16 @@ class Solution(object):
         return ret
         '''
         #method 3
-        s, ret = [(root, False)],[]
-        while s:
-            node, status = s.pop()
+        stack, ret = [(root, False)], []
+        while stack:
+            node, visited = stack.pop()
             if node:
-                if status:
-                    ret.append(node.val)
+                if not visited:
+                    stack.append((node, True))
+                    stack.append((node.right, False))
+                    stack.append((node.left, False))
                 else:
-                    s.append((node, True))
-                    s.append((node.right, False))
-                    s.append((node.left, False))
+                    ret.append(node.val)
         return ret
 
 
