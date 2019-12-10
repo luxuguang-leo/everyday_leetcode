@@ -34,6 +34,7 @@ class Solution(object):
         #b.while stack is not empty and root.left is not None, push to stack
         #c.if root.left is empty, pop stack, printf if node valus, and if root.right is not None, push to stack
         #d.return to b
+        '''
         if not root:
             return []
         s, ret = [],[]
@@ -46,6 +47,21 @@ class Solution(object):
             ret.append(node.val)
             cur = node.right
         return ret
+        '''
+        #3, more easy to understand, mark every node
+        stack, ret = [(root, False)], []
+        while stack:
+            node, visited = stack.pop()
+            if node:
+                if not visited:
+                    stack.append((node.right, False))
+                    stack.append((node, True))#cannot add value first, mark it as visited
+                    stack.append((node.left, False))
+                else:
+                    ret.append(node.val)#at last add value
+        return ret
+
+
         
         
 
