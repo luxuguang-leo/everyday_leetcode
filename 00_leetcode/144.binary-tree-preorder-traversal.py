@@ -45,6 +45,7 @@ class Solution(object):
         #method 3, easy to understand, why append right node first?
         #Because this is a stack, we need to visit 'left-node-right'
         #So push right node into stack first.
+        '''
         stack, ret = [root], []
         while stack:
             node = stack.pop()
@@ -54,5 +55,19 @@ class Solution(object):
             stack.append(node.right)
             stack.append(node.left)
         return ret
+        '''
+        #method 4, mark visited node for easier understanding
+        stack, ret = [(root, False)], []
+        while stack:
+            node, visited = stack.pop()
+            if node:
+                if not visited:
+                    stack.append((node.right, False))
+                    stack.append((node.left, False))
+                    stack.append((node, True))
+                else:
+                    ret.append(node.val)
+        return ret
+
         
 
