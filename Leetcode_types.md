@@ -138,7 +138,7 @@ Leetcode
 - [x] 67    Add Binary
 - [x] 43    Multiply Strings
 - [x] 29    Divide Two Integers
-- [ ] 69    Sqrt(x)
+- [x] 69    Sqrt(x)
 - [x] 50    Pow(x, n)
 - [ ] 367   Valid Perfect Square
 - [ ] 365   Water and Jug Problem
