@@ -140,7 +140,7 @@ Leetcode
 - [x] 29    Divide Two Integers
 - [x] 69    Sqrt(x)
 - [x] 50    Pow(x, n)
-- [ ] 367   Valid Perfect Square
+- [x] 367   Valid Perfect Square
 - [ ] 365   Water and Jug Problem
 - [ ] 204   Count Primes
 
