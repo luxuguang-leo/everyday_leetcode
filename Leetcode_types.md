@@ -187,7 +187,7 @@ Leetcode
 - [x] 100	Same Tree	preorder
 - [x] 101	Symmetric Tree	preorder
 - [x] 226	Invert Binary Tree	preorder + BFS
-- [ ] 257	Binary Tree Paths	preorder
+- [x] 257	Binary Tree Paths	preorder
 - [x] 112	Path Sum	preorder
 - [x] 113	Path Sum II	preorder
 - [ ] 129	Sum Root to Leaf Numbers	preorder
