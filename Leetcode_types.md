@@ -190,7 +190,7 @@ Leetcode
 - [x] 257	Binary Tree Paths	preorder
 - [x] 112	Path Sum	preorder
 - [x] 113	Path Sum II	preorder
-- [ ] 129	Sum Root to Leaf Numbers	preorder
+- [x] 129	Sum Root to Leaf Numbers	DFS BFS
 - [ ] 298	~~Binary Tree Longest Consecutive Sequence	preorder~~
 - [x] 111	Minimum Depth of Binary Tree	preorder
 
