@@ -24,9 +24,17 @@ class Solution(object):
         '''
         #BFS
         q = collections.deque([root])
-        #q.append(root)
         while q:
             node = q.pop()
+            if node:
+                node.left, node.right = node.right, node.left
+                q.append(node.left)
+                q.append(node.right)
+        return root
+        #BFS, queue
+        q = [root]
+        while q:
+            node = q.pop(0)
             if node:
                 node.left, node.right = node.right, node.left
                 q.append(node.left)
