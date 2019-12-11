@@ -24,7 +24,23 @@ class Solution(object):
         :type sum: int
         :rtype: bool
         """
+        #DFS, revrusatively
+        '''
         return self.dfs(root, sum)
+        '''
+        #DFS, interavtively
+        if not root:
+            return False
+        stack = [(root, root.val)]
+        while stack:
+            node, cur_sum = stack.pop()
+            if node.left:
+                stack.append((node.left, cur_sum+node.left.val))
+            if node.right:
+                stack.append((node.right, cur_sum+node.right.val))
+            if not node.left and not node.right and cur_sum==sum:
+                return True
+        return False
         
         
 
