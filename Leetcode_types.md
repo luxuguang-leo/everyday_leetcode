@@ -195,7 +195,7 @@ Leetcode
 - [x] 111	Minimum Depth of Binary Tree	preorder
 
 ## Postorder
-- [x] 104	Maximum Depth of Binary Tree	postorder
+- [x] 104	Maximum Depth of Binary Tree	DFS,BFS,stack, queue, deque
 - [x] 110	Balanced Binary Tree	postorder
 - [x] 124	Binary Tree Maximum Path Sum	postorder
 - [ ] 250	~~Count Univalue Subtrees	postorder~~

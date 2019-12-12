@@ -16,9 +16,56 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
+        #DFS+recrusative
+        '''
         if not root:
             return 0
         if root:
             return 1+ max(self.maxDepth(root.left), self.maxDepth(root.right))
+        '''
+        #DFS+stack, 32ms
+        '''
+        if not root:
+            return 0
+        stack = [(root, 1)]
+        ret = 0
+        while stack:
+            root, level = stack.pop()
+            ret = max(ret, level)
+            if root.left:
+                stack.append((root.left, level+1))
+            if root.right:
+                stack.append((root.right, level+1))
+        return ret
+        '''
+        #BFS+queue, 40ms
+        '''
+        if not root:
+            return 0
+        ret = 0
+        q = [(root, 1)]
+        while q:
+            node, level = q.pop(0)
+            ret = max(ret, level)
+            if node.left:
+                q.append((node.left, level+1))
+            if node.right:
+                q.append((node.right, level+1))
+        return ret
+        '''
+        #BFS+queue, optimize， 28ms
+        if not root:
+            return 0
+        q = [(root, 1)]
+        while q:
+            node, level = q.pop(0)
+            #最后一个结点的判断
+            if not node.left and not node.right and not q:
+                return level
+            if node.left:
+                q.append((node.left, level+1))
+            if node.right:
+                q.append((node.right, level+1))
+        #return ret
         
 
