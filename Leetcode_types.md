@@ -283,7 +283,7 @@ Leetcode
 - [ ] 363	Max Sum of Rectangle No Larger Than K	TreeSet
 
 ### 化简
-- [ ] 198	House Robber
+- [x] 198	House Robber
 - [ ] 213	House Robber II
 - [ ] 276	Paint Fence
 - [ ] 91	Decode Ways
