@@ -30,6 +30,22 @@ class Solution(object):
             return False
         return self.isBalanced(root.left) and self.isBalanced(root.right)
         '''
-        #method 2
+        #method 2, BFS，记录叶子节点的深度，如果两个不一层叶子节点深度差值大于1，则不平衡, 有问题！
+        if not root:
+            return True
+        q, leaf_depth = [(root, 1)], []
+        while q:
+            node, level = q.pop(0)
+            #记录两种情况，只有一个节点，没有节点,但还是有corner case的情况
+            if not node.left or not node.right:
+                leaf_depth.append(level)
+                #print(leaf_depth)
+                if leaf_depth[-1] - leaf_depth[0] > 1:
+                    return False
+            if node.left:
+                q.append((node.left, level+1))
+            if node.right:
+                q.append((node.right, level+1))
+        return True
         
 
