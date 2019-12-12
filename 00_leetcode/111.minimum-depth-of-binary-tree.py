@@ -26,12 +26,25 @@ class Solution(object):
         return 1+ min(self.minDepth(root.left), self.minDepth(root.right))
         '''
         #BFS, use deque
+        '''
         if not root:
             return 0
         q = collections.deque()
         q.append([root, 1])
         while q:
             node, level = q.popleft()
+            if node:
+                if not node.left and not node.right:
+                    return level
+                else:
+                    q.append((node.left, level+1))
+                    q.append((node.right, level+1))
+        '''
+        if not root:
+            return 0
+        q  = [(root, 1)]
+        while q:
+            node, level = q.pop(0)
             if node:
                 if not node.left and not node.right:
                     return level
