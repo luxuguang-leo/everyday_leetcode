@@ -30,15 +30,14 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         #DFS
-        #'''
+        '''
         if not root:
             return []
         ret = []
         self.dfs(root, 0, ret)
         return ret
-        #'''
-        #2 deque
         '''
+        #2 deque
         if not root:
             return []
         q = collections.deque()
@@ -61,5 +60,4 @@ class Solution(object):
                     q.append(node.right)
             ret.append(level)
         return ret
-        '''
 

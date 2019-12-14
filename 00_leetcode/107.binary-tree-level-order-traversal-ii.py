@@ -37,6 +37,7 @@ class Solution(object):
         '''
 
         #2 interavtive
+        '''
         if not root:
             return []
         ret = []
@@ -53,4 +54,21 @@ class Solution(object):
                     q.append(node.right)
             ret.insert(0, level)
         return ret
+        '''
+        #BFS + queue
+        if not root:
+            return []
+        q, ret = [root], []
+        while q:
+            level = []
+            for i in range(len(q)):
+                node = q.pop(0)
+                level.append(node.val)
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+            ret.insert(0, level)
+        return ret
+
 
