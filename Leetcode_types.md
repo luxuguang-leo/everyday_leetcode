@@ -214,11 +214,11 @@ Leetcode
 - [x] 108	Convert Sorted Array to Binary Search Tree	binary search
 - [x] 109	Convert Sorted List to Binary Search Tree	binary search
 - [ ] 173	Binary Search Tree Iterator	inorder
-- [ ] 230	Kth Smallest Element in a BST	inorder
+- [x] 230	Kth Smallest Element in a BST	inorder
 - [ ] 297	Serialize and Deserialize Binary Tree	BFS
-- [ ] 285	Inorder Successor in BST	inorder
-- [ ] 270	Closest Binary Search Tree Value	preorder
-- [ ] 272	Closest Binary Search Tree Value II	inorder
+- [ ] 285	~~Inorder Successor in BST	inorder~~
+- [ ] 270	~~Closest Binary Search Tree Value	preorder~~
+- [ ] 272	~~Closest Binary Search Tree Value II	inorder~~
 - [ ] 99    Recover Binary Search Tree	inorder
 
 ### 重要程度
