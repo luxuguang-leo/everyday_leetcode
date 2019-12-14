@@ -209,7 +209,7 @@ Leetcode
 
 ### BST
 - [x] 98    Validate Binary Search Tree	preorder
-- [ ] 235	Lowest Common Ancestor of a Binary Search Tree	preorder
+- [x] 235	Lowest Common Ancestor of a Binary Search Tree	preorder
 - [ ] 236	Lowest Common Ancestor of a Binary Tree	postorder
 - [x] 108	Convert Sorted Array to Binary Search Tree	binary search
 - [x] 109	Convert Sorted List to Binary Search Tree	binary search
