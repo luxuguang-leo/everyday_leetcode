@@ -28,7 +28,7 @@ class Solution(object):
         return self.helper(root, float('-inf'), float('inf'))
         '''
         #method 2, inorder and judge if the result is ordered
-        ##
+        '''
         s, ret = [], []
         cur = root
         while s or cur:
@@ -41,6 +41,21 @@ class Solution(object):
                 return False
             ret.append(node.val)
             cur = node.right
+        return True
+        '''
+        #DFS + stack
+        stack, ret = [(root, False)], []
+        while stack:
+            node, visited = stack.pop()
+            if node:
+                if visited:
+                    if ret and node.val <= ret[-1]:
+                        return False
+                    ret.append(node.val)
+                else:
+                    stack.append((node.right, False))
+                    stack.append((node, True))
+                    stack.append((node.left, False))
         return True
 
 
