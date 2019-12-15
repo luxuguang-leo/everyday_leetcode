@@ -219,7 +219,7 @@ Leetcode
 - [ ] 285	~~Inorder Successor in BST	inorder~~
 - [ ] 270	~~Closest Binary Search Tree Value	preorder~~
 - [ ] 272	~~Closest Binary Search Tree Value II	inorder~~
-- [ ] 99    Recover Binary Search Tree	inorder
+- [x] 99    Recover Binary Search Tree	inorder
 
 ### 重要程度
 - [ ] 156	Binary Tree Upside Down	很少考
