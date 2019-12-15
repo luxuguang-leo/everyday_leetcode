@@ -213,7 +213,7 @@ Leetcode
 - [x] 236	Lowest Common Ancestor of a Binary Tree	postorder
 - [x] 108	Convert Sorted Array to Binary Search Tree	binary search
 - [x] 109	Convert Sorted List to Binary Search Tree	binary search
-- [ ] 173	Binary Search Tree Iterator	inorder
+- [x] 173	Binary Search Tree Iterator	inorder
 - [x] 230	Kth Smallest Element in a BST	inorder
 - [ ] 297	Serialize and Deserialize Binary Tree	BFS
 - [ ] 285	~~Inorder Successor in BST	inorder~~
