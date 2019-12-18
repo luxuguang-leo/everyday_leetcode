@@ -234,7 +234,7 @@ Leetcode
 - [ ] 314	~~Binary Tree Vertical Order Traversal~~
 - [x] 96    Unique Binary Search Trees	重要
 - [x] 95    Unique Binary Search Trees II	很少考
-- [ ] 331	Verify Preorder Serialization of a Binary Tree	很少考
+- [x] 331	Verify Preorder Serialization of a Binary Tree	很少考
 
 ## Backtracking
 ### 基础
