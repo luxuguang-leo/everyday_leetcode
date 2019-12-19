@@ -247,12 +247,12 @@ Leetcode
 - [x] 40    Combination Sum II
 - [x] 216	Combination Sum III
 - [x] 377	Combination Sum IV	Dynamic Programming
-- [ ] 254	Factor Combinations
-- [ ] 46    Permutations
-- [ ] 47    Permutations II
+- [ ] 254	~~Factor Combinations~~
+- [x] 46    Permutations
+- [x] 47    Permutations II
 - [x] 31    Next Permutation	String
 - [ ] 60    Permutation Sequence	String
-- [ ] 291	Word Pattern II
+- [ ] 291	~~Word Pattern II~~
 
 ### Enumeration
 - [x] 17    Letter Combinations of a Phone Number
