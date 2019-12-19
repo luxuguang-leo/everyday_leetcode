@@ -246,7 +246,7 @@ Leetcode
 - [x] 39  	Combination Sum
 - [x] 40    Combination Sum II
 - [x] 216	Combination Sum III
-- [ ] 377	Combination Sum IV	Dynamic Programming
+- [x] 377	Combination Sum IV	Dynamic Programming
 - [ ] 254	Factor Combinations
 - [ ] 46    Permutations
 - [ ] 47    Permutations II

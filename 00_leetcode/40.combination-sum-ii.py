@@ -3,28 +3,18 @@
 #
 # [40] Combination Sum II
 #
+
+# @lc code=start
 class Solution(object):
-    def dfs(self, candidates, target, start, level, ret):
-        '''
-        if target == 0 and level not in ret:
-                ret.append(level)
-        for i in range(start, len(candidates)):
-            if target < candidates[i]:
-                return
-            self.dfs(candidates, target - candidates[i], i+1, level+[candidates[i]], ret)
-        '''
+    def dfs(self, nums, target, index, path, res):
         if target == 0:
-            #ret.append(level)
-            ret.append(list(level))
-        for i in range(start, len(candidates)):
-            if target < candidates[i]:
-                return
-            if i > start and candidates[i] == candidates[i-1]:
+            res.append(path)
+        for i in range(index, len(nums)):
+            if nums[i] > target:
+                break
+            if i > index and nums[i] == nums[i-1]:
                 continue
-            level.append(candidates[i])
-            #self.dfs(candidates, target-candidates[i], i+1,level+[candidates[i]], ret)
-            self.dfs(candidates, target - candidates[i], i+1, level, ret)
-            level.pop()
+            self.dfs(nums, target-nums[i], i+1, path+[nums[i]], res)
     def combinationSum2(self, candidates, target):
         """
         :type candidates: List[int]
@@ -32,10 +22,11 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         if not candidates:
-            return []
+            return [[]]
         candidates.sort()
-        ret = []
-        self.dfs(candidates, target, 0, [], ret)
-        return ret
+        res = []
+        self.dfs(candidates, target, 0, [], res)
+        return res
         
+# @lc code=end
 

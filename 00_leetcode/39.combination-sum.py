@@ -4,48 +4,43 @@
 # [39] Combination Sum
 #
 class Solution(object):
-    def dfs(self, candidates, target, level, ret):
-        if target == 0:
-            ret.append(level)
-        for i in range(len(candidates)):
-            if target < candidates[i]:
-                return
-            self.dfs(candidates[i:], target - candidates[i], level+[candidates[i]], ret)
-        
-    def dfs_2(self, candidates, target, start, level, ret):
+    def dfs2(self, nums, target, start, path, ret):
         if target < 0:
             return
         if target == 0:
-            #ret.append(level)
-            ret.append(list(level))
-        for i in range(start, len(candidates)):
-            if target < candidates[i]:
-                return
-            #self.dfs_2(candidates, target - candidates[i], i, level+[candidates[i]], ret)
-            level.append(candidates[i])
-            self.dfs_2(candidates, target - candidates[i], i, level, ret)
-            level.pop()
+            ret.append(path)
+        for i in range(start, len(nums)):
+            self.dfs2(nums,target-nums[i], i, path+[nums[i]], ret)
+
+    def dfs(self, nums, target, level, ret):
+        if len(ret) < level +1:
+            level_list = []
+        if target == 0:
+            ret.append(level_list)
+        for i in range(len(nums)):
+            if nums[i] > target:
+                break
+            self.dfs(nums, target - nums[i], i+1, ret)
+
     def combinationSum(self, candidates, target):
         """
         :type candidates: List[int]
         :type target: int
         :rtype: List[List[int]]
         """
-        #method 1, 
+        #dfs
         '''
         if not candidates:
             return []
-        candidates.sort()
         ret = []
-        self.dfs(candidates, target, [], ret)
+        self.dfs(candidates, target, 0, ret)
         return ret
         '''
-        #method, pass index instead of slice avoiding copy
         if not candidates:
-            return []
-        candidates.sort()
+            return [[]]
         ret = []
-        self.dfs_2(candidates, target, 0,[], ret)
+        #candidates.sort()
+        self.dfs2(candidates, target, 0, [], ret)
         return ret
-
+        
 

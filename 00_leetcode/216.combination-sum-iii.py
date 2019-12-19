@@ -3,27 +3,28 @@
 #
 # [216] Combination Sum III
 #
+
+# @lc code=start
 class Solution(object):
-    def dfs(self, nums, k, n, start, path, ret):
-        #if k < 0 or n < 0:
-            #return
-        if k == 0 and n == 0:
-            ret.append(path)
+    def dfs(self, nums, target,k,index, path, res):
+        if k == 0 and target == 0:
+            res.append(path)
             return
-        for i in range(start, len(nums)):
-            if nums[i] > n:
-                return
-            self.dfs(nums, k-1, n-nums[i], i+1, path+[nums[i]], ret)
-        
+        if k < 0 or target < 0:
+            return
+        for i in range(index, len(nums)):
+            self.dfs(nums,target-nums[i], k-1,i+1, path+[nums[i]], res)
     def combinationSum3(self, k, n):
         """
         :type k: int
         :type n: int
         :rtype: List[List[int]]
         """
-        if k == 0:
+        if n < 0:
             return []
-        ret = []
-        self.dfs(range(1, 10), k, n, 0, [], ret)
-        return ret
+        res = []
+        self.dfs(xrange(1, 10), n,k, 0, [], res)
+        return res
+        
+# @lc code=end
 
