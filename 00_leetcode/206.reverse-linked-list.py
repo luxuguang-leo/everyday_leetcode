@@ -15,25 +15,25 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        #1>>use stack
+        if not head:
+            return None
+        #use stack
         '''
-        p = head
-        list_new = []
-        while p:
-            list_new.insert(0, p.val)
-            p = p.next
-        p = head
-        for data in list_new:
-            p.val = data
-            p = p.next
+        stack = []
+        cur = head
+        while cur:
+            stack.append(cur.val)
+            cur = cur.next
+        cur = head
+        while stack:
+            cur.val = stack.pop()
+            cur = cur.next 
         return head
         '''
-        #2, insert for the head of linklist
-        #different with previous thought
-        #       1 ->    2 ->    3 ->     4 ->    NULL
-        # pre   cur ->  next
-        # NULL<- 1      2->     3->      4->     NULL
-        # NULL<- 1  <-  2       3->      4->     NULL
+        #reverse use two pointers, pre and cur, and next
+        #       1->       2->       3->      4->       5 
+        #pre    cur     next
+        #next = cur.next cur.next = pre   pre = cur  cur = next
         '''
         pre, cur = None, head
         while cur:
@@ -43,15 +43,7 @@ class Solution(object):
             cur = next
         return pre
         '''
-        #2 elegant soluction
-        '''
-        pre, cur = None, head
-        while cur:
-            next = cur.next
-            cur.next, pre, cur = pre, cur, next
-        return pre
-        '''
-        #recrusive
+        #recrusatively 
         #divide LL into 2 parts, first and rest
         #the end of recrusive have 3 conditions:
         #head is None
@@ -59,9 +51,9 @@ class Solution(object):
         #head is not None
         #link the next of rest to first
         #move first to rest
-        if head is None:
-            return head
-        if head.next is None:
+        if not head:
+            return None
+        if not head.next:
             return head
         newHead = self.reverseList(head.next)
         head.next.next = head
