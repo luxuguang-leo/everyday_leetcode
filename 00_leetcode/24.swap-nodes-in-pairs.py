@@ -3,6 +3,8 @@
 #
 # [24] Swap Nodes in Pairs
 #
+
+# @lc code=start
 # Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, x):
@@ -15,15 +17,16 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        dummy = ListNode(0)
+        #两两交换，画图示意
+        dummy = ListNode(-1)
         dummy.next = head
-        pre, cur = dummy, head
-        while pre.next and cur.next:
-            pre.next = cur.next
-            cur.next = pre.next.next
-            pre.next.next = cur
-            pre, cur = cur, cur.next
+        pre, first = dummy, head
+        while pre.next and first.next:
+            pre.next = first.next
+            first.next = first.next.next
+            pre.next.next = first
+            pre, first = first, first.next
         return dummy.next
-
         
+# @lc code=end
 

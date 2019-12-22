@@ -3,6 +3,8 @@
 #
 # [141] Linked List Cycle
 #
+
+# @lc code=start
 # Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, x):
@@ -15,15 +17,16 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        #fast and slow pointers
         if not head:
             return False
-        fast = slow = head
+        slow = fast = head
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-            if slow == fast:
-                return True            
+            if fast == slow:
+                return True
         return False
+
         
+# @lc code=end
 

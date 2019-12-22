@@ -297,7 +297,7 @@ Leetcode
 - [x] 206	Reverse Linked List
 - [x] 141	Linked List Cycle
 - [x] 24	Swap Nodes in Pairs
-- [ ] 328	Odd Even Linked List
+- [x] 328	Odd Even Linked List
 - [x] 92	Reverse Linked List II
 - [x] 237	Delete Node in a Linked List
 - [x] 19	Remove Nth Node From End of List
