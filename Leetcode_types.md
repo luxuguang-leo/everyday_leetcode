@@ -304,9 +304,9 @@ Leetcode
 - [x] 83	Remove Duplicates from Sorted List
 - [x] 203	Remove Linked List Elements
 - [x] 82	Remove Duplicates from Sorted List II
-- [ ] 369	Plus One Linked List
+- [ ] 369	~Plus One Linked List~
 - [x] 2	    Add Two Numbers
-- [ ] 160	Intersection of Two Linked Lists
+- [x] 160	Intersection of Two Linked Lists
 - [x] 21	Merge Two Sorted Lists
 
 ### 提高
