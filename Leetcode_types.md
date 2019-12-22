@@ -310,7 +310,7 @@ Leetcode
 - [x] 21	Merge Two Sorted Lists
 
 ### 提高
-- [ ] 234	Palindrome Linked List
+- [x] 234	Palindrome Linked List
 - [ ] 143	Reorder List
 - [ ] 142	Linked List Cycle II
 - [ ] 148	Sort List
