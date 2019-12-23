@@ -311,7 +311,7 @@ Leetcode
 
 ### 提高
 - [x] 234	Palindrome Linked List
-- [ ] 143	Reorder List
+- [x] 143	Reorder List
 - [ ] 142	Linked List Cycle II
 - [ ] 148	Sort List
 - [ ] 25	Reverse Nodes in k-Group
