@@ -313,10 +313,10 @@ Leetcode
 - [x] 234	Palindrome Linked List
 - [x] 143	Reorder List
 - [ ] 142	Linked List Cycle II
-- [ ] 148	Sort List
+- [x] 148	Sort List
 - [ ] 25	Reverse Nodes in k-Group
 - [ ] 61	Rotate List
-- [ ] 86	Partition List
+- [x] 86	Partition List
 - [x] 23	Merge k Sorted Lists
 - [ ] 147	Insertion Sort List
 
