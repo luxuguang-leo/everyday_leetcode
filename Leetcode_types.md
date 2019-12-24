@@ -316,7 +316,7 @@ Leetcode
 - [x] 148	Sort List
 - [ ] 25	Reverse Nodes in k-Group
 - [ ] 61	Rotate List
-- [ ] 86	Partition List
+- [x] 86	Partition List
 - [x] 23	Merge k Sorted Lists
 - [ ] 147	Insertion Sort List
 
