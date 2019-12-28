@@ -312,13 +312,13 @@ Leetcode
 ### 提高
 - [x] 234	Palindrome Linked List
 - [x] 143	Reorder List
-- [ ] 142	Linked List Cycle II
+- [x] 142	Linked List Cycle II
 - [x] 148	Sort List
 - [ ] 25	Reverse Nodes in k-Group
 - [ ] 61	Rotate List
 - [x] 86	Partition List
 - [x] 23	Merge k Sorted Lists
-- [ ] 147	Insertion Sort List
+- [x] 147	Insertion Sort List
 
 ## Binary Search
 ### 基础
