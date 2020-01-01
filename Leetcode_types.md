@@ -38,7 +38,7 @@ Leetcode
 - [x] 4	    Median of Two Sorted Arrays	
 - [ ] 321	Create Maximum Number	很少考
 - [ ] 327	Count of Range Sum	很少考
-- [ ] 289	Game of Life	
+- [x] 289	Game of Life	
 
 ### Interval
 - [x] 57	Insert Interval	
