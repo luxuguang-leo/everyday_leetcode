@@ -33,6 +33,7 @@ Leetcode
 - [ ] 287	Find the Duplicate Number	
 - [ ] 135	Candy	很少考
 - [ ] 330	Patching Array	很少考
+- [x] 414   Third-maximum-number  
 
 ### 提高		
 - [x] 4	    Median of Two Sorted Arrays	
