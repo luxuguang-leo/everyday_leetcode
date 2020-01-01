@@ -14,8 +14,10 @@ class Solution(object):
         :rtype: int
         """
         #use nlargest
+        '''
         k_larget = heapq.nlargest(k, nums)
         return k_larget[-1]
+        '''
         #use heappush and heappop
         '''
         min_heap = []
@@ -25,6 +27,16 @@ class Solution(object):
                 heapq.heappop(min_heap)
         return heapq.heappop(min_heap)
         '''
+        #simplify 
+        if not nums:
+            return None
+        min_heap = []
+        for n in nums:
+            if len(min_heap) < k:
+                heapq.heappush(min_heap, n)
+            else:
+                heapq.heappushpop(min_heap, n)
+        return min_heap[0]
         
 # @lc code=end
 
