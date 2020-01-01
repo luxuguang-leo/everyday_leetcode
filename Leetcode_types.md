@@ -54,7 +54,7 @@ Leetcode
 - [x] 209	Minimum Size Subarray Sum	
 - [x] 238	Product of Array Except Self	
 - [x] 152	Maximum Product Subarray	
-- [ ] 228	Summary Ranges	
+- [x] 228	Summary Ranges	
 
 ### Sort		
 - [x] 88	Merge Sorted Array	
