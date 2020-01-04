@@ -385,7 +385,7 @@ Leetcode
 - [x] 347	Top K Frequent Elements
 - [x] 313	Super Ugly Number	很少考
 - [x] 373	Find K Pairs with Smallest Sums	很少考
-- [ ] 218	The Skyline Problem
+- [x] 218	The Skyline Problem
 - [ ] 332	Reconstruct Itinerary
 - [ ] 341	Flatten Nested List Iterator
 
