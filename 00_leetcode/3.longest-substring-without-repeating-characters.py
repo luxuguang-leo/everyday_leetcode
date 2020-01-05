@@ -3,40 +3,38 @@
 #
 # [3] Longest Substring Without Repeating Characters
 #
+
+# @lc code=start
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """
         :type s: str
         :rtype: int
         """
-        #method 1， sliding window
+        #sliding window, record the position of each char
         '''
-        left = max_len = 0
-        hTable = {}
-        for i in range(len(s)):
-            if s[i] in hTable and left <= hTable[s[i]]:
-                left = hTable[s[i]] + 1
-            else:
-                max_len = max(max_len, i - left +1)
-            hTable[s[i]] = i
-        return max_len
-        '''
-        #method 2, sliding window,use pattern
-        if len(s) <= 1:
-            return len(s)
-        l = max_len = 0
+        start = 0
+        ans = 0
         m = {}
         for i in range(len(s)):
-            m[s[i]] = m.get(s[i], 0) +1
-            while m[s[i]] != 1:
-                #左移窗口，更新map中的值
-                m[s[l]] -=1
-                l += 1
-            max_len = max(max_len, i-l+1)
-            #print(m, l, i, max_len)
-        return max_len
-
+            if s[i] in m and start <= m[s[i]]:
+                start = m[s[i]] + 1
+            else:
+                ans = max(ans, i - start + 1) 
+            m[s[i]] = i
+        return ans
+        '''
+        start = 0
+        ans = 0
+        m = {}
+        for i in range(len(s)):
+            if s[i] in m and start <= m[s[i]]:
+                start = m[s[i]] + 1
+            ans = max(ans, i - start + 1) 
+            m[s[i]] = i
+        return ans
 
 
         
+# @lc code=end
 
