@@ -3,6 +3,8 @@
 #
 # [16] 3Sum Closest
 #
+
+# @lc code=start
 class Solution(object):
     def threeSumClosest(self, nums, target):
         """
@@ -10,19 +12,21 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        sum_val = sum(nums[:3])
+        if len(nums) < 3:
+            return None
         nums.sort()
-        for i in range(len(nums) -2):
-            start, end = i+1, len(nums)-1
-            while start < end:
-                val = nums[i] + nums[start] + nums[end]
-                if abs(val - target) < abs(sum_val - target): 
+        sum_val = sum(nums[:3])
+        for i in range(len(nums)-2):
+            s, e = i+1, len(nums)-1
+            while s < e:
+                val = nums[i] + nums[s] + nums[e]
+                if abs(val - target) < abs(sum_val - target):
                     sum_val = val
-                if val < target:
-                    start += 1
+                elif val < target:
+                    s +=1
                 else:
-                    end -= 1
+                    e -=1
         return sum_val
-            
         
+# @lc code=end
 
