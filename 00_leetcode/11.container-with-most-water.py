@@ -19,14 +19,21 @@ class Solution(object):
         '''
     
         #use two pointers
-        max_volum, head, tail = 0, 0, len(height) -1
-        while head < tail:
-            max_volum = max(max_volum, (tail - head)* min(height[head], height[tail]))
-            if height[head] < height[tail]:
-                head += 1
+        #use very intuitative idea
+        #1.the widest is canditate 
+        #2.Shorten the width, but we should choose a large one beween first and last
+        #3.end of the loop is the width is 0
+        if not height:
+            return 0
+        s, e = 0, len(height)-1
+        max_water = 0
+        while s < e:
+            max_water = max(max_water, (e-s)*min(height[s], height[e]))
+            if height[s] < height[e]:
+                s +=1
             else:
-                tail -= 1
-        return max_volum
+                e -=1
+        return max_water
         
 
 
