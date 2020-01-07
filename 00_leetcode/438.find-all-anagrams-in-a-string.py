@@ -12,35 +12,27 @@ class Solution(object):
         :type p: str
         :rtype: List[int]
         """
-        #brutal force, 判断是p的异构词语，排序,但是会TLE
-        '''
-        p = sorted(p)
-        w = len(p)
-        ret = []
-        for i in range(len(s)-w+1):
-            sub_str = sorted(s[i:i+w])
-            if sub_str == p:
-                ret.append(i)
-        return ret
-        '''
-        #method 2，用map表来比较两个字符,这时候左边界是l-w+1
+        #和#76相同的思路！
+        if not s or not p:
+            return []
         m = collections.Counter(p)
-        h = collections.Counter()
+        l, cnt = 0, 0
+        wanted = len(p)
         ret = []
-        w = len(p)
-        for i in range(len(s)):
-            h[s[i]] +=1
-            if i >= w:
-                h[s[i-w]] -=1
-                if h[s[i-w]] == 0:
-                    del h[s[i-w]]
-            if h == m:
-                ret.append(i-w+1)
+        for r in range(len(s)):
+            if s[r] in m:
+                m[s[r]] -=1
+                if m[s[r]] >=0:
+                    cnt +=1
+            while cnt == wanted:
+                if r - l + 1 == len(p):
+                    ret.append(l)
+                if s[l] in m:
+                    m[s[l]] +=1
+                    if m[s[l]] > 0:
+                        cnt -=1
+                l +=1
         return ret
-
-
-            
-
         
 # @lc code=end
 
