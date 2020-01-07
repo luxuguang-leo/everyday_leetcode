@@ -12,16 +12,14 @@ class Solution(object):
         """
         if not nums:
             return []
-        dq = collections.deque()
-        ret = []
+        q = collections.deque()
+        i, res = 0, []
         for i in range(len(nums)):
-            while dq and nums[dq[-1]] < nums[i]:
-                dq.pop()
-            dq.append(i)
-            if i - dq[0] == k:
-                dq.popleft()
+            while q and nums[i] > nums[q[-1]]:
+                q.pop()
+            q.append(i)
+            if i - q[0] == k:
+                q.popleft()
             if i >= k -1:
-                ret.append(nums[dq[0]])
-        return ret
-        
-
+                res.append(nums[q[0]])
+        return res 

@@ -33,7 +33,7 @@ class Solution(object):
                 nums[i] = 2
         return nums
         '''
-        #method,头尾两个指针，red指针和blue指针
+        #method,头尾两个指针，red指针和blue指针,我将第一个分支写成elif反过来了结果，为什么？
         red = i = 0
         blue = len(nums)-1
         while i <= blue:
