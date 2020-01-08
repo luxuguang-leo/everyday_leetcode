@@ -14,16 +14,32 @@ class Solution(object):
         :type n: int
         :rtype: None Do not return anything, modify nums1 in-place instead.
         """
-        #理解题意，前m n个都是拍好序的，而且nums1足够长，可以从num1, nums2后往前比较,谁大就放在n+m-1位置
-        i = m - 1
-        j = n - 1
+        #copy from right to left
+        '''
+        l_mn = m + n -1
+        l_m = m - 1
+        l_n = n -1
+        while l_mn >=0 and l_n >=0:
+            if l_m >= 0 and nums1[l_m] > nums2[l_n]:
+                nums1[l_mn] = nums1[l_m]
+                l_m -=1
+            else:
+                nums1[l_mn] = nums2[l_n]
+                l_n -=1
+            l_mn -=1
+        return nums1
+        '''
+        i, j = m-1, n -1
         while j >= 0:
-            if i >=0 and nums1[i] > nums2[j]:
+            if i >= 0 and nums1[i] > nums2[j]:
                 nums1[i+j+1] = nums1[i]
-                i -= 1
+                i -=1
             else:
                 nums1[i+j+1] = nums2[j]
                 j -= 1
+        return nums1
+            
+
         
         
         
