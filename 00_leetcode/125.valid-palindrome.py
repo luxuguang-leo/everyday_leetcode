@@ -3,6 +3,8 @@
 #
 # [125] Valid Palindrome
 #
+
+# @lc code=start
 class Solution(object):
     def isPalindrome(self, s):
         """
@@ -13,14 +15,17 @@ class Solution(object):
             return True
         l, r = 0, len(s)-1
         while l < r:
-            while l < r and not s[l].isalnum():
-                l += 1
-            while l < r and not s[r].isalnum():
-                r -= 1
+            while l < r and not s[l].isalpha() and not s[l].isdigit():
+            #while l < r and not s[l].isalnum():
+                l +=1
+            while l < r and not s[r].isalpha() and not s[r].isdigit():
+            #while l < r and not s[r].isalnum():
+                r -=1
             if s[l].lower() != s[r].lower():
                 return False
-            l += 1
-            r -= 1
+            l +=1
+            r -=1
         return True
-         
+        
+# @lc code=end
 
