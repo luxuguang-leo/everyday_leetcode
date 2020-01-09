@@ -30,7 +30,7 @@ Leetcode
 - [ ] 334	Increasing Triplet Subsequence	
 - [x] 128	Longest Consecutive Sequence #union find
 - [ ] 164	Maximum Gap	Bucket
-- [ ] 287	Find the Duplicate Number	
+- [x] 287	Find the Duplicate Number	
 - [ ] 135	Candy	很少考
 - [ ] 330	Patching Array	很少考
 - [x] 414   Third-maximum-number  
