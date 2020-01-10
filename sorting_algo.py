@@ -92,6 +92,22 @@ def quickSort(nums):
     return quickSortHelper(nums, 0, len(nums)-1)
 
 
+def bucketSort(nums):
+    #1.build bucket, only for intergers
+    max_val = 0
+    for i in range(len(nums)):
+        max_val = max(max_val, nums[i])
+    bucket = [0]*(max_val)
+    for i in range(len(nums)):
+        bucket[nums[i]-1] = nums[i]
+    start = 0
+    for i in range(max_val):
+        if bucket[i] != 0:
+            bucket[i], bucket[start] = bucket[start], bucket[i]
+            start +=1
+    return bucket
+
+
 arr0 = [64, 34, 25, 12, 22, 11, 90] 
 print ("before sorting:")
 print (arr0)
@@ -111,3 +127,8 @@ print (mergeSort(arr3))
 arr4 = [64, 34, 25, 12, 22, 11, 32]
 print ("quick sorting %d", arr4)
 print (quickSort(arr4))
+
+#arr5 = [64, 34, 25, 12, 22, 11, 32]
+arr5 = [6, 3, 2, 1, 7, 8, 11]
+print ("bucket sorting %d", arr5)
+print (bucketSort(arr5))
