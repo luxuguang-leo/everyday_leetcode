@@ -10,17 +10,22 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        left = 0
-        sum = 0
+        #大概思路就是欢滑动窗口，小于s的时候向右滑动,一边累计sum值
+        #当sum大于s的时候就停止滑动，然后左边界收缩，知道小于s
+        #如果中间等于s则更新窗口长度
+        if not nums:
+            return 0
+        l, r, sum_val = 0, 0, 0
         min_len = float('inf')
-        for i in range(len(nums)):
-            sum += nums[i]
-            while sum >= s:
-                min_len = min(min_len, i - left +1)
-                sum -= nums[left]
-                left += 1
+        while r < len(nums):
+            sum_val += nums[r]
+            while sum_val >= s:
+                min_len = min(min_len, r-l+1)
+                sum_val -=nums[l]
+                l +=1
+            r += 1
         if min_len == float('inf'):
             return 0
-        return min_len
-        
+        else:
+            return min_len
 
