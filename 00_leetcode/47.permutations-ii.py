@@ -22,9 +22,8 @@ class Solution(object):
         """
         if not nums:
             return []
-        nums.sort()
         res = []
-        self.dfs(nums, [], res)
+        self.dfs(sorted(nums), [], res)
         return res
         
 # @lc code=end

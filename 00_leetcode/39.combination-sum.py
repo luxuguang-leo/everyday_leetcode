@@ -4,23 +4,33 @@
 # [39] Combination Sum
 #
 class Solution(object):
-    def dfs2(self, nums, target, start, path, ret):
-        if target < 0:
+    #dfs，并没有传入一个level的变量原因在于最终结果判断结束并没有根据递归层数，全排列需要，
+    def dfs(self, nums, target, res, path):
+        if target == 0:
+            res.append(path)
             return
+        for i in range(len(nums)):
+            if nums[i] > target:#剪支
+                continue
+            self.dfs(nums[i:], target - nums[i], res, path+[nums[i]])
+    def dfs2(self, nums, target, start, res, path):
         if target == 0:
-            ret.append(path)
+            res.append(path)
         for i in range(start, len(nums)):
-            self.dfs2(nums,target-nums[i], i, path+[nums[i]], ret)
+            if nums[i] > target:
+                continue
+            self.dfs2(nums,target-nums[i], i, res, path+[nums[i]])
 
-    def dfs(self, nums, target, level, ret):
-        if len(ret) < level +1:
-            level_list = []
+    #使用深copy list，和append/pop更直观展示回溯的过程
+    def dfs3(self, nums, target, res, path):
         if target == 0:
-            ret.append(level_list)
+            res.append(list(path))
         for i in range(len(nums)):
             if nums[i] > target:
-                break
-            self.dfs(nums, target - nums[i], i+1, ret)
+                continue
+            path.append(nums[i])
+            self.dfs3(nums[i:], target - nums[i], res, path)
+            path.pop()
 
     def combinationSum(self, candidates, target):
         """
@@ -28,19 +38,12 @@ class Solution(object):
         :type target: int
         :rtype: List[List[int]]
         """
-        #dfs
-        '''
+        #回溯，核心:加入决策路径，选择回溯列表
         if not candidates:
             return []
-        ret = []
-        self.dfs(candidates, target, 0, ret)
-        return ret
-        '''
-        if not candidates:
-            return [[]]
-        ret = []
-        #candidates.sort()
-        self.dfs2(candidates, target, 0, [], ret)
-        return ret
-        
+        res = []
+        #self.dfs(candidates, target, res, [])
+        #self.dfs2(candidates, target, 0, res, [])
+        self.dfs3(candidates, target, res, [])
+        return res
 

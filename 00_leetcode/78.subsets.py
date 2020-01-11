@@ -4,11 +4,11 @@
 # [78] Subsets
 #
 class Solution(object):
-    def dfs(self,nums, start, path, ret):
-        ret.append(path)
-        for i in range(start, len(nums)):
-            self.dfs(nums, i+1, path+[nums[i]], ret)
-
+    def dfs(self, nums, res, path):
+        res.append(path)
+        for i in range(len(nums)):
+            self.dfs(nums[i+1:], res, path+[nums[i]])
+   
     def subsets(self, nums):
         """
         :type nums: List[int]
@@ -17,9 +17,9 @@ class Solution(object):
         #for those backtracking problems
         #https://leetcode.com/problems/subsets/discuss/429534/General-Backtracking-questions-solutions-in-Python-for-reference-%3A
         if not nums:
-            return [[]]
-        ret = []
-        self.dfs(nums, 0, [], ret)
-        return ret
-        
+            return []
+        res = []
+        self.dfs(nums, res, [])
+        return res
+
 

@@ -4,16 +4,13 @@
 # [90] Subsets II
 #
 class Solution(object):
-    def dfs(self, nums, start, path, ret):
-        '''
-        if path not in ret:
-            ret.append(path)
-        '''
-        ret.append(path)
-        for i in range(start, len(nums)):
-            if i > start and nums[i] == nums[i-1]:
+    def dfs(self, nums, res, path):
+        res.append(path)
+        for i in range(len(nums)):
+            if i > 0 and nums[i] == nums[i-1]:
                 continue
-            self.dfs(nums, i+1, path+[nums[i]], ret)
+            self.dfs(nums[i+1:], res, path+[nums[i]])
+    
     def subsetsWithDup(self, nums):
         """
         :type nums: List[int]
@@ -22,8 +19,7 @@ class Solution(object):
         if not nums:
             return []
         nums.sort()
-        ret = []
-        self.dfs(nums, 0, [], ret)
-        return ret
-        
+        res = []
+        self.dfs(nums, res, [])
+        return res
 
