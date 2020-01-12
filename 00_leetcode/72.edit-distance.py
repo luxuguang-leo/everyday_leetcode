@@ -12,6 +12,7 @@ class Solution(object):
         :type word2: str
         :rtype: int
         """
+        #一般二维DP，设计到两个字符串，求最值问题
         #字符串类动态规划， DP[m][n]表示从str1(0..m)转换到str(0..n)的代价
         #依照最后一个字符是否相等得到递推公式
         #if s[m] == s[n] DP[m][n] = DP[m-1][n-1]
