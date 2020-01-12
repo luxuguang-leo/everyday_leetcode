@@ -6,17 +6,18 @@
 
 # @lc code=start
 class Solution(object):
-    #记录走过的点
-    def dfs(self, x, y, board, start, word):
-        if x == len(board) or y == len(board[0]) or x < 0 or y < 0 or word[start] != board[x][y]:
+    def dfs(self, board, x, y, start, word):
+        if x < 0 or x >= len(board) or y < 0 or y >= len(board[0]) or board[x][y] != word[start]:
             return False
-        if start == len(word)-1:
+        if start == len(word) -1:
             return True
-        char = board[x][y]
+        ch = board[x][y]
         board[x][y] = 0
-        ret = self.dfs(x+1, y, board, start+1, word) or self.dfs(x, y+1, board, start+1, word) or self.dfs(x-1, y, board, start+1, word) or self.dfs(x, y-1, board, start+1, word)
-        board[x][y] = char
+        ret = self.dfs(board, x+1, y, start + 1, word) or self.dfs(board, x, y+1, start + 1, word)\
+            or self.dfs(board, x-1, y, start + 1, word) or self.dfs(board, x, y-1, start + 1, word)
+        board[x][y] = ch
         return ret
+        
 
     def exist(self, board, word):
         """
@@ -24,16 +25,16 @@ class Solution(object):
         :type word: str
         :rtype: bool
         """
-        #题目理解，找出是否包含此字母每一个字符，并且这个区域是相邻的
-        #DFS解这类问题比较适合，我的纠结点在于如何标记已经走过的点
-        if not word or not board:
+        #难点在于判断单个点和word的关系，对单独的一个点进行DFS的时候传入一个参数代表word的位置来解决此问题
+        if not board or not word:
             return False
-        row, col = len(board), len(board[0])
-        for i in range(row):
-            for j in range(col):
-                if self.dfs(i, j, board, 0, word):
+        r, c = len(board), len(board[0])
+        for i in range(r):
+            for j in range(c):
+                if self.dfs(board, i, j, 0, word):
                     return True
         return False
+        
         
 # @lc code=end
 

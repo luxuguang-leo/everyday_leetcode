@@ -6,54 +6,60 @@
 
 # @lc code=start
 class Solution(object):
-    def dfs(self, grid, m, n):
-        if m < 0 or m >= len(grid) or n < 0 or n >= len(grid[0]) or grid[m][n] == "0":
+    def dfs(self, grid, x, y):
+        if x < 0 or x >= len(grid) or y < 0 or y >= len(grid[0]) or grid[x][y] == '0':
             return 0
-        grid[m][n] = "0"
-        self.dfs(grid, m+1, n); self.dfs(grid, m-1, n)
-        self.dfs(grid, m, n+1); self.dfs(grid, m, n-1)
+        grid[x][y] = '0'
+        self.dfs(grid, x+1, y)
+        self.dfs(grid, x, y+1)
+        self.dfs(grid, x-1, y)
+        self.dfs(grid, x, y-1)
         return 1
+
+
     def numIslands(self, grid):
         """
         :type grid: List[List[str]]
         :rtype: int
         """
-        #DFS
-        #'''
-        if not grid:
-            return 0
-        m, n = len(grid), len(grid[0])
-        ret_nums = 0
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == "1":
-                    ret_nums += self.dfs(grid, i, j)
-        return ret_nums
-        #'''
-
-        #BFS,大概思路就是遇到"1"就加上去，置为"0"，然后压队列，弹队列，相邻是"1"继续压队，直到队列为空
+        #DFS，回溯，对于一个'1'的点DFS四个方向的值，如果是'0'就标记为island,
+        #需要标记是否访问过？
         '''
         if not grid:
             return 0
-        dq = collections.deque([])
-        m, n = len(grid), len(grid[0])
-        directions = [[0, -1], [0, 1], [-1, 0], [1, 0]]
-        ret_nums = 0
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == "1":
-                    ret_nums +=1
-                    grid[i][j] = "0"
-                    dq.append([i, j])
-                    while dq:
-                        r, c = dq.popleft()
+        cnt = 0
+        row, col = len(grid), len(grid[0])
+        for i in range(row):
+            for j in range(col):
+                if grid[i][j] == '1':
+                    #DFS其四个方向
+                    cnt += self.dfs(grid, i, j)
+        return cnt
+        '''
+        #BFS, use queue,但是会修改原有矩阵
+        if not grid:
+            return 0
+        cnt = 0
+        q = collections.deque([])
+        row, col = len(grid), len(grid[0])
+        for i in range(row):
+            for j in range(col):
+                if grid[i][j] == '1':
+                    cnt +=1
+                    grid[i][j] = '0'
+                    q.append([i, j])
+                    while q:
+                        x, y = q.popleft()
+                        directions = [[0, 1], [1, 0], [-1, 0], [0, -1]]
                         for d in directions:
-                            new_r, new_c = r + d[0], c + d[1]
-                            if new_r >=0 and new_r < m and new_c >= 0 and new_c < n and grid[new_r][new_c] == "1":
-                                grid[new_r][new_c] = "0"
-                                dq.append([new_r, new_c])
-        return ret_nums 
-        '''
+                            new_x, new_y = x + d[0], y + d[1]
+                            if 0 <= new_x < row and 0 <= new_y < col and grid[new_x][new_y] == '1':
+                                grid[new_x][new_y] = '0'
+                                q.append([new_x, new_y])
+        return cnt
+
+
+        
 
         
 # @lc code=end
