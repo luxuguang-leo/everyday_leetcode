@@ -252,7 +252,7 @@ Leetcode
 - [x] 46    Permutations
 - [x] 47    Permutations II
 - [x] 31    Next Permutation	String
-- [ ] 60    Permutation Sequence	String
+- [x] 60    Permutation Sequence	String
 - [ ] 291	~~Word Pattern II~~
 
 ### Enumeration
