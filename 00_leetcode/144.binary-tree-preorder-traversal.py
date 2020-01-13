@@ -29,7 +29,7 @@ class Solution(object):
         self.preorderHelper(root, ret)
         return ret
         '''
-        #method 2, not easy to understand
+        #method 2, simulate with stack(12ms)
         '''
         s, ret = [], []
         cur = root
@@ -45,15 +45,15 @@ class Solution(object):
         #method 3, easy to understand, why append right node first?
         #Because this is a stack, we need to visit 'left-node-right'
         #So push right node into stack first.
+        #This is only for preorder, note.
         '''
         stack, ret = [root], []
         while stack:
             node = stack.pop()
-            if not node:
-                continue
-            ret.append(node.val)
-            stack.append(node.right)
-            stack.append(node.left)
+            if node:
+                ret.append(node.val)
+                stack.append(node.right)
+                stack.append(node.left)
         return ret
         '''
         #method 4, mark visited node for easier understanding
@@ -61,7 +61,7 @@ class Solution(object):
         while stack:
             node, visited = stack.pop()
             if node:
-                if not visited:
+                if not visited: #val-left-right, so the order of pushing stack is right, left, val
                     stack.append((node.right, False))
                     stack.append((node.left, False))
                     stack.append((node, True))

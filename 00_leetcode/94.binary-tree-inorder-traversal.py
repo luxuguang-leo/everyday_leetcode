@@ -34,6 +34,7 @@ class Solution(object):
         #b.while stack is not empty and root.left is not None, push to stack
         #c.if root.left is empty, pop stack, printf if node valus, and if root.right is not None, push to stack
         #d.return to b
+        #can wen have more common ways
         '''
         if not root:
             return []

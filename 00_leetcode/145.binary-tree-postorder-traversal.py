@@ -23,14 +23,14 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
-        #method 1
+        #method 1, not to mention
         '''
         ret = []
         if root:
         dfs(root, ret)
         return ret
         '''
-        #method 2
+        #method 2, little tricky
         #we can reverse the preorder results(DRL order)
         '''
         s, ret = [], []
