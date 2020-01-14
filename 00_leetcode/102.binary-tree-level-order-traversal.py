@@ -21,8 +21,6 @@ class Solution(object):
         ret[level].append(root.val)
         self.dfs(root.left, level+1, ret)
         self.dfs(root.right, level +1, ret)
-        return ret
-
 
     def levelOrder(self, root):
         """

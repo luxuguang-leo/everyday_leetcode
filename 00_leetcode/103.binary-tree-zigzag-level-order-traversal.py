@@ -40,9 +40,8 @@ class Solution(object):
         #2 deque
         if not root:
             return []
-        q = collections.deque()
+        q, ret = collections.deque(), []
         q.append(root)
-        ret = []
         level_val = 0
         while q:
             level = []

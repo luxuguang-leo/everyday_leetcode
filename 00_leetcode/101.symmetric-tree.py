@@ -11,21 +11,23 @@
 #         self.right = None
 
 class Solution(object):
-    def isSymmCore(self, left, right):
+
+    def dfs(self, left, right):
         if not left and not right:
             return True
         if left and right:
             if left.val == right.val:
-                return self.isSymmCore(left.left, right.right) and self.isSymmCore(left.right, right.left)
+                return self.dfs(left.left, right.right) and self.dfs(left.right, right.left)
         return False
+
+   
 
     def isSymmetric(self, root):
         """
         :type root: TreeNode
         :rtype: bool
         """
-        #recursive
-        if root:
-            return self.isSymmCore(root.left, root.right)
-        return True
+        if not root:
+            return True
+        return self.dfs(root.left, root.right)
 
