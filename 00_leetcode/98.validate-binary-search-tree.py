@@ -11,12 +11,12 @@
 #         self.right = None
 
 class Solution(object):
-    def helper(self, root, min, max):
+    def helper(self, root, min_val, max_val):
         if not root:
             return True
-        if root.val >= max or root.val <= min:
+        if root.val >= max_val or root.val <= min_val:
             return False
-        return self.helper(root.left, min, root.val) and self.helper(root.right, root.val, max)
+        return self.helper(root.left, min_val, root.val) and self.helper(root.right, root.val, max_val)
 
     def isValidBST(self, root):
         """
