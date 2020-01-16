@@ -3,6 +3,8 @@
 #
 # [95] Unique Binary Search Trees II
 #
+
+# @lc code=start
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
@@ -16,25 +18,27 @@ class Solution(object):
             return [None]
         ret = []
         for i in range(start, end+1):
-            left = self.dfs(start, i-1)
-            right = self.dfs(i+1, end)
-            for l in left:
-                for r in right:
+            L = self.dfs(start, i-1)
+            R = self.dfs(i+1, end)
+            for left in L:
+                for right in R:
                     root = TreeNode(i)
-                    root.left = l
-                    root.right = r
+                    root.left = left
+                    root.right = right
                     ret.append(root)
         return ret
+
+
 
     def generateTrees(self, n):
         """
         :type n: int
         :rtype: List[TreeNode]
         """
-        if n < 1:
+        if n == 0:
             return []
         return self.dfs(1, n)
-
-
+            
         
+# @lc code=end
 

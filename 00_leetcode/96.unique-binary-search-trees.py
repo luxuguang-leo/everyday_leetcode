@@ -32,7 +32,7 @@ class Solution(object):
         for i in range(1, n+1):
             for j in range(0, i):
                 DP[i] += DP[j]*DP[i-j-1]
-        print(DP)
+        #print(DP)
         return DP[-1]
         
 
