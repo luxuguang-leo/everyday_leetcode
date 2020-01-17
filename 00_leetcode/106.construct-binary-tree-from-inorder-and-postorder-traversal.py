@@ -17,6 +17,8 @@ class Solution(object):
         :type postorder: List[int]
         :rtype: TreeNode
         """
+        #take care of the index
+        '''
         if not inorder or not postorder:
             return None
         rootVal = postorder.pop()
@@ -25,3 +27,20 @@ class Solution(object):
         root.left = self.buildTree(inorder[:partion], postorder[:partion])
         root.right = self.buildTree(inorder[partion+1:], postorder[partion:])
         return root
+        '''
+        #recr with optimization
+        if not inorder or not postorder:
+            return None
+        hash_map = {}
+        for i, node in enumerate(inorder):
+            hash_map[node] = i
+        def recr(start, end):
+            if start > end:
+                return None
+            rootval = postorder.pop()
+            root = TreeNode(rootval)
+            index = hash_map[rootval]
+            root.right = recr(index+1, end)
+            root.left = recr(start, index-1)
+            return root
+        return recr(0, len(inorder)-1)
