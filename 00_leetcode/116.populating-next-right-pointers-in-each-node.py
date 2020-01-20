@@ -22,7 +22,7 @@ class Solution(object):
         """
         #层次遍历？然后级联
         if not root:
-            return
+            return root
         queue,ret = collections.deque(),[]
         queue.append(root)
         while queue:

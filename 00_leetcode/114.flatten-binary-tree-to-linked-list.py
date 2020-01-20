@@ -18,18 +18,20 @@ class Solution(object):
         :type root: TreeNode
         :rtype: None Do not return anything, modify root in-place instead.
         """
+        #preorder
+        #supporse left part has been flattened
         if not root:
-            return None
+            return root
         while root:
             if root.left:
                 self.flatten(root.left)
-                newleft = root.left#already flatten left part
-                while newleft.right:
-                    newleft = newleft.right
-                newleft.right = root.right
-                root.left, root.right = None, root.left
+                node1 = root.left
+                #find the last node in the already-flattened left tree
+                while node1 and node1.right:
+                    node1 = node1.right
+                node1.right = root.right
+                root.right, root.left = root.left, None
             root = root.right
-        
-        
+        return root
 # @lc code=end
 
