@@ -54,16 +54,16 @@
          {
 
          		union{
-
+	
          		     unsigned int a;
-
-                      unsigned char b;        
-
-                }c;
-
-                c.a = 1;
-
-               return (c.b == 1);
+	
+         	         unsigned char b;        
+	
+         	   }c;
+	
+         	   c.a = 1;
+	
+         	  return (c.b == 1);
 
          }
 
@@ -105,6 +105,30 @@
       1. 操作系统在初始化中分配、释放和访问时会执行一些指令在物理内存中填写页表，然后设置MMU，告诉MMU表在物理内存中什么位置
       2. 设置好之后，CPU每次访问内存地址都会触发MMU做查表和地址转换，地址转换有硬件完成，不需要指令控制去做。
       3. 多了一层VA到PA的转换，好处就是内存保护作用，物理地址不连续，转换为VA，变成方便。
+    80's Tasks
+Task in RTOS, compared with UNIX, use task instead of process. 
+   Compared with UNIX:1.They are all share the same linear physical address   2.They share the sections, .text, .data, .bss, .rodate, .heap
+   Each task:
+    ```c
+    OSTaksCreate(task, priority, ptos)
+        task-address of task, i.e. func handler
+        ptos-address of task's stack
+        prio-priority of task
+    ```
+    Each task have:
+    1. Different stack, register set, and performing task context switching is similar to process context switching.
+    Inter-task communication is performed with shared memory(no address translation between PA and VA).
+    2. ISRs communication with task is more efficient compared with processes. Task2task, ISR2task.
+    3. Also the task scheduling policy is different with UNIX. Majority share the basic model: Priority pre-emptive scheduling. And the responsiveness are under programmer instead of kernel.
+    4. No memory protection. Thus any task has the potential of correpting of memories of other tasks.
+
+    90's Thread
+    multiple lightweight thread within a signal address space where a thread represent a sigle. Thus A process itself didn't run or schedule but thread are. Thread run within a process, in linux or MAC, type 'top' in command line.
+    * OS support context between threads in the same process
+    * OS support context between threads in different processes, the cost is very expensive
+
+    ** Lightweight thread, 
+
 
 
 ## 算法
@@ -173,6 +197,82 @@ https://leetcode.com/problems/sum-of-two-integers/discuss/84278/A-summary:-how-t
    ```
 
 3. 使用两个stack实现一个queue
+
+4. implement atoi
+```c
+/*
+int myAtoi(char * str){
+    int ret = 0;
+    int sign = 1;
+    int i = 0;
+    while(str[i] == ' ' || str[i] == '\t' || str[i] == '\n'){
+        i++;
+    }
+    if(str[i] == '-'){
+        sign = -1;
+        i++;
+    }
+    for(; str[i] != '\0'; i++){
+        ret = ret*10 + str[i] - '0';
+    }
+    return ret*sign;
+}
+
+*/
+
+
+
+int myAtoi(char* str) {
+        if(*str == '\0') return 0;
+        long long llnum = 0;
+        int sign = 1;
+
+        while (*str == ' ')
+        {
+            str++;
+        }
+        if (*str == '-')
+        {
+            sign = -1;
+            str++;
+        }
+        else if(*str == '+')
+        {
+            str++;
+        }
+        while (*str >= '0' && *str <= '9')
+        {
+            int i = *str - '0';
+            llnum = llnum*10 + i;
+            if (llnum*sign > INT_MAX)
+            {
+                llnum = INT_MAX;
+                break;
+            }
+            else if (llnum*sign < INT_MIN)
+            {
+                llnum = INT_MIN;
+                break;
+            }
+            str++;
+        }
+        return (int)(sign*llnum);
+}
+```
+invert bits 
+```c
+int reverse(int x){
+    long long ret = 0;
+    do{
+        ret = ret*10 + x%10;
+        x /= 10;
+
+    }while (x);
+
+    return (ret > INT_MAX || ret <INT_MIN) ? 0:(int)ret;
+}
+```
+
 
 
 ## 英语准备
