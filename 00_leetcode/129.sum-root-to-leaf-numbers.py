@@ -52,6 +52,7 @@ class Solution(object):
         return ret
         '''
         #method 3, BFS
+        '''
         if not root:
             return 0
         q, ret = [(root, root.val)], 0
@@ -62,6 +63,21 @@ class Solution(object):
                 q.append((node.left, cur_val*10+node.left.val))
             if node.right:
                 q.append((node.right, cur_val*10+node.right.val))
+        return ret
+        '''
+        #BFS with queue
+        if not root:
+            return 0
+        q, ret = collections.deque(), 0
+        q.append((root, root.val))
+        while q:
+            node, pre_val = q.popleft()
+            if node.left:
+                q.append((node.left, pre_val*10 + node.left.val))
+            if node.right:
+                q.append((node.right, pre_val*10+node.right.val))
+            if not node.left and not node.right:
+                ret += pre_val
         return ret
 # @lc code=end
 

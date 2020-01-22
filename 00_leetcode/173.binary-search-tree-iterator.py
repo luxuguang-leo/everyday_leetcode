@@ -30,7 +30,8 @@ class BSTIterator(object):
                     self.stack.append((node.right, False))
                     self.stack.append((node, True))
                     self.stack.append((node.left, False))
-        self.iterator.sort(reverse=True)        
+        #self.iterator.sort(reverse=True) 
+        self.iterator = self.iterator[::-1]     
 
     def next(self):
         """

@@ -32,6 +32,7 @@ class Solution(object):
             return root
         '''
         #non-recrusive
+        '''
         if not root or not q or not p:
             return None
         while True:
@@ -42,6 +43,31 @@ class Solution(object):
             else:
                 break
         return root
+        '''
+        '''
+        #1.dfs
+        if not root or not q or not p:
+            return None
+        if p.val < root.val and q.val < root.val:
+            return self.lowestCommonAncestor(root.left, p, q)
+        elif p.val > root.val and q.val > root.val:
+            return self.lowestCommonAncestor(root.right, p, q)
+        else:
+            return root
+        '''
+        if not root or not p or not q:
+            return None
+        while root:
+            if p.val < root.val and q.val < root.val:
+                root = root.left
+            elif p.val > root.val and q.val > root.val:
+                root = root.right
+            else:
+                break
+                #return root
+        return root
+        
+        
         
 
     

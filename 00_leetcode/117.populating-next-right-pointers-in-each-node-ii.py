@@ -35,6 +35,7 @@ class Solution(object):
             if queue:
                 node.next = queue[0]
             if not queue:
+            #when level node is visited..
                 queue, sublevel = sublevel, queue
         return root
         '''

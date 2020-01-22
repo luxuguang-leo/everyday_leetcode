@@ -24,6 +24,8 @@ class Solution(object):
         """
         #if heightLeft == heightRIght, left is perfert binary tree with heightLeft,
         #otherwise(heightLeft = heightRight+1) right is perfect binary tree with heightRight
+        #如果左子树深度等于右子树的深度，那么左子树为满二叉树，节点为2^depth -1, 再加上根节点，所以为2^depth
+        #如果左子树深度不等于右子树深度，那么右子树为满二叉树，右边部分节点可以计算可得，左边递归或者迭代获取
         '''
         if not root:
             return 0
@@ -35,27 +37,23 @@ class Solution(object):
             return (1<<R) + self.countNodes(root.left)
         '''
         #interactively
-        if not root:
-            return 0
         def getHeight(root):
-            if not root:
-                return 0
             height = 0
             while root:
                 height +=1
                 root = root.left
             return height
-        numNodes = 0
+        ret = 0
         while root:
             L = getHeight(root.left)
             R = getHeight(root.right)
             if L == R:
-                numNodes += (1<<L)
+                ret += (1<<L)
                 root = root.right
             else:
-                numNodes += (1<<R)
+                ret += (1<<R)
                 root = root.left
-        return numNodes
+        return ret
 
         
         

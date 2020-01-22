@@ -70,6 +70,7 @@ class Solution(object):
                     q.append(node.left)
             ret.append(path)
         return [x[0] for x in ret]
+        #'''
         '''
         q, ret = collections.deque(),[]
         if not root:
@@ -84,6 +85,22 @@ class Solution(object):
                     q.append((node.right, level+1))
                 if node.left:
                     q.append((node.left, level+1))
+        return ret
+        '''
+        if not root:
+            return []
+        q = collections.deque()
+        q.append(root)
+        ret = [root.val]
+        while q:
+            for _ in range(len(q)):
+                node = q.popleft()
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+            if q:
+                ret.append(q[-1].val)
         return ret
 # @lc code=end
 
