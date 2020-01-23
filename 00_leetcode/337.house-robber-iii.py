@@ -22,16 +22,16 @@ class Solution(object):
     def dfs(self, root, m):
         if not root:
             return 0
-        val = 0
         if root in m:
             return m[root]
+        val = 0
         if root.left:
-            val +=self.rob(root.left.left) + self.rob(root.left.right)
+            val += (self.dfs(root.left.left, m) + self.dfs(root.left.right, m))
         if root.right:
-            val += self.rob(root.right.left) + self.rob(root.right.right)
-        level_val = max(self.ret, max(val + root.val, self.rob(root.left) + self.rob(root.right)))
-        m[root] = level_val
-        return level_val
+            val += (self.dfs(root.right.left, m) + self.dfs(root.right.right, m))
+        val = max(val+root.val, self.dfs(root.left,m) + self.dfs(root.right, m))
+        m[root] = val
+        return val
 
     def rob(self, root):
         """
@@ -50,14 +50,13 @@ class Solution(object):
         return max(val + root.val, self.rob(root.left) + self.rob(root.right))
         '''
         #DFS,DP，第一种方法中有重叠部分，可以用记忆化递归来实现, 依然TLE../
-        '''
-        self.ret = 0
-        m = collections.defaultdict()
+        #'''
+        m = {}
         return self.dfs(root, m)
         '''
         #DFS, DP
-
-        return max(self.dfs_dp(root))
+        #return max(self.dfs_dp(root))
+        '''
 
 
 
