@@ -4,12 +4,13 @@
 # [17] Letter Combinations of a Phone Number
 #
 class Solution(object):
-    def dfs(self, digits, l, hash_map,path, ret):
-        if l == len(digits):
+    def dfs(self, digits, index,path, ret):
+        if index == len(digits):
             ret.append(path)
             return
-        for letter in hash_map[digits[l]]:
-            self.dfs(digits, l+1, hash_map, path+letter,ret)
+        for letter in self.m[digits[index]]:
+            #choose one and move to next character
+            self.dfs(digits, index+1, path+letter,ret)
 
         
         
@@ -20,7 +21,7 @@ class Solution(object):
         """
         if not digits:
             return []
-        hash_map = {'2':['a','b','c'],
+        self.m = {'2':['a','b','c'],
                     '3':['d','e','f'],
                     '4':['g','h','i'],
                     '5':['j','k','l'],
@@ -30,7 +31,7 @@ class Solution(object):
                     '9':['w','x','y','z']
                     }
         ret = []
-        self.dfs(digits, 0, hash_map,"", ret)
+        self.dfs(digits, 0, "", ret)
         return ret
         
 

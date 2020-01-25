@@ -15,7 +15,7 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        #method 1, brute force
+        #method 1, brute force, O(N^2)
         '''
         if len(s) <= 1:
             return s
@@ -29,7 +29,7 @@ class Solution(object):
                 ret = tmp
         return ret
         '''
-        #马拉车算法
+        #马拉车算法, O(N)
         #1.插入dummy字符，转换成奇数长的字符串
         #2.DP算法求RL[i]
         #3.根据max_right和RL[i]找出字符串的位置

@@ -9,6 +9,7 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
+        '''
         if not s:
             return True
         tmp_set = {'{':'}','[':']','(':')'}
@@ -19,4 +20,17 @@ class Solution(object):
             elif not q or q.pop() != ch:
                 return False
         return len(q)==0
+        '''
+        #no difference 
+        if not s:
+            return True
+        m = {'}':'{', ']':'[', ')':'(' }
+        q = []
+        for ch in s:
+            if ch not in m:
+                q.append(ch)
+            elif not q or q.pop() != m[ch]:
+                return False
+        return len(q) == 0
+
 

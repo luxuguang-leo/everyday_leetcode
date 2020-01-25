@@ -11,30 +11,31 @@ class Solution(object):
         :type str: str
         :rtype: int
         """
-        #elimate whitespace from left
-        s = str.strip()
+        s = str.strip(" ")
+        ret = 0
+        sign = 1
         if not s:
             return 0
-        sign = 1
         if s[0] == '-':
             sign = -1
         if s[0] == '-' or s[0] == '+':
             s = s[1:]
-        ret = 0
-        for i in range(len(s)):
-            val = ord(s[i])-ord("0")
-            if val < 0 or val > 9:
+        for ch in s:
+            val = ord(ch) - ord('0')
+            if 0 <= val <= 9:
+                ret = ret*10 + val
+            else:
                 break
-            ret = ret*10 + val
-        ret = ret*sign
-        if ret > 2147483647:
-            return 2147483647
-        #if ret < -sys.maxint-1:
-            #return -sys.maxint-1
-        if ret < -2147483648:
-            return -2147483648
-        return ret
-
+        ret *= sign
+        '''
+        if ret >= 2**31 -1:
+            return 2**31 -1
+        if ret <= -2**31:
+            return -2**31
+        '''
+        #return max(-2**31, min(ret, 2**31-1))
+        return min(2**31-1, max(ret, -2**31))
+       
 
         
 

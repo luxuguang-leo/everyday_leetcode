@@ -9,6 +9,8 @@ class Solution(object):
         :type strs: List[str]
         :rtype: str
         """
+        #sort the strings, and compare the first and last string
+        #find the common prefix, O(NLogN) + O(N)
         if not strs:
             return ""
         strs.sort()
