@@ -9,6 +9,7 @@ class Solution(object):
         :type strs: List[str]
         :rtype: List[List[str]]
         """
+        #use default dict 
         hashmap = collections.defaultdict(list)
         for word in strs:
             tmpWord = ''.join(sorted(word))

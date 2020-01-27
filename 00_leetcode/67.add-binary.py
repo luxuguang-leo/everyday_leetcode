@@ -12,6 +12,9 @@ class Solution(object):
         :type b: str
         :rtype: str
         """
+        #add from end of 2 strings, use carry to decide if need carry
+        #check the last bit is it's '1' or not
+        """
         M, N = len(a)-1, len(b)-1
         carry = 0
         ret = ""
@@ -27,6 +30,18 @@ class Solution(object):
         if carry == 1:
             ret = "1"+ret
         return ret
+        """
+        #recrsatively
+        if not a:
+            return b
+        if not b:
+            return a
+        if a[-1] == '1' and b[-1] == '1':
+            return self.addBinary(self.addBinary(a[0:-1], b[0:-1]), '1') + '0'
+        elif a[-1] == '0' and b[-1] == '0':
+            return self.addBinary(a[0:-1], b[0:-1]) + '0'
+        else:
+            return self.addBinary(a[0:-1], b[0:-1]) + '1'
 
 
 

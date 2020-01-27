@@ -12,23 +12,21 @@ class Solution(object):
         :type num2: str
         :rtype: str
         """
-        if not num1 or not num2:
-            return ""
-        def str2num(s):
+        #return str(int(num1)*int(num2))
+        def str2num(str):
             ret = 0
-            for i in range(0, len(s)):
-                val = ord(s[i]) - ord('0')
-                ret = ret * 10 + val
+            for ch in str:
+                val = ord(ch) - ord('0')
+                ret = ret*10 + val
             return ret
         mul = str2num(num1)*str2num(num2)
+        ret = ""
         if mul == 0:
             return "0"
-        ret = ""
-        while mul > 0:
+        while mul:
             ret = str(mul%10) + ret
-            mul /=10
+            mul = mul/10
         return ret
-
 
         
 # @lc code=end
