@@ -12,20 +12,15 @@ class Solution(object):
         :rtype: str
         """
         if not path:
-            return None
+            return ""
+        sperators = [".", "..", ""]
         stack = []
-        path_new = path.split("/")
-        for c in path_new:
-            if not c or c == '.':
-                continue
-            if c == '..':
-                if stack:
-                    stack.pop()
-            else:
-                stack.append(c)
-        return '/'+'/'.join(stack)
-
-
+        for item in path.split("/"):
+            if item not in sperators:
+                stack.append(item)
+            elif item == ".." and stack:
+                stack.pop()
+        return "/"+"/".join(stack)
         
 # @lc code=end
 

@@ -10,6 +10,7 @@ class Solution(object):
         :type t: str
         :rtype: str
         """
+        '''
         if not s or not t:
             return ""
         t_map = collections.Counter(t)
@@ -19,9 +20,9 @@ class Solution(object):
         min_len = len(s) + 1
         for r in range(len(s)):
             if s[r] in t_map:
-                t_map[s[r]] -=1
-                if t_map[s[r]] >=0:
+                if t_map[s[r]] >0:
                     cnt +=1
+                t_map[s[r]] -=1
                 while cnt == wanted:#到达区间右边界，需要尝试更新区间左边界
                     #如果发现此时的窗口更小，则更新串口长度
                     if r - l + 1 < min_len:
@@ -35,5 +36,17 @@ class Solution(object):
                             cnt -=1
                     l +=1
         return res 
-
-       
+        '''
+        map_s = collections.Counter()
+        map_t = collections.Counter(t)
+        best_i, best_j = -float('inf'), float('inf')
+        i = 0
+        for j, ch in enumerate(s):
+            map_s[ch] +=1
+            while map_s & map_t == map_t:
+                if j - i < best_j - best_i:
+                    best_i, best_j = i, j
+                map_s[s[i]] -=1
+                i +=1
+        return s[best_i : best_j + 1] if best_j - best_i < len(s) else ""
+        
