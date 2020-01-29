@@ -9,6 +9,7 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        #hashmap, stupid question
         hashTable = {}
         for ch in s:
             if ch not in hashTable:

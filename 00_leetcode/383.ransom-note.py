@@ -10,6 +10,7 @@ class Solution(object):
         :type magazine: str
         :rtype: bool
         """
+        #super easy, not intersting...
         hashtable = {}
         for ch in magazine:
             if ch not in hashtable:
