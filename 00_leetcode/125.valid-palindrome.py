@@ -11,20 +11,20 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
+        #需要考虑的情况有，如果非字母，非数字，跳过
         if not s:
             return True
         l, r = 0, len(s)-1
         while l < r:
             while l < r and not s[l].isalpha() and not s[l].isdigit():
-            #while l < r and not s[l].isalnum():
                 l +=1
             while l < r and not s[r].isalpha() and not s[r].isdigit():
-            #while l < r and not s[r].isalnum():
                 r -=1
-            if s[l].lower() != s[r].lower():
+            if s[l].lower() == s[r].lower():
+                l +=1
+                r -=1
+            else:
                 return False
-            l +=1
-            r -=1
         return True
         
 # @lc code=end
