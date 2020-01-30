@@ -18,19 +18,19 @@ class Solution(object):
             return -1
         str1 = version1.split('.')
         str2 = version2.split('.')
-        while len(str1) or len(str2):
-            if len(str1) == 0: str1=[0]
-            if len(str2) == 0: str2=[0]
+        #when both str1 and str2 have the same length and have the same value
+        while len(str1)  or len(str2) :
+            if len(str1) == 0:
+                str1 = '0'
+            if len(str2) == 0:
+                str2 = '0'
+            if int(str1[0]) > int(str2[0]):
+                return 1
+            elif int(str1[0]) < int(str2[0]):
+                return -1
             else:
-                i1 = int(str1[0])
-                i2 = int(str2[0])
-                if i1 < i2:
-                    return -1
-                elif i1 > i2:
-                    return 1
-                else:
-                    str1 = str1[1:]
-                    str2 = str2[1:]
+                str1 = str1[1:]
+                str2 = str2[1:]
         return 0
         '''
         #2
