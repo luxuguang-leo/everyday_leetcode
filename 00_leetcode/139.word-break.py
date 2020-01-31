@@ -52,14 +52,17 @@ class Solution(object):
         #DP[2]&&InDict(s[2...i-1])
         #...
         #DP[i-1]&&InDict[i-1...i-1]
+        if not s:
+            return False
+        wordSet = set(wordDict)
         DP = [False]*(len(s)+1)
-        DP[0] = True
-        for i in range(len(s)):
-            if DP[i]:
-                for j in range(i,len(s)):
-                    if s[i:j+1] in wordDict:
-                        DP[j+1] = True
+        DP[0] = True 
+        for i in range(1, len(s)+1):
+            for j in range(i):
+                if DP[j] and s[j:i] in wordSet:
+                    DP[i] = True
         return DP[-1]
+
 
         
 
