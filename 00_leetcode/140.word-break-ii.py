@@ -22,9 +22,8 @@ class Solution(object):
                 path.append(s)
             for i in range(1, len(s)):
                 r = s[i:]
-                if r not in words:
-                    continue
-                path +=[l + " "+ r for l in dfs(s[:i])]
+                if r in words:
+                    path += [l + " " + r for l in dfs(s[:i])]
                 #print(path)
             mem[s] = path
             return mem[s]
