@@ -18,7 +18,7 @@ class Solution(object):
         #定义DP为从起始点到(x,y)的最小路径和，那么
         #递推公式 (x,y)点之能由(x-1, y)或者(x, y-1)获得
         #DP[x][y] = min(DP[x-1][y], DP[x][y-1]) + grid[x][y]
-        #对边界特殊处理
+        #对边界特殊处理, 相对比较简单，注意下标和边界处理即可
         DP[0][0] = grid[0][0]
         for i in range(1, row):
             DP[i][0] = DP[i-1][0]+grid[i][0]

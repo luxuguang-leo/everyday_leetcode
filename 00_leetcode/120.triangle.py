@@ -26,6 +26,7 @@ class Solution(object):
         return min(DP[-1])
         '''
         #method 2, DP, don't need to create, modify triangle in place
+        '''
         if not triangle:
             return
         for i in xrange(1, len(triangle)):
@@ -34,6 +35,17 @@ class Solution(object):
                     triangle[i][j] += triangle[i-1][j]
                 elif j == len(triangle[i]) - 1:
                     triangle[i][j] += triangle[i-1][j-1]
+                else:
+                    triangle[i][j] += min(triangle[i-1][j], triangle[i-1][j-1])
+        return min(triangle[-1])
+        '''
+        m = len(triangle)
+        for i in range(1,m):
+            for j in range(len(triangle[i])):
+                if j == 0:
+                    triangle[i][0] += triangle[i-1][0]
+                elif j == len(triangle[i])-1:
+                    triangle[i][-1] += triangle[i-1][-1]
                 else:
                     triangle[i][j] += min(triangle[i-1][j], triangle[i-1][j-1])
         return min(triangle[-1])
