@@ -29,7 +29,7 @@ class Solution(object):
             if i %2 == 0:
                 ret[i] = ret[i/2]
             else:
-                ret[i] = ret[i//2]+1
+                ret[i] = ret[i/2]+1
         return ret
         
 # @lc code=end

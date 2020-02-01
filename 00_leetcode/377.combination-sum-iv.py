@@ -39,13 +39,25 @@ class Solution(object):
         (2, 2)   -> DP[2]
         (3, 1)   -> DP[1]
         '''
+        #base case DP[0] = 1
+        '''
         DP = [0] * (target+1)
         DP[0] = 1
         for i in range(1, target+1):
-            for n in nums:
-                if i >= n:
-                    DP[i] += DP[i-n]
+            for j in range(len(nums)):
+                if i - nums[j] >=0:
+                    DP[i] += DP[i-nums[j]]
         return DP[target]
+        '''
+        #base case DP[0] = 0
+        DP = [0] * (target+1)
+        for i in range(1, target+1):
+            for j in range(len(nums)):
+                if i == nums[j]:
+                    DP[i] += 1
+                elif i > nums[j]:
+                    DP[i] += DP[i - nums[j]]
+        return DP[-1]
 
         
 # @lc code=end
