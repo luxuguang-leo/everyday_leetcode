@@ -13,7 +13,7 @@ class Solution(object):
         """
         #DP,或者类似DP，用两个数组标识up和上升的最长长度
         #如果后一个数比前一个数大，则up = down +1
-        #否则down = up +1
+        #否则down = up +1,只能说是DP思想吧
         '''
         N = len(nums)
         if N <=1:

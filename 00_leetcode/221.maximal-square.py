@@ -32,26 +32,25 @@ class Solution(object):
         '''
         #DP表示(x,y)和(0, 0)形成的区域最长的正方形边长
         #递推DP[x][y] = min(DP[x-1][y], DP[x][y-1], DP[x-1][y-1]) + matrix[x][y]
+        if not matrix:
+            return 0
         r, c = len(matrix), len(matrix[0])
-        DP = [[0]*c for _ in range(r)]
-        max_len = 0
+        DP = [[0]*c for _ in range(r)]#DP表示边长而不是面积
+        max_edge = 0
         for i in range(r):
             if matrix[i][0] == '1':
                 DP[i][0] = 1
-                max_len = 1
-        for i in range(c):
-            if matrix[0][i] == '1':
-                DP[0][i] = 1
-                max_len = 1
-        for i in range(1,r):
-            for j in range(1,c):
+                max_edge = 1
+        for j in range(c):
+            if matrix[0][j] == '1':
+                DP[0][j] = 1
+                max_edge = 1
+        for i in range(1, r):
+            for j in range(1, c):
                 if matrix[i][j] == '1':
-                    DP[i][j] = min(min(DP[i-1][j], DP[i][j-1]), DP[i-1][j-1]) + 1
-                #else:
-                    #DP[i][j] = min(min(DP[i-1][j], DP[i][j-1]), DP[i-1][j-1])
-                max_len = max(max_len, DP[i][j])
-        return max_len*max_len
-
+                    DP[i][j] = min(DP[i-1][j-1], min(DP[i-1][j], DP[i][j-1])) + 1
+                max_edge = max(max_edge, DP[i][j])
+        return max_edge*max_edge
 
 # @lc code=end
 
