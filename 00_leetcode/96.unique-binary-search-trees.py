@@ -27,6 +27,7 @@ class Solution(object):
         #G(N) = F(0, N)+F(1,N)+...+F(N,N)
         #F(i, N) = G(i-1)*G(N-i)  N>=i>=1 this is tricky,
         #G(N) = G(0)*G(N-1) + G(1)*G(N-2)+...+G(N-1)*G(0)
+        '''
         DP = [0]*(n+1)
         DP[0] = 1
         for i in range(1, n+1):
@@ -34,5 +35,11 @@ class Solution(object):
                 DP[i] += DP[j]*DP[i-j-1]
         #print(DP)
         return DP[-1]
-        
+        '''
+        DP = [0]*(n+1)
+        DP[0] = DP[1] = 1
+        for i in range(2, n+1):
+            for j in range(i):
+                DP[i] += DP[j]*DP[i-j-1]
+        return DP[-1]
 
