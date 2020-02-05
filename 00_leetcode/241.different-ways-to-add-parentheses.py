@@ -28,7 +28,7 @@ class Solution(object):
                         ret.append(eval(str(l) + c + str(r)))
         return ret
         '''
-        #method 2, use memory for speedup
+        #method 2, use memory for speedup,如何改成DP？
         if input.isdigit():
             return [int(input)]
         if input in self.cach:
