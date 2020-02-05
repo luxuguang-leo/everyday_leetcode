@@ -16,19 +16,25 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
+        #增加新的结点，time O(m+n) space(O max(m, n)+1)
         if not l1:
             return l2
         if not l2:
             return l1
-        dummy = head = ListNode(0)
+        cur = dummy = ListNode(-1)
         while l1 and l2:
             if l1.val < l2.val:
-                dummy.next = l1
+                #cur.next = ListNode(l1.val)
+                cur.next = l1
                 l1 = l1.next
             else:
-                dummy.next = l2
+                #cur.next = ListNode(l2.val)
+                cur.next = l2
                 l2 = l2.next
-            dummy = dummy.next
-        dummy.next = l1 or l2
-        return head.next
+            cur = cur.next
+        cur.next = l1 or l2
+        return dummy.next
+        
 
+
+        

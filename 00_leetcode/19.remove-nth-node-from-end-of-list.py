@@ -16,14 +16,17 @@ class Solution(object):
         :type n: int
         :rtype: ListNode
         """
-        dummy = ListNode(0)
+        #通过画图来看结点信息
+        if not head:
+            return None
+        dummy = ListNode(-1)
         dummy.next = head
-        slow = fast = dummy
+        fast = slow = dummy
         for _ in range(n):
             fast = fast.next
-        while fast and fast.next:
-            slow = slow.next
+        while fast.next:
             fast = fast.next
+            slow = slow.next
         slow.next = slow.next.next
         return dummy.next
 
