@@ -44,6 +44,7 @@ class Solution(object):
         return True
         '''
         #DFS + stack
+        '''
         stack, ret = [(root, False)], []
         while stack:
             node, visited = stack.pop()
@@ -57,6 +58,36 @@ class Solution(object):
                     stack.append((node, True))
                     stack.append((node.left, False))
         return True
+        '''
+        #其实没有必要保存之前的所有遍历元素只需要保存之前的结点的值即可所以DFS+stack可以写成
+        '''
+        stack, pre = [(root, False)], None
+        while stack:
+            node, visited = stack.pop()
+            if node:
+                if visited:
+                    if pre and node.val <= pre.val:
+                        return False
+                    pre = node
+                else:
+                    stack.append((node.right, False))
+                    stack.append((node, True))
+                    stack.append((node.left, False))
+        return True
+        '''
+        stack, pre = [], None
+        cur = root
+        while stack or cur:
+            while cur:
+                stack.append(cur)
+                cur = cur.left
+            node = stack.pop()
+            if pre and node.val <= pre.val:
+                return False
+            pre = node
+            cur = node.right
+        return True
+
 
 
 
