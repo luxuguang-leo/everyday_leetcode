@@ -22,19 +22,20 @@ class Solution(object):
         :type head: ListNode
         :rtype: TreeNode
         """
-        ##linked list and BST
-        #first use 2 pointers to find the middle val
+        #破题，linked list只能单向访问，BST是一个二叉树，一般需要迭代生成，目标找到中间值，然后左右子树迭代
         if not head:
             return None
         dummy = ListNode(0)
         dummy.next = head
-        slow, fast = dummy, head
+        fast, slow = head, dummy
         while fast and fast.next:
-            slow, fast = slow.next, fast.next.next
-        root = TreeNode(slow.next.val)
-        tmp = slow.next.next
+            slow = slow.next
+            fast = fast.next.next
+        newNode = slow.next
+        root = TreeNode(newNode.val)
         slow.next = None
         root.left = self.sortedListToBST(dummy.next)
-        root.right = self.sortedListToBST(tmp)
+        root.right = self.sortedListToBST(newNode.next)
         return root
+
 
