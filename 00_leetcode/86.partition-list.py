@@ -16,18 +16,19 @@ class Solution(object):
         :type x: int
         :rtype: ListNode
         """
-        dummy1, dummy2 = ListNode(0), ListNode(0)
-        leftTail, rightTail = dummy1, dummy2
-        while head:
-            if head.val < x:
-                leftTail.next = head
-                leftTail = leftTail.next
+        if not head:
+            return head
+        small, large = ListNode(0), ListNode(0)
+        l, r, cur = small, large, head
+        while cur:
+            if cur.val < x:
+                small.next = cur
+                small = small.next
             else:
-                rightTail.next = head
-                rightTail = rightTail.next
-            head = head.next
-        rightTail.next = None
-        leftTail.next = dummy2.next
-        return dummy1.next
-
-
+                large.next = cur
+                large = large.next
+            cur = cur.next
+        small.next = r.next
+        large.next = None
+        return l.next
+       
