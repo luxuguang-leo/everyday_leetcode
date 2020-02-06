@@ -17,15 +17,24 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        #两两交换，画图示意
+        if not head:
+            return None
+        #dummy node, fast and slow node
         dummy = ListNode(-1)
         dummy.next = head
-        pre, first = dummy, head
-        while pre.next and first.next:
-            pre.next = first.next
-            first.next = first.next.next
-            pre.next.next = first
-            pre, first = first, first.next
+        head = dummy
+        while head and head.next and head.next.next:
+            #narrowdown to slow&fast nodes
+            slow = head.next
+            fast = head.next.next
+            
+            #swap them
+            head.next = fast
+            slow.next = fast.next
+            fast.next = slow
+            
+            #move ahead
+            head = slow
         return dummy.next
         
 # @lc code=end
