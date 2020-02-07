@@ -19,14 +19,16 @@ class Solution(object):
             return None
         fast = slow = head
         while fast and fast.next:
-            slow, fast = slow.next, fast.next.next
-            if slow == fast:
+            slow = slow.next
+            fast = fast.next.next
+            if fast == slow:
                 break
-        if fast is None or fast.next is None:
+        if not fast or not fast.next:#while跳出循环没有满足相等条件
             return None
-        slow = head
-        while slow != fast:
+        fast = head
+        while fast != slow:
             slow = slow.next
             fast = fast.next
-        return slow
+        return fast
 
+    

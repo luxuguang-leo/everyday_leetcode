@@ -25,6 +25,7 @@ class Solution(object):
         :type head: ListNode
         :rtype: None Do not return anything, modify head in-place instead.
         """
+        '''
         #1.split into two parts
         if not head or not head.next or not head.next.next:
             return head
@@ -48,6 +49,32 @@ class Solution(object):
             #print(first, second)
             second.next, second = first, second.next
         return head
+        '''
+        #elegant one with refined code
+        #1.将链表切成前后两部分，注意起点位置
+        if not head:
+            return head
+        slow, fast = head, head.next
+        #将fast向前一步是为了去的中点前的结点
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+        secondHalf = slow.next
+        slow.next = None
+
+        #2.反转后半部分，标准反转写法，需要熟练掌握
+        pre, cur = None, secondHalf
+        while cur:
+            nxt = cur.next
+            cur.next = pre
+            pre, cur = cur, nxt
+        #3.合并两个链表，头分别是head和pre，画图示意
+        firstHalf, secondHalf = head, pre
+        while firstHalf and secondHalf:
+            firstHalf.next, firstHalf = secondHalf, firstHalf.next
+            secondHalf.next, secondHalf = firstHalf, secondHalf.next
+        return head
+        
 
 
             

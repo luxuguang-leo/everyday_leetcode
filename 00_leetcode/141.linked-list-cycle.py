@@ -23,7 +23,7 @@ class Solution(object):
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-            if fast == slow:
+            if fast == slow:#如果放在前面第一个节点就不满足
                 return True
         return False
 
