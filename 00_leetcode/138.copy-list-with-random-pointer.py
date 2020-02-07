@@ -43,6 +43,7 @@ class Solution(object):
         return dummy.next
         '''
         #简便写法
+        '''
         if not head:
             return None
         hash_map = dict()
@@ -58,8 +59,48 @@ class Solution(object):
             hash_map[node].next = hash_map[node.next]
             node = node.next
         return hash_map[head]
+        '''
         #另外一种方法就是在原节点后面复制，形成一个两倍长的list，然后再更新next和random
         #来处理比较麻烦，好处就是省空间，但是繁琐
+        '''
+        if not head:
+            return None
+        #很巧妙的使用hashmap来记录新旧节点之前的对应关系，这样难点在于求新节点的random
+        #newNode.random -> 据map找到oldNode -> oldNode.random  -> 据map找到新的节点
+        #key:oldNode Value:newNode
+        m = {}
+        newHead= dummy = Node(-1, None, None)
+        oldNode = head
+        while oldNode:
+            newNode = Node(oldNode.val, None, None)
+            newHead.next = newNode
+            m[oldNode] = newNode
+            newHead = newHead.next
+            oldNode = oldNode.next
+        oldNode = head
+        while oldNode:
+            if oldNode.random:
+                m[oldNode].random = m[oldNode.random]
+            oldNode = oldNode.next
+        return dummy.next
+        '''
+        if not head:
+            return None
+        m = {}
+        cur = head
+        while cur:
+            newNode = Node(cur.val, None, None)
+            m[cur] = newNode
+            cur = cur.next
+        m[None] = None#否则在cur.random为空的时候会出错
+        cur = head
+        while cur:
+            m[cur].random = m[cur.random]
+            m[cur].next = m[cur.next]
+            cur = cur.next
+        return m[head]
+        
+
 
 # @lc code=end
 
