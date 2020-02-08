@@ -10,6 +10,7 @@
 #         self.next = None
 
 class Solution(object):
+    '''
     def reverseList(self, head):
         if head is None or head.next is None:
             return head
@@ -17,6 +18,7 @@ class Solution(object):
         head.next.next = head
         head.next = None
         return newHead
+    '''
 
     def addTwoNumbers(self, l1, l2):
         """
@@ -24,8 +26,15 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        l1 = self.reverseList(l1)
-        l2 = self.reverseList(l2)
+        def reverseList(head):
+            pre = None
+            while head:
+                nxt = head.next
+                head.next = pre
+                pre, head = head, nxt
+            return pre
+        l1 = reverseList(l1)
+        l2 = reverseList(l2)
         dummy = cur = ListNode(0)
         carry = 0
         while l1 or l2 or carry:
@@ -38,7 +47,7 @@ class Solution(object):
             cur.next = ListNode(carry%10)
             carry = carry//10
             cur = cur.next
-        return self.reverseList(dummy.next)
+        return reverseList(dummy.next)
 
         
 
