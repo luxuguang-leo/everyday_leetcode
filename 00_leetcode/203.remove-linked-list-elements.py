@@ -16,6 +16,7 @@ class Solution(object):
         :type val: int
         :rtype: ListNode
         """
+        '''
         if not head:
             return None
         dummy = ListNode(0)
@@ -27,6 +28,18 @@ class Solution(object):
             else:
                 pre = pre.next
             cur = cur.next
+        return dummy.next
+        '''
+        if not head:
+            return None
+        dummy = ListNode(-1)
+        dummy.next = head
+        cur = dummy
+        while cur and cur.next:
+            if cur.next.val == val:
+                cur.next = cur.next.next
+            else:
+                cur = cur.next
         return dummy.next
             
 

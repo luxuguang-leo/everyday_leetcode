@@ -15,8 +15,8 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        if not head:
-            return None
+        #if not head:
+            #return None
         #use stack
         '''
         stack = []
@@ -51,6 +51,7 @@ class Solution(object):
         #head is not None
         #link the next of rest to first
         #move first to rest
+        '''
         if not head:
             return None
         if not head.next:
@@ -59,3 +60,40 @@ class Solution(object):
         head.next.next = head
         head.next = None
         return newHead
+        '''
+        '''
+        stack, cur = [], head
+        while cur:
+            stack.append(cur)
+            cur = cur.next
+        cur = newHead = stack.pop()
+        while stack:
+            cur.next = stack.pop()
+            cur = cur.next
+        cur.next = None
+        return newHead
+        '''
+        '''
+        if not head:
+            return head
+        pre, cur = None, head
+        while cur:
+            nxt, cur.next = cur.next, pre
+            #cur.next = pre
+            pre, cur = cur, nxt
+        return pre
+        '''
+        if not head:
+            return head
+        pre = None
+        while head:
+            head.next, pre, head = pre, head, head.next
+        return pre
+        '''
+        if not head or not head.next:
+            return head
+        newHead = self.reverseList(head.next)
+        head.next.next = head
+        head.next = None
+        return newHead 
+        '''
