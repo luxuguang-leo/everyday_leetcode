@@ -27,17 +27,18 @@ class Solution(object):
                 cur = cur.next
             else:
                 #swap if next node is large
+                #@02.08 update, not swap, insert the smaller node in the first sorted list
                 #1.fetch next node
                 tmp = cur.next
                 #2.delete next node
                 cur.next = cur.next.next
                 #3.travel from head to find the node large than tmp node
-                node = dummy
-                while node.next and node.next.val < tmp.val:
-                    node = node.next
+                tHead = dummy
+                while tHead.next and tHead.next.val < tmp.val:
+                    tHead = tHead.next
                 #insert after node
-                tmp.next = node.next
-                node.next = tmp
+                tmp.next = tHead.next
+                tHead.next = tmp
         return dummy.next
         
         
