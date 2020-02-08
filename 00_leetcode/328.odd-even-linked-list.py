@@ -28,6 +28,26 @@ class Solution(object):
             even = even.next
         odd.next = evenHead
         return head
+        #直观做法
+        '''
+        if not head or not head.next:
+            return head
+        odd = dummy1 = ListNode(-1)
+        even = dummy2 = ListNode(-1)
+        cnt = 0
+        while head:
+            cnt +=1
+            if cnt % 2 ==1:#odd
+                odd.next = head
+                odd = odd.next
+            else:
+                even.next = head
+                even = even.next
+            head = head.next
+        odd.next = dummy2.next
+        even.next = None
+        return dummy1.next
+        '''
 
         
 # @lc code=end
