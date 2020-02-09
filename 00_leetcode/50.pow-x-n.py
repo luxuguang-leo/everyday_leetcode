@@ -19,7 +19,7 @@ class Solution(object):
             n = -n
         ret = 1
         while n > 0:
-            if n &0x01 ==1:
+            if n &0x01 ==1:#没有用整除2，最终都会经过这里
                 ret *= x
                 n -=1
             x = x*x
