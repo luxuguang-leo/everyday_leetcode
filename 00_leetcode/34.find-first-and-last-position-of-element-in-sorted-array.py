@@ -15,7 +15,7 @@ class Solution(object):
         while l < r:
             mid = (r-l)//2 + l
             if nums[mid] == target:
-                r = mid
+                r = mid #这里寻找左边界的时候限制右边界收缩
             elif nums[mid] > target:
                 r = mid
             else:
@@ -33,7 +33,7 @@ class Solution(object):
         while l < r:
             mid = (r-l)//2 + l
             if nums[mid] == target:
-                l = mid +1
+                l = mid +1#寻找右边界的时候左边界多尝试走一步
             elif nums[mid] < target:
                 l = mid +1
             else:
