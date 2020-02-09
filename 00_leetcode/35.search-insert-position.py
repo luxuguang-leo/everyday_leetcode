@@ -25,6 +25,7 @@ class Solution(object):
                 r = mid -1
             elif target > nums[mid]:
                 l = mid +1
-        return l
+        #return l
+        return r + 1
         
 
