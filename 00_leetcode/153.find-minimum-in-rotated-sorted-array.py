@@ -12,7 +12,7 @@ class Solution(object):
         :rtype: int
         """
         if not nums:
-            return []
+            return None
         l, r = 0, len(nums)-1
         while l < r:
             mid = (r-l)//2 + l

@@ -21,7 +21,7 @@ class Solution(object):
             elif nums[mid] > nums[r]:
                 l = mid +1
             else:
-                r -= 1
+                r -= 1#剔除掉相同元素的情况，可以比照之前leetcode81剔除前半部分元素从前面开始
         return nums[l]
         
 # @lc code=end
