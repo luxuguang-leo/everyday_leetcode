@@ -36,6 +36,7 @@ class Solution(object):
         #2.如果nums[i]小于最开始的值，替换掉最开始的数,这种情况下不会让隐藏的LIS长度变长，只需替换开始即可
         #3.如果nums[i]位于开头和结尾之间，这种情况需要也同样不会对隐藏的LIS长度有影响，因此需要替换比这个数大的那个数
         #4.注意最终的序列并不是候选的LIS，我们只是维持一个长度等同于LIS的序列，并且有利于后续LIS的方式递增或者维持
+        '''
         if not nums:
             return 0
         N = len(nums)
@@ -47,6 +48,20 @@ class Solution(object):
             if index == size:
                 size +=1
         return size
+        '''
+        if not nums:
+            return 0
+        tail = [nums[0]]
+        for i in range(1, len(nums)):
+            if nums[i] < tail[0]:
+                tail[0] = nums[i]
+            elif nums[i] > tail[-1]:
+                tail.append(nums[i])
+            else:
+                #二分查找，找到
+                pos = bisect.bisect_left(tail, nums[i])
+                tail[pos] = nums[i]
+        return len(tail)
 
 
 
