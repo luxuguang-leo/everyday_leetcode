@@ -37,12 +37,15 @@ class Solution(object):
             return (1<<R) + self.countNodes(root.left)
         '''
         #interactively
+        '''
         def getHeight(root):
             height = 0
             while root:
                 height +=1
                 root = root.left
             return height
+        if not root:
+            return 0
         ret = 0
         while root:
             L = getHeight(root.left)
@@ -54,6 +57,10 @@ class Solution(object):
                 ret += (1<<R)
                 root = root.left
         return ret
+        '''
+        #二分查找？？？
+                
+
 
         
         
