@@ -32,7 +32,7 @@ class Solution(object):
         while slow != fast:
             slow = nums[slow]
             fast = nums[nums[fast]]
-        fast = 0
+        fast = 0 #起始位置为0
         while slow != fast:
             slow = nums[slow]
             fast = nums[fast]
