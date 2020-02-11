@@ -11,6 +11,7 @@ class Solution(object):
         :type num: int
         :rtype: bool
         """
+        #[l,r]区间
         l, r = 0, num
         while l <= r:
             mid = l + (r-l)//2
