@@ -12,6 +12,9 @@ class Solution(object):
         for i in range(len(nums)):
             if nums[i] > target:#剪支
                 continue
+            #1.注意回溯路径，这里当前元素可以重复利用，所以是nums[i:]
+            #2.注意剪纸
+            #3.注意退出条件
             self.dfs(nums[i:], target - nums[i], res, path+[nums[i]])
     def dfs2(self, nums, target, start, res, path):
         if target == 0:

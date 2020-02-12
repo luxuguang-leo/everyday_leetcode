@@ -20,6 +20,10 @@ class Solution(object):
             s, e = i+1, len(nums)-1
             while s < e:
                 val = nums[i] + nums[s] + nums[e]
+                #限制条件是只有一个解
+                #如果找到相等的肯定是最优解，直接返回即可
+                if val == target:
+                    return val
                 if abs(val - target) < abs(sum_val - target):
                     sum_val = val
                 elif val < target:

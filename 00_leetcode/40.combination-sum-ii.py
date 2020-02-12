@@ -11,7 +11,8 @@ class Solution(object):
             res.append(path)
         for i in range(start, len(nums)):
             if nums[i] > target:
-                continue
+                #continue
+                break#因为是已经排列的数组，如果超过了target则后面的更加不可能，直接break即可
             if i > start and nums[i] == nums[i-1]:
                 continue
             self.dfs(nums, target - nums[i], i+1, res, path+[nums[i]]) 

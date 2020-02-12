@@ -11,6 +11,7 @@ class Solution(object):
         :rtype: int
         """
         #in place swap 
+        '''
         l, r = 0, len(nums) -1
         while l <= r:
             if nums[l] == val:
@@ -18,4 +19,13 @@ class Solution(object):
             else:
                 l += 1
         return l
+        '''
+        #in-place remove
+        slow = -1
+        for i in range(len(nums)):
+            if nums[i] != val:
+                slow +=1
+                nums[slow] = nums[i]
+        return slow+1
+        
 
