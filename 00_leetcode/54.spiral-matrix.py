@@ -13,29 +13,32 @@ class Solution(object):
         """
         if len(matrix) == 0:
             return []
-        i = j = k = 0#level k
-        row, col = len(matrix), len(matrix[0])
-        res = []
-        while True:
-            if i == k and j != col - 1 - k:
-                res.append(matrix[i][j])
-                j += 1
-            elif j == col -1 -k and i != row - 1 - k:
-                res.append(matrix[i][j])
-                i += 1
-            elif i == row - 1 - k and j != k:
-                res.append(matrix[i][j])
-                j -= 1
-            elif i != k and j == k:
-                res.append(matrix[i][j])
-                i -= 1
-                if i == k:
-                    i += 1
-                    j += 1
-                    k += 1
+        m, n = len(matrix), len(matrix[0])
+        i = j = level = 0
+        ret = []
+        while len(ret) < m*n:
+            if i == level and j != n - 1 - level:
+                ret.append(matrix[i][j])
+                j +=1
+            elif j == n-1-level and i != m-1-level:
+                ret.append(matrix[i][j])
+                i +=1
+            elif i == m-1-level and j != level:
+                ret.append(matrix[i][j])
+                j -=1
+            elif i != level and j == level:
+                ret.append(matrix[i][j])
+                i -=1
+                if i == level:
+                    i +=1
+                    j +=1
+                    level +=1
             else:
-                res.append(matrix[i][j])
-            if len(res) == row*col:
-                return res
-            
+                ret.append(matrix[i][j])
+            #if len(ret) == m*n:
+                #return ret
+        return ret
+                
+        
+# @lc code=end
 
