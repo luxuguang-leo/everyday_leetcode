@@ -33,7 +33,8 @@ class Solution(object):
                 nums[i] = 2
         return nums
         '''
-        #method,头尾两个指针，red指针和blue指针,我将第一个分支写成elif反过来了结果，为什么？
+        #method,头尾两个指针，red指针和blue指针
+        '''
         red = i = 0
         blue = len(nums)-1
         while i <= blue:
@@ -45,6 +46,39 @@ class Solution(object):
                 blue -=1
             else:
                 i +=1
+        '''
+        #method 3
+        '''
+        if not nums:
+            return []
+        l = i= 0
+        r = len(nums) -1
+        while i <=r:
+            if nums[i] == 0:
+                nums[i], nums[l] = nums[l], nums[i]
+                l +=1
+            elif nums[i] == 2:
+                nums[i], nums[r] = nums[r], nums[i]
+                r -=1
+                i -=1#这里需要退后一步
+            i+=1
+        return nums
+        '''
+        if not nums:
+            return []
+        l = i = 0
+        r = len(nums) -1
+        while i <= r:
+            if nums[i] == 0 and i != l:
+                nums[i], nums[l] = nums[l], nums[i]
+                l +=1
+                i -=1
+            elif  nums[i] == 2 and i != r:
+                nums[i], nums[r] = nums[r], nums[i]
+                r -=1
+                i -=1
+            i +=1
+        return nums
         
             
 
