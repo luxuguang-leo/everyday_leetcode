@@ -22,6 +22,7 @@ class Solution(object):
         ret.append(intervals[0])
         for i in range(1, len(intervals)):
             if intervals[i][0] <= ret[-1][1]:
+                #这里只需要取最大值即可，不需要再判断新加入的尾部是否比之前的要大的情况
                 ret[-1][-1] = max(ret[-1][-1], intervals[i][1])
             else:
                 ret.append(intervals[i])
