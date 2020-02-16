@@ -11,11 +11,11 @@ class Solution(object):
             return False
         if start == len(word) -1:
             return True
-        ch = board[x][y]
-        board[x][y] = 0
+        tmp = board[x][y]
+        board[x][y] = '#'#避免再次访问到
         ret = self.dfs(board, x+1, y, start + 1, word) or self.dfs(board, x, y+1, start + 1, word)\
             or self.dfs(board, x-1, y, start + 1, word) or self.dfs(board, x, y-1, start + 1, word)
-        board[x][y] = ch
+        board[x][y] = tmp
         return ret
         
 
