@@ -23,35 +23,54 @@ class Solution(object):
         ret = 0
         for i in range(len(heights)):
             if i + 1 < len(heights) and heights[i] <= heights[i+1]:
-                continue
+                continue #这里比较巧妙，如果直接写出判断条件有两种，要么是>下一个元素，或者为数组最后一个元素
             minH = heights[i]
             for j in range(i,-1,-1):
                 minH = min(minH, heights[j])
-                ret = max(ret, (i-j+1)*minH)
-                #print(i, j, ret)
+                ret = max(ret, (i-j+1)*minH)#这里没有必要用一个局部变量
         return ret
         '''
         #利用栈，思想类似于上一个，维持一个单调递增栈(相同元素也要处理)
         #遍历数组，如果大于栈的顶点，则压栈，否则开始计算以栈顶元素(局部最大)往前的所有图形面积
+        '''
         if not heights:
             return 0
-        ret = 0
         #将height补一个0，可以处理最后一个值
         heights.append(0)
-        q = list()
+        s, ret  = [], 0
         for i in range(len(heights)):
-            if not q or heights[i] > heights[q[-1]]:
-                q.append(i)
+            if not s or heights[i] > heights[s[-1]]:
+                s.append(i)
             else:  
-                while q and heights[i] <= heights[q[-1]]:
-                    h = heights[q[-1]]
-                    q.pop()
-                    if not q:#最后一个元素
+                while s and heights[i] <= heights[s[-1]]:
+                    h = heights[s[-1]]
+                    s.pop()
+                    if not s:#最后一个元素
                         w = i
                     else:
-                        w = i-q[-1]-1
+                        w = i-s[-1]-1
                     ret = max(ret, h * w)
-                q.append(i)
+                    #这里面积指什么呢？指以之前栈顶为右边界的矩形面积，左边界不停的向左尝试，知道左边界小于要插入的这个值
+                    #高度是每一次的栈顶，右边界为(i-1),左边界为q[-1]，所以面积为h*(i-1 - q[-1])
+                s.append(i)
+        return ret
+        '''
+        #可不可以先在栈加入一个-1值，这样就不会为空
+        if not heights:
+            return 0
+        s, ret = [-1], 0
+        heights.append(0)
+        for i in range(len(heights)):
+            while heights[i] < heights[s[-1]]:
+            #这里使用了两个技巧，在原有的bar数组增加一个0
+            #在原有的stack提前增加一个-1
+            #当s只有一个元素的时候， height[s[-1]] = height[-1] = 0
+            #当只有一个元素的时候这个while循环永远不会进入，也就是stack至少有一个元素，永远大于1
+                h = heights[s.pop()]
+                w = i - 1 - s[-1]
+                ret = max(ret, h*w)
+            #所以while之外的分支有两种情况进入，1.stack只有一个元素，或者stack内不止一个元素，不过栈顶元素要小于要插入的值
+            s.append(i)
         return ret
             
         

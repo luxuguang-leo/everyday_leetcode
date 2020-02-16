@@ -6,6 +6,7 @@
 
 # @lc code=start
 class Solution(object):
+    '''
     def maxArea(self, height):
         if not height:
             return 0
@@ -24,6 +25,19 @@ class Solution(object):
                         w = i - stack[-1] - 1
                     ret = max(ret, w*h)
                 stack.append(i)
+        return ret
+    '''
+    def maxArea(self, height):
+        if not height: return 0
+        ret, s = 0, [-1]
+        height.append(0)
+        for i in range(len(height)):
+            while height[i] < height[s[-1]]:
+            #参考LC84
+                h = height[s.pop()]
+                w = i-1-s[-1]
+                ret = max(ret, h*w)
+            s.append(i)
         return ret
     def maximalRectangle(self, matrix):
         """

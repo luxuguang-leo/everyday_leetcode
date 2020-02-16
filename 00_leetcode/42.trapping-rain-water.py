@@ -56,6 +56,7 @@ class Solution(object):
         '''
         #优化，使用双指针，两个变量left_max, right_max记录左指针左边最大值，右指针右边最大值
         #如果左最大值小于右最大值，那么左边当前点可以确定，反之右边当前点可以确定
+        '''
         if not height or len(height) < 3:
             return 0
         l, r = 0, len(height)-1#从左右倒数第二个数开始算
@@ -71,6 +72,25 @@ class Solution(object):
                 ret += r_max - height[r]
                 r -=1
         return ret
+        '''
+        #使用单调栈，比较难想，但是想法和84类似，区别在于需要计算盛雨的时候之前应该维护
+        #一个单调递减栈
+        #如果stack为空，或者height[i] < stack[-1], 入栈
+        #否则，出栈，求出width， cur - 1 - s[-1]； 雨水的高度 min(heightRight, heightLeft) - 弹出来的最底的bar
+        ans, s = 0, []
+        for i in range(len(height)):
+            while s and height[i] > height[s[-1]]:
+                bottom = s[-1]
+                s.pop()
+                #if not s:
+                    #ans +=0
+                #else:
+                if s:
+                    h = min(height[i], height[s[-1]]) - height[bottom]
+                    w = i-1-s[-1]
+                    ans += (h*w)
+            s.append(i)
+        return ans
 
         
             
