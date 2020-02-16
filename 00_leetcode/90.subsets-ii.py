@@ -16,10 +16,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        if not nums:
-            return []
-        nums.sort()
         res = []
-        self.dfs(nums, res, [])
+        self.dfs(sorted(nums), res, [])
         return res
 
