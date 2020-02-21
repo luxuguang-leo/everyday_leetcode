@@ -9,19 +9,7 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        '''
-        if not s:
-            return True
-        tmp_set = {'{':'}','[':']','(':')'}
-        q = []
-        for ch in s:
-            if ch in tmp_set:
-                q.append(tmp_set[ch])
-            elif not q or q.pop() != ch:
-                return False
-        return len(q)==0
-        '''
-        #no difference 
+        #使用map完成左右括弧的映射
         if not s:
             return True
         m = {'}':'{', ']':'[', ')':'(' }
