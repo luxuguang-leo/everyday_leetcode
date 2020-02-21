@@ -64,8 +64,7 @@ class Solution(object):
         '''
         if not s:
             return 0
-        max_len = 0
-        stack = [-1]
+        max_len, stack = 0, [-1]#初始化stack -1避免了在栈为空的情况下的来两种情况只需要判断一次即可
         for i in range(len(s)):
             if s[i] == '(':
                 stack.append(i)
@@ -88,6 +87,8 @@ class Solution(object):
         ### DP[i] = DP[i-1]+2，然后看DP[i-DP[i]]是否还有值，如果有值应该加上DP[i-DP[i]]
         ### 所以递推公式应该是DP[i] = DP[i-1] + 2
         #DP += DP[i-DP[i]]
+        #DP分为两部分，DP[i-1]部分和DP[i-DP[i]]部分
+        #'''
         if not s:
             return 0
         leftCount, ret = 0, 0
@@ -103,6 +104,7 @@ class Solution(object):
                 leftCount -=1
             ret = max(ret, DP[i])#如果
         return ret
+        '''
 
 
 
