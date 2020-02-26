@@ -18,6 +18,7 @@ class Solution(object):
         :type tokens: List[str]
         :rtype: int
         """
+        '''
         if not tokens:
             return 0
         stack = []
@@ -28,5 +29,22 @@ class Solution(object):
             else:
                 stack.append(int(token))
         return stack[0] 
+        '''
+        #don't use lambda expression
+        if not tokens:
+            return 0
+        stack = []
+        for item in tokens:
+            if item not in ('+', '-', '*', '/'):
+                stack.append(item)
+            else:
+                left, right = stack.pop(), stack.pop()
+                if item == '/':
+                    value = int(float(right)/float(left))
+                else:
+                    value = eval(right+item+left)
+                stack.append(str(value))
+        return int(stack[0])
+
 # @lc code=end
 
