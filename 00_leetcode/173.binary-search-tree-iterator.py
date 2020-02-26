@@ -13,12 +13,20 @@
 #         self.right = None
 
 class BSTIterator(object):
-    #tradition way
-    '''
+
+    def pushLeft(self, root):
+        if not root:
+            return root
+        while root:
+            self.newItrator.append(root)
+            root = root.left
+
+
     def __init__(self, root):
         """
         :type root: TreeNode
         """
+        '''
         self.iterator = []
         self.stack = [(root, False)]
         while self.stack:
@@ -30,15 +38,23 @@ class BSTIterator(object):
                     self.stack.append((node.right, False))
                     self.stack.append((node, True))
                     self.stack.append((node.left, False))
-        #self.iterator.sort(reverse=True) 
-        self.iterator = self.iterator[::-1]     
+        self.iterator = self.iterator[::-1]
+        '''
+        self.newItrator = []
+        self.pushLeft(root)
 
     def next(self):
         """
         @return the next smallest number
         :rtype: int
         """
+        '''
         return self.iterator.pop()
+        '''
+        node = self.newItrator.pop()
+        if node.right:
+            self.pushLeft(node.right)
+        return node.val
         
 
     def hasNext(self):
@@ -46,43 +62,13 @@ class BSTIterator(object):
         @return whether we have a next smallest number
         :rtype: bool
         """
+        '''
         if self.iterator:
             return True
         else:
             return False
-    '''
-    def __init__(self, root):
-        """
-        :type root: TreeNode
-        """
-        self.stack = []
-        self.pushLeft(root)
-
-
-    def next(self):
-        """
-        @return the next smallest number
-        :rtype: int
-        """
-        node = self.stack.pop()
-        self.pushLeft(node.right)
-        return node.val
-
-
-
-    def hasNext(self):
-        """
-        @return whether we have a next smallest number
-        :rtype: bool
-        """
-        if len(self.stack) == 0:
-            return False
-        else:
-            return True
-    def pushLeft(self, node):
-        while node is not None:
-            self.stack.append(node)
-            node = node.left
+        '''
+        return len(self.newItrator) != 0
         
 
 
