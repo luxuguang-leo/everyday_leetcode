@@ -76,6 +76,7 @@ class Solution(object):
         # 1.向左遍历，如果hashmap[n-1]存在并且为false，长度+1
         # 2.向右遍历，如果hashmap[n+1]存在并且为fasle,长度+1
         # 更新整个最大长度，遍历结束返回最大长度
+        '''
         if len(nums) <= 1:
             return len(nums)
         hashmap = {}
@@ -87,15 +88,29 @@ class Solution(object):
             pre = n -1
             while pre in hashmap and hashmap[pre]== False:
                 hashmap[pre] = True
-                tmp_len +=1
-                pre -= 1
+                tmp_len +=1; pre -= 1
             next = n +1
             while next in hashmap and hashmap[next]==False:
                 hashmap[next] = True
-                tmp_len +=1
-                next += 1
+                tmp_len +=1; next += 1
             ret_max = max(tmp_len, ret_max)
         return ret_max 
+        '''
+        if len(nums) <=1:
+            return len(nums)
+        m, ret_max = {}, 1
+        for n in nums:
+            m[n] = False
+        for n in nums:
+            if n-1 not in m:
+                tmp_len = 1
+                nxt = n +1
+                while nxt in m and m[nxt] == False:
+                    m[nxt] = True
+                    nxt +=1
+                    tmp_len += 1
+                ret_max = max(ret_max, tmp_len)
+        return ret_max
 
         
 

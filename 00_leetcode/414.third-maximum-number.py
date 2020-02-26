@@ -47,15 +47,14 @@ class Solution(object):
         if len(nums) < 3:
             return max(nums)
         first = second = third = float('-inf')
-        for i in range(len(nums)):
-            if nums[i] > first:
-                third, second, first = second, first, nums[i]
-            elif nums[i] > second:
-                third, second = second, nums[i]
-            elif nums[i] > third:
-                third = nums[i]
-        return third 
-
+        for n in nums:
+            if n > first:
+                third, second, first = second, first, n
+            elif n > second:
+                third, second = second, n
+            elif n > third:
+                third = n
+        return third
 
         
 # @lc code=end

@@ -29,6 +29,8 @@ class Solution(object):
         return ret
         '''
         #method 2, use memory for speedup,如何改成DP？
+        #这个思维的难点在于递归返回的是一个表达式的可能的所有值，所以在Divide之后，对左半部分的结果应该是取其中一个
+        #再分别取右半部分的list中的一个，分别计算，然后组合得出结果，最终返回的是整个结果list
         if input.isdigit():
             return [int(input)]
         if input in self.cach:

@@ -13,33 +13,31 @@ class Solution(object):
         """
         if nums == None or len(nums) == 0:
             return []
-        maj_idx1= maj_idx2 = 0
-        cnt1 = cnt2 = 0
-        for i in range(len(nums)):
-            if nums[maj_idx1] == nums[i]:
-                cnt1 +=1
-            elif nums[maj_idx2] == nums[i]:
-                cnt2 +=1
-            elif cnt1 == 0:
-                maj_idx1 = i
-                cnt1 =1
-            elif cnt2 == 0:
-                maj_idx2 =i
-                cnt2 =1
-            else:
-                cnt1 -=1
-                cnt2 -=1
-        cnt1 = cnt2 =0
         ret = []
-        for i in range(len(nums)):
-            if nums[i] == nums[maj_idx1]:
-                cnt1 +=1
-            elif nums[i] == nums[maj_idx2]:
-                cnt2 +=1
-        if cnt1 > len(nums)/3:
-            ret.append(nums[maj_idx1])
-        if cnt2 > len(nums)/3:
-            ret.append(nums[maj_idx2])
+        maj_1, cnt_1 = nums[0], 0
+        maj_2, cnt_2 = nums[0], 0
+        for n in nums:
+            if n == maj_1:
+                cnt_1 +=1
+            elif n == maj_2:
+                cnt_2 +=1
+            elif cnt_1 == 0:
+                maj_1, cnt_1 = n, 1
+            elif cnt_2 == 0:
+                maj_2, cnt_2 = n, 1
+            else:
+                cnt_1 -=1
+                cnt_2 -=1
+        cnt_1 = cnt_2 = 0
+        for n in nums:
+            if n == maj_1:
+                cnt_1 +=1
+            elif n == maj_2:
+                cnt_2 +=1
+        if cnt_1 > len(nums)//3:
+                ret.append(maj_1)
+        if cnt_2 > len(nums)//3:
+                ret.append(maj_2)
         return ret
         
         

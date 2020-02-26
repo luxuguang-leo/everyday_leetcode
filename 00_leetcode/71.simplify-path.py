@@ -13,14 +13,15 @@ class Solution(object):
         """
         if not path:
             return ""
-        sperators = [".", "..", ""]
+        #m = ['..', '.', '']
+        sperators = ('..', '.', '')
         stack = []
         for item in path.split("/"):
             if item not in sperators:
                 stack.append(item)
-            elif item == ".." and stack:
-                stack.pop()
-        return "/"+"/".join(stack)
-        
-# @lc code=end
+            elif item == '..':
+                if stack:
+                    stack.pop()
+        return '/'+'/'.join(stack)
+       # @lc code=end
 
