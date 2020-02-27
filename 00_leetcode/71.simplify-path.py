@@ -13,7 +13,6 @@ class Solution(object):
         """
         if not path:
             return ""
-        #m = ['..', '.', '']
         sperators = ('..', '.', '')
         stack = []
         for item in path.split("/"):

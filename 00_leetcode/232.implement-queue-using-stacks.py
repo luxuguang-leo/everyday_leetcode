@@ -27,6 +27,7 @@ class MyQueue(object):
         Removes the element from in front of queue and returns that element.
         :rtype: int
         """
+        #难点在于out队列为空的时候，这时候应该全部将in queue的pop出来加入out队列
         if len(self.q_out) == 0:
             while len(self.q_in) != 0:
                 self.q_out.append(self.q_in.pop())
@@ -50,11 +51,13 @@ class MyQueue(object):
         Returns whether the queue is empty.
         :rtype: bool
         """
+        '''
         if len(self.q_in) == 0 and len(self.q_out) == 0:
             return True
         else:
             return False
-        #return len(self.q_in) !=0 and len(self.q_out) != 0
+        '''
+        return len(self.q_in) == 0 and len(self.q_out) == 0
 
 
 # Your MyQueue object will be instantiated and called as such:

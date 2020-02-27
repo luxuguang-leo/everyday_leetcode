@@ -5,13 +5,14 @@
 #
 
 # @lc code=start
+
 class MyStack(object):
 
     def __init__(self):
         """
         Initialize your data structure here.
         """
-        self.s1 = collections.deque()
+        self.stack = collections.deque()
         
 
     def push(self, x):
@@ -20,39 +21,33 @@ class MyStack(object):
         :type x: int
         :rtype: None
         """
-        l = len(self.s1)
-        self.s1.append(x)
-        while l > 0:
-            self.s1.append(self.s1.popleft())
-            l -= 1
-        
+        l = len(self.stack)
+        self.stack.append(x)
+        for _ in range(l):
+            self.stack.append(self.stack.popleft())
+        print("push", self.stack)
 
     def pop(self):
         """
         Removes the element on top of the stack and returns that element.
         :rtype: int
         """
-        return self.s1.popleft()
+        return self.stack.popleft()
         
-
 
     def top(self):
         """
         Get the top element.
         :rtype: int
         """
-        return self.s1[0]
-        
+        return self.stack[0]
 
     def empty(self):
         """
         Returns whether the stack is empty.
         :rtype: bool
         """
-        if len(self.s1) == 0:
-            return True
-        else:
-            return False
+        return len(self.stack) == 0
 
 
 # Your MyStack object will be instantiated and called as such:
