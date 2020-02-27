@@ -16,7 +16,7 @@ class Solution(object):
         #2.遇到[ 压stack,将数字和string
         #3.遇到] 弹stack,得到数字和之前的string,当前string按照数字重复后和之前string累计
         #4.遇到一般字符，更新当前string
-        #'''
+        '''
         stack = []
         curnum = 0
         curstr = ''
@@ -35,6 +35,7 @@ class Solution(object):
             else:
                 curstr += ch
         return curstr
+        '''
         '''
         s_num, s_str = [], []
         curnum = 0
@@ -58,6 +59,26 @@ class Solution(object):
                 cur_str += ch
         return cur_str
         '''
+        if not s:
+            return ''
+        #如果是非],压入栈，否则弹出栈，将弹出的字符暂存起来，然后继续出栈，数字
+        #需要对大于9的数字就行技术
+        curnum, curstr = 0, ''
+        stack = []
+        for ch in s:
+            if ch.isdigit():
+                curnum = curnum*10 + int(ch)
+            elif ch == '[':
+                stack.append(curnum)
+                stack.append(curstr)
+                curnum, curstr = 0, ''
+            elif ch == ']':
+                prestr = stack.pop()
+                prenum = stack.pop()
+                curstr = prestr + prenum*curstr
+            else:
+                curstr +=ch
+        return curstr
 
 
 

@@ -43,7 +43,6 @@ class Solution(object):
             if visited[ch]:
                 continue
             while stack and ch < stack[-1] and cnt[stack[-1]]:
-                #visited[stack[-1]] = False
                 visited[stack.pop()] = False
             stack.append(ch)
             visited[ch] = True
