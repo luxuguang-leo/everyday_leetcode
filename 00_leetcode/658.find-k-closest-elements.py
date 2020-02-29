@@ -13,27 +13,29 @@ class Solution(object):
         :type x: int
         :rtype: List[int]
         """
+        #@0229
+        #O(n), two-pointers
         '''
         while len(arr) > k:
-            if abs(arr[0]-x) <= abs(arr[-1]-x):
+            if x - arr[0] <= arr[-1] - x:
                 arr.pop()
             else:
                 arr.pop(0)
         return arr
         '''
-        #
+        #method, heapify
         if x < arr[0]:
             return arr[:k]
         elif x > arr[-1]:
             return arr[-k:]
         else:
-            l, r = 0, len(arr)-k
+            l, r = 0, len(arr) - k
             while l < r:
                 mid = l + (r-l)//2
-                if x - arr[mid] <= arr[mid+k]-x:
-                    r = mid
+                if x - arr[mid] > arr[mid+k] - x:
+                    l = mid +1
                 else:
-                    l = mid + 1
+                    r = mid
             return arr[l:l+k]
 
 

@@ -49,6 +49,7 @@ class Solution(object):
                 size +=1
         return size
         '''
+        '''
         if not nums:
             return 0
         tail = [nums[0]]
@@ -62,6 +63,39 @@ class Solution(object):
                 pos = bisect.bisect_left(tail, nums[i])
                 tail[pos] = nums[i]
         return len(tail)
+        '''
+        #DP, easy way
+        #DP[i] 表示以nums[i]为结尾的最长子序列
+        #DP[i] = max(DP[j]+1) (j<i and nums[i]>nums[j])
+        '''
+        if not nums:
+            return 0
+        DP = [1]*len(nums)
+        for i in range(1, len(nums)):
+            tmp_max = 1
+            for j in range(i):
+                if nums[i] > nums[j]:
+                    tmp_max = max(tmp_max, DP[j]+1)
+            DP[i] = tmp_max
+        return max(DP)
+        '''
+        #binary search,二分，思路
+        #从头开始维持一个递增序列，用二分法看插入的位置，有以下几种情况：
+        #1.如果在右边，直接插入
+        #2.如果在中间，则替换比它稍大的那个数,原因是如果需要找到一个较长的序列，则应该取较小的哪一个
+        #3.如果比最小的都要小，则？？？
+        #'''
+        if not nums:
+            return 0
+        array = []
+        for i in range(len(nums)):
+            index = bisect.bisect_left(array, nums[i])
+            if index == len(array):
+                array.append(nums[i])
+            else:
+                array[index] = nums[i]
+        return len(array)
+        #'''
 
 
 

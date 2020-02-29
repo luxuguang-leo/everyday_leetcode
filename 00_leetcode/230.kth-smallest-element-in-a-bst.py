@@ -72,6 +72,7 @@ class Solution(object):
         return self.ret
         '''
         #interative
+        '''
         stack = []
         while stack or root:
             while root:
@@ -83,6 +84,24 @@ class Solution(object):
                 return root.val
             root = root.right
         #return node.val
+        '''
+
+        self.cnt = 0
+        if not root:
+            return None
+        s = [(root, False)]
+        while s:
+            node, visited = s.pop()
+            if node:
+                if visited:
+                    self.cnt +=1
+                    if self.cnt == k:
+                        return node.val
+                else:
+                    s.append([node.right, False])
+                    s.append([node, True])
+                    s.append([node.left, False])
+        return None
                 
 
         

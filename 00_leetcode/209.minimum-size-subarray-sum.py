@@ -14,6 +14,7 @@ class Solution(object):
         #当sum大于s的时候就停止滑动，然后左边界收缩，知道小于s
         #如果中间等于s则更新窗口长度
         #不知道为啥打上binary-search标签
+        '''
         if not nums:
             return 0
         l, r, sum_val = 0, 0, 0
@@ -29,4 +30,19 @@ class Solution(object):
             return 0
         else:
             return min_len
+        '''
+        if not nums:
+            return 0
+        sum_val =  l = 0
+        window = float('inf')
+        for i in range(len(nums)):
+            sum_val += nums[i]
+            while sum_val >= s:
+                window = min(window, i - l +1)
+                sum_val -=nums[l]
+                l +=1
+        if window == float('inf'):
+            return 0
+        else:
+            return window
 

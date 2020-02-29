@@ -28,7 +28,10 @@ class Solution(object):
         '''
         #linked-list cycle
         slow = nums[0]
-        fast = nums[nums[0]]
+        if nums[0] < len(nums):
+            fast = nums[nums[0]]
+        else:
+            return None
         while slow != fast:
             slow = nums[slow]
             fast = nums[nums[fast]]

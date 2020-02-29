@@ -24,7 +24,7 @@ class Solution(object):
             ret[i] = cnt
         return ret
         '''
-        #二分
+        #二分,从后往前，比较难想
         ret, sorted_array = [], []
         for i in range(len(nums)-1, -1, -1):
             pos = bisect.bisect_left(sorted_array, nums[i])
