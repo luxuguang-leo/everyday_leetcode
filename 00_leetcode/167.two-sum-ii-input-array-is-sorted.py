@@ -12,6 +12,7 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        '''
         if not numbers:
             return []
         l, r = 0, len(numbers)-1
@@ -28,7 +29,21 @@ class Solution(object):
                 else:
                     l = mid +1
             #return []#这里对每一个i值要判断，不应该在这里返回，因为后续的numbers[i]有可能是解
-            
+        '''
+        #@0229,使用二分查找，反而变得很慢
+        if not numbers:
+            return []
+        for i in range(len(numbers)):
+            l, r = i+1, len(numbers)-1
+            newTarget = target - numbers[i]
+            while l <= r:
+                mid = l + (r-l)//2
+                if newTarget == numbers[mid]:
+                    return [i+1, mid+1]
+                elif newTarget > numbers[mid]:
+                    l = mid + 1
+                else:
+                    r = mid -1
         
 # @lc code=end
 

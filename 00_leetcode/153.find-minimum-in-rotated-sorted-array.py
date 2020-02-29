@@ -11,6 +11,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        '''
         if not nums:
             return None
         l, r = 0, len(nums)-1
@@ -21,6 +22,7 @@ class Solution(object):
             else:
                 r = mid
         return nums[l]
+        '''
         #don't know why failed???
         #判断有问题，比如4 5 6 7 0 1 2
         #l   r   mid  n[mid] nu[l]  nu[r]
@@ -38,5 +40,18 @@ class Solution(object):
                 r = mid
         return nums[l]
         '''
+
+        #@0229，有疑惑，首先开区间的话，为何边界是n-1,退出条件是l==r,这时候r可能是存在的最小值
+        #可以这样理解，如果发现nums[mid] == nums[r]，那么右边界可能是mid这个
+        l, r = 0, len(nums)-1
+        while l < r:
+            mid = l + (r-l)//2
+            if nums[mid] > nums[r]:
+                l = mid +1
+            elif nums[mid] == nums[r]:
+                r = mid
+            elif nums[mid] < nums[r]:
+                r = mid
+        return nums[l]
  # @lc code=end
 

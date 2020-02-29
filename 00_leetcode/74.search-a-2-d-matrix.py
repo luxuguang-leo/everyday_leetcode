@@ -12,6 +12,7 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
+        #@0229, 转换成二分查找问题
         if not matrix:
             return False
         m, n = len(matrix), len(matrix[0])
@@ -20,10 +21,10 @@ class Solution(object):
             mid = l + (r-l)//2
             if target == matrix[mid/n][mid%n]:
                 return True
+            elif target > matrix[mid/n][mid%n]:
+                l = mid +1
             elif target < matrix[mid/n][mid%n]:
                 r = mid -1
-            else:
-                l = mid +1
         return False
         
 # @lc code=end

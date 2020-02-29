@@ -11,18 +11,19 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        #有点类似寻找左边界
         if not nums:
-            return []
+            return None
         l, r = 0, len(nums)-1
         while l < r:
-            mid = (r-l)//2 + l
-            if nums[mid] < nums[r]:
-                r = mid
-            elif nums[mid] > nums[r]:
+            mid = l + (r-l)//2
+            if nums[mid] > nums[r]:
                 l = mid +1
-            else:
-                r -= 1#剔除掉相同元素的情况，可以比照之前leetcode81剔除前半部分元素从前面开始
+            elif nums[mid] < nums[r]:
+                r = mid
+            elif nums[mid] == nums[r]:
+                r -=1
         return nums[l]
-        
+
 # @lc code=end
 

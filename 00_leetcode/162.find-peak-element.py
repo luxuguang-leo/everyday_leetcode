@@ -32,6 +32,8 @@ class Solution(object):
         | X | X | X | X | l,r | X | X | X | X |
 
         l is the answer
+
+        '''
         '''
         if not nums:
             return -1
@@ -43,5 +45,19 @@ class Solution(object):
             elif nums[mid] > nums[mid+1]:
                 r = mid
         return l
+        '''
+        #收缩条件可是意识num[mid]与num[mid+1]比较，然后用开区间来处理，知道最终l==r,返回这个l
+        if not nums:
+            return -1
+        l, r = 0, len(nums) -1
+        while l < r:
+            mid = l + (r-l)//2
+            if nums[mid] < nums[mid+1]:
+                l = mid +1
+            elif nums[mid] > nums[mid+1]:
+                r = mid
+        return l
+        
+
        # @lc code=end
 

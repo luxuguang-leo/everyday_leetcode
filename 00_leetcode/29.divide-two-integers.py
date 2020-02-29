@@ -18,6 +18,7 @@ class Solution(object):
             sign = False
         digits = 0
         #find how many shitfs, 2^n*(1 or 0) +2^(n-1)*(1 or 0) 
+        #和二分查找的关系？？？时间复杂度是logN，因为将每一个数进行2分
         dividend, divisor = abs(dividend), abs(divisor)
         while divisor <= dividend:  #这里有==
             divisor <<=1

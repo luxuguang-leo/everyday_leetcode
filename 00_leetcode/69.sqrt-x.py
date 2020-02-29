@@ -11,7 +11,7 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        #use binary search
+        #use binary search, 目标值应该是x,边界可以用[l, r]来确定，每次比较的是mid**2和x
         l, r= 0, x
         while l <= r:
             mid = l + (r-l)/2
