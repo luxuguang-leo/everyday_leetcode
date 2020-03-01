@@ -12,6 +12,7 @@ class Solution(object):
         :rtype: bool
         """
         #需要考虑的情况有，如果非字母，非数字，跳过
+        #@0301,如果有数字肯定不是回文
         if not s:
             return True
         l, r = 0, len(s)-1

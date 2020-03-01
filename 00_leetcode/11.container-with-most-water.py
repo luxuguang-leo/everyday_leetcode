@@ -23,17 +23,19 @@ class Solution(object):
         #1.the widest is canditate 
         #2.Shorten the width, but we should choose a large one beween first and last
         #3.end of the loop is the width is 0
-        if not height:
+        #@0301
+        if len(height) < 2:
             return 0
-        s, e = 0, len(height)-1
-        max_water = 0
-        while s < e:
-            max_water = max(max_water, (e-s)*min(height[s], height[e]))
-            if height[s] < height[e]:
-                s +=1
+        ans = 0
+        l, r = 0, len(height)-1
+        
+        while l < r:
+            ans = max(ans, min(height[l], height[r])*(r-l))
+            if height[l] <= height[r]:
+                l +=1
             else:
-                e -=1
-        return max_water
+                r -=1
+        return ans
         
 
 

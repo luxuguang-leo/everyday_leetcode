@@ -11,10 +11,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
+        #@0301
         if len(nums) < 3:
             return []
         nums.sort()
-        ret = []
+        ans = []
         #after sorting, use 2-pointers
         for i in range(len(nums)-2):
             l, r = i+1, len(nums)-1
@@ -23,7 +24,7 @@ class Solution(object):
             while l < r:
                 val = nums[i] + nums[l] + nums[r]
                 if val == 0:
-                    ret.append([nums[i], nums[l], nums[r]])
+                    ans.append([nums[i], nums[l], nums[r]])
                     #cannot stop here, there maybe other candidates in the following array
                     while l < r and nums[l] == nums[l+1]:
                         l +=1
@@ -36,5 +37,5 @@ class Solution(object):
                     l += 1
                 else:
                     r -=1
-        return ret
+        return ans
        

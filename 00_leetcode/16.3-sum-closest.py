@@ -12,25 +12,24 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
+        #@0301
         if len(nums) < 3:
             return None
         nums.sort()
-        sum_val = sum(nums[:3])
+        ans = sum(nums[:3])
         for i in range(len(nums)-2):
-            s, e = i+1, len(nums)-1
-            while s < e:
-                val = nums[i] + nums[s] + nums[e]
-                #限制条件是只有一个解
-                #如果找到相等的肯定是最优解，直接返回即可
-                if val == target:
+            l, r = i+1, len(nums)-1
+            while l < r:
+                val = nums[i] + nums[l] + nums[r]
+                if val == target:#if we found three nums with its sum equal to target, definitely it will be the result
                     return val
-                if abs(val - target) < abs(sum_val - target):
-                    sum_val = val
+                if abs(val - target) < abs(ans - target):#if we found smaller sum values, we update the result
+                    ans = val
                 elif val < target:
-                    s +=1
+                    l +=1
                 else:
-                    e -=1
-        return sum_val
+                    r -=1
+        return ans
         
 # @lc code=end
 

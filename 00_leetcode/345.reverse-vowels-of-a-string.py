@@ -9,8 +9,10 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
+        #@0301, 2-pointers
         s = list(s)
         vowels = {'a', 'e', 'i', 'o', 'u'}
+        #vowels = 'aeiou'
         l , r = 0, len(s)-1
         while l < r:
             while l < r and s[l].lower() not in vowels:

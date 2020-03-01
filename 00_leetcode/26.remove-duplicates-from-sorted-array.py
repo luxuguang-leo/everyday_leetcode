@@ -9,10 +9,20 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        #@0301,不需要从1开始
+        l = 0
+        for i in range(len(nums)):
+            if nums[i] != nums[l]:
+                l +=1
+                nums[l] = nums[i]
+        return l+1
+
+        '''
         l = 0
         for i in range(1, len(nums)):
             if nums[l] != nums[i]:
                 l += 1
                 nums[l] = nums[i]
         return l +1
+        '''
 

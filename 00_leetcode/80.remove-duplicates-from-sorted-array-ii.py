@@ -11,6 +11,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        #@0301
         if len(nums) < 3:
             return len(nums)
         s = 1
