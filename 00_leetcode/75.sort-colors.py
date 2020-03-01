@@ -64,6 +64,7 @@ class Solution(object):
             i+=1
         return nums
         '''
+        '''
         if not nums:
             return []
         l = i = 0
@@ -78,6 +79,23 @@ class Solution(object):
                 r -=1
                 i -=1
             i +=1
+        return nums
+        '''
+        #@0301,
+        if not nums:
+            return nums
+        red = mid = 0
+        blue = len(nums) -1
+        while mid <= blue:
+            if nums[mid] == 2:
+                nums[mid], nums[blue] = nums[blue], nums[mid]
+                blue -=1
+            elif nums[mid] == 0:
+                nums[mid], nums[red] = nums[red], nums[mid]
+                red +=1
+                mid +=1
+            else:
+                mid +=1
         return nums
         
             

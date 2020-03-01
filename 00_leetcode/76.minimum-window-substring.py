@@ -37,6 +37,7 @@ class Solution(object):
                     l +=1
         return res 
         '''
+        '''
         map_s = collections.Counter()
         map_t = collections.Counter(t)
         best_i, best_j = -float('inf'), float('inf')
@@ -48,5 +49,36 @@ class Solution(object):
                     best_i, best_j = i, j
                 map_s[s[i]] -=1
                 i +=1
-        return s[best_i : best_j + 1] if best_j - best_i < len(s) else ""
+        if best_j - best_i < len(s):
+            return s[best_i : best_j + 1]
+        else:
+            return "
+        '''
+        #@0301,滑动窗口，首先达到右边界，如何判断右边界满足条件呢？具体问题具体分析，这里应该使用计数来巧妙判断
+        #使用一个hashmap，而不是两个hashmap
+        if not s or not t:
+            return ""
+        wanted, count = len(t), 0
+        map_t = collections.Counter(t)
+        min_win, left = len(s)+1, 0#初始值选一个比较大，左边界
+        ret = ""
+        for i in range(len(s)):
+            if s[i] in map_t:
+                if map_t[s[i]] > 0:
+                    count +=1
+                map_t[s[i]] -=1
+                while count == wanted:
+                    if i - left + 1 < min_win:
+                        min_win = i - left +1
+                        ret = s[left:i+1]
+                    if s[left] in map_t:
+                        map_t[s[left]] +=1
+                        if map_t[s[left]] > 0:
+                            count -=1
+                    left +=1
+        return ret
+
+
+
+
         

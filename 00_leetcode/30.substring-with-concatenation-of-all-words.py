@@ -75,6 +75,7 @@ class Solution(object):
         #https://leetcode.wang/leetCode-30-Substring-with-Concatenation-of-All-Words.html
         #外循环是单词的长度，内循环是一个整个字符串减去单词长度的大的window，满足条件则右边界向右扩展，不满足条件则左边界向右扩展一个单词长度，
         #内外循环保证所有的情况都可以访问到，时间复杂度为O(m*len(word)),如果单词长度大大小于单词数目，则这一种方法比前一种时间复杂度提高
+        '''
         if not s or not words:
             return []
         wordDict = collections.Counter(words)
@@ -107,6 +108,30 @@ class Solution(object):
                     cnt = 0
                     newWordDict = collections.defaultdict(int)
         return ret
+        '''
+        #@0301, 使用sliding window,几点
+        #1.如何判断符合条件的子串？新的map和之前字典一致就可以判断
+        if not s or not words:
+            return None
+        strLen = len(s)
+        wordLen = len(words[0])
+        windowLen = wordLen*len(words)
+        wordDict = collections.Counter(words)
+        ret = []
+        for i in range(strLen - windowLen +1):
+            newDict = collections.defaultdict(int)
+            for j in range(len(words)):
+                subWord = s[i+j*wordLen:i+(j+1)*wordLen]
+                if subWord in wordDict:
+                    newDict[subWord] +=1
+                    if newDict[subWord] > wordDict[subWord]:
+                        break
+                else:
+                    break
+            if newDict == wordDict:
+                ret.append(i)
+        return ret
+
 
 
         
