@@ -17,38 +17,21 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        #奇，偶交替使用两个指针
-        if not head:
-            return head
-        odd, even, evenHead = head, head.next, head.next
-        while odd.next and even.next:
-            odd.next = even.next
-            odd = odd.next
-            even.next = odd.next
-            even = even.next
-        odd.next = evenHead
-        return head
-        #直观做法
-        '''
-        if not head or not head.next:
-            return head
         odd = dummy1 = ListNode(-1)
         even = dummy2 = ListNode(-1)
-        cnt = 0
-        while head:
+        cur, cnt = head, 0
+        while cur:
             cnt +=1
-            if cnt % 2 ==1:#odd
-                odd.next = head
+            if cnt & 0x01:
+                odd.next = cur
                 odd = odd.next
             else:
-                even.next = head
+                even.next = cur
                 even = even.next
-            head = head.next
+            cur = cur.next
         odd.next = dummy2.next
         even.next = None
         return dummy1.next
-        '''
-
         
 # @lc code=end
 

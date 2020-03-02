@@ -10,87 +10,40 @@
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
-
 class Solution(object):
-    '''
-    def merger(self, l, r):
-        if not l:
-            return r
-        if not r:
-            return l
-        head = ListNode(-1)
-        move = head
+    def mergeCore(self, l, r):
+        cur = dummy = ListNode(-1)
         while l and r:
             if l.val < r.val:
-                move.next = l
+                cur.next = l
                 l = l.next
             else:
-                move.next = r
+                cur.next = r
                 r = r.next
-            move = move.next
-        move.next = l or r
-        return head.next
+            cur = cur.next
+        cur.next = l or r
+        return dummy.next
+        
     def sortList(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
         """
-        #merge sort
-        #1.划分为前后两部分
+        #@0303
+        #merge and sort
         if not head or not head.next:
             return head
         slow, fast = head, head.next
+        #divide into two parts
         while fast and fast.next:
             fast = fast.next.next
             slow = slow.next
-        head2 = slow.next
+        #slow.next should be head of second part
+        secondHead = slow.next
         slow.next = None
-        l = self.sortList(head)
-        r = self.sortList(head2)
-        return self.merger(l, r)
-        '''
-
-    def mergeList(self, first, second):
-        if not first:
-            return second
-        if not second:
-            return first
-        Node = NewHead = ListNode(-1)
-        while first and second:
-            if first.val < second.val:
-                #Node.next = ListNode(first.val)
-                Node.next = first
-                first = first.next
-            else:
-                #Node.next = ListNode(second.val)
-                Node.next = second
-                second = second.next
-            Node = Node.next
-        Node.next = first or second
-        return NewHead.next
-        
-    def sortList(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
-        #merge sort
-        if not head or not head.next:
-            return head
-        #将list切成前后两个部分
-        fast, slow = head.next, head
-        while fast and fast.next:
-            fast = fast.next.next
-            slow = slow.next
-        secondHalf = slow.next
-        slow.next = None
-        
-        #每一部分divide
-        firstHalf = self.sortList(head)
-        secondHalf = self.sortList(secondHalf)
-        #merge 2 sorted list
-        return self.mergeList(firstHalf, secondHalf)
-
-        
-# @lc code=end
+        #divide left and right part
+        left = self.sortList(head)
+        right = self.sortList(secondHead)
+        #merge the sorted list
+        return self.mergeCore(left, right)
 

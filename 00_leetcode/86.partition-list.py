@@ -3,6 +3,8 @@
 #
 # [86] Partition List
 #
+
+# @lc code=start
 # Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, x):
@@ -16,6 +18,23 @@ class Solution(object):
         :type x: int
         :rtype: ListNode
         """
+        '''
+        if not head:
+            return None
+        dummyHead1, dummyHead2 = ListNode(-1), ListNode(-1)
+        head1, head2 = dummyHead1, dummyHead2
+        while head:
+            if head.val < x:
+                head1.next = head
+                head1 = head1.next
+            else:
+                head2.next = head
+                head2 = head2.next
+            head = head.next
+        head2.next = None
+        head1.next = dummyHead2.next
+        return dummyHead1.next
+        '''
         if not head:
             return head
         small, large = ListNode(0), ListNode(0)
@@ -31,4 +50,5 @@ class Solution(object):
         small.next = r.next
         large.next = None
         return l.next
-       
+# @lc code=end
+

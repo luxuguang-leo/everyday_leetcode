@@ -3,6 +3,8 @@
 #
 # [109] Convert Sorted List to Binary Search Tree
 #
+
+# @lc code=start
 # Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, x):
@@ -22,20 +24,20 @@ class Solution(object):
         :type head: ListNode
         :rtype: TreeNode
         """
-        #破题，linked list只能单向访问，BST是一个二叉树，一般需要迭代生成，目标找到中间值，然后左右子树迭代
         if not head:
             return None
-        dummy = ListNode(0)
-        dummy.next = head
-        fast, slow = head, dummy
+        dummy = ListNode(-1)
+        slow, fast, dummy.next = dummy, head, head
         while fast and fast.next:
-            slow = slow.next
             fast = fast.next.next
-        newNode = slow.next
-        root = TreeNode(newNode.val)
+            slow = slow.next
+        #slow.next will be the root 
+        root = TreeNode(slow.next.val)
+        newHead = slow.next.next
         slow.next = None
         root.left = self.sortedListToBST(dummy.next)
-        root.right = self.sortedListToBST(newNode.next)
+        root.right = self.sortedListToBST(newHead)
         return root
-
+        
+# @lc code=end
 

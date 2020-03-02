@@ -17,6 +17,7 @@ class Solution(object):
         :type n: int
         :rtype: ListNode
         """
+        #@0302, practise
         if head is None:
             return head
         dummy = ListNode(0)

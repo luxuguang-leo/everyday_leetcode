@@ -44,9 +44,9 @@ class Solution(object):
         '''
         #another soluction,由于无环，可以在一个链表达到终点的时候指向另外一个list头，这样两个指针的
         #总长度都为两个list长度,如果相等则返回相遇的节点
-        pA, pB = headA, headB
         if not pA or not pB:
             return None
+        pA, pB = headA, headB
         while pA != pB:
             pA = pA.next
             pB = pB.next
@@ -57,11 +57,5 @@ class Solution(object):
             if not pB:
                 pB = headA
         return pA
-        
-
-        
-
-        
-        
 # @lc code=end
 

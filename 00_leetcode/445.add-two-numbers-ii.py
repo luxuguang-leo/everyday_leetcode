@@ -26,6 +26,7 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
+        #@0302
         def reverseList(head):
             pre = None
             while head:
@@ -45,7 +46,7 @@ class Solution(object):
                 carry += l2.val
                 l2 = l2.next
             cur.next = ListNode(carry%10)
-            carry = carry//10
+            carry //=10
             cur = cur.next
         return reverseList(dummy.next)
 

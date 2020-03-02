@@ -19,7 +19,8 @@ class Solution(object):
         """
         if not head:
             return None
-        #dummy node, fast and slow node
+        #@0302, swap 2 nodes
+        # dummy node, fast and slow node
         dummy = ListNode(-1)
         dummy.next = head
         head = dummy
