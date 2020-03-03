@@ -29,6 +29,7 @@ class Solution(object):
         return self.dfs(root, sum)
         '''
         #DFS, interavtively
+        '''
         if not root:
             return False
         stack = [(root, root.val)]
@@ -40,6 +41,19 @@ class Solution(object):
                 stack.append((node.right, cur_sum+node.right.val))
             if not node.left and not node.right and cur_sum==sum:
                 return True
+        return False
+        '''
+        if not root:
+            return False
+        stack = [(root, root.val)]
+        while stack:
+            node, val = stack.pop()
+            if not node.left and not node.right and val == sum:
+                return True
+            if node.left:
+                stack.append((node.left, val + node.left.val))
+            if node.right:
+                stack.append((node.right, val + node.right.val))
         return False
         
         

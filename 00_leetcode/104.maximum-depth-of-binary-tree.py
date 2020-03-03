@@ -54,6 +54,7 @@ class Solution(object):
         return ret
         '''
         #BFS+queue, optimize， 28ms
+        '''
         if not root:
             return 0
         q = [(root, 1)]
@@ -66,6 +67,23 @@ class Solution(object):
                 q.append((node.left, level+1))
             if node.right:
                 q.append((node.right, level+1))
+            
         #return ret
+        '''
+        #@0303, 20ms
+        if not root:
+            return 0
+        stack = [(root, 1)]
+        ret = 0
+        while stack:
+            node, level = stack.pop()
+            if level > ret:
+                ret = level
+            if node.left:
+                stack.append((node.left, level+1))
+            if node.right:
+                stack.append((node.right, level+1))
+        return ret
+        
         
 

@@ -55,18 +55,20 @@ class Solution(object):
                 ret.append(path)
         return ret
         '''
-        #BFS
+        #DFS @0303
         if not root:
             return []
-        q, ret = [(root, root.val, [root.val])], []
-        for node, cur_sum, path in q:
-            if node.left:
-                q.append((node.left, cur_sum+node.left.val, path+[node.left.val]))
-            if node.right:
-                q.append((node.right, cur_sum + node.right.val, path+[node.right.val]))
+        ans = []
+        stack = [(root, root.val, [root.val])]
+        while stack:
+            node, cur_sum, path = stack.pop()
             if not node.left and not node.right and cur_sum == sum:
-                ret.append(path)
-        return ret
+                ans.append(path)
+            if node.left:
+                stack.append((node.left, cur_sum + node.left.val, path+[node.left.val]))
+            if node.right:
+                stack.append((node.right, cur_sum + node.right.val, path+[node.right.val]))
+        return ans
 
 # @lc code=end
 

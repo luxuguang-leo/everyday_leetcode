@@ -13,7 +13,7 @@
 #         self.right = None
 
 class Solution(object):
-    def dfs(self, start, end):
+    def dfs(self,start, end):
         if start > end:
             return [None]
         ret = []
@@ -28,17 +28,15 @@ class Solution(object):
                     ret.append(root)
         return ret
 
-
-
     def generateTrees(self, n):
         """
         :type n: int
         :rtype: List[TreeNode]
         """
-        if n == 0:
+        #DFS. @0302
+        if n < 1:
             return []
-        return self.dfs(1, n)
-            
+        return self.dfs( 1, n)
         
 # @lc code=end
 

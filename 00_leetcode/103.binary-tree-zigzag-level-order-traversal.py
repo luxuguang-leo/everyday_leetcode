@@ -29,6 +29,7 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[List[int]]
         """
+        #@0303, use deque
         #DFS
         '''
         if not root:
@@ -38,6 +39,7 @@ class Solution(object):
         return ret
         '''
         #2 deque
+        '''
         if not root:
             return []
         q, ret = collections.deque(), []
@@ -58,5 +60,26 @@ class Solution(object):
                 if node.right:
                     q.append(node.right)
             ret.append(level)
+        return ret
+        '''
+        #3.deque
+        if not root:
+            return []
+        q, ret = collections.deque(), []
+        q.append((root, 1))
+        while q:
+            l = len(q)
+            path = []
+            for _ in range(l):
+                node, level = q.popleft()
+                if level & 0x01:
+                    path.append(node.val)
+                else:
+                    path.insert(0, node.val)
+                if node.left:
+                    q.append((node.left, level+1))
+                if node.right:
+                    q.append((node.right, level+1))
+            ret.append(path)
         return ret
 

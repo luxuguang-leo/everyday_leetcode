@@ -27,7 +27,7 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[List[int]]
         """
-        #dfs
+        #@0303, dfs,recrusatively way
         ret = []
         self.dfs(root, 0, ret)
         return ret
@@ -59,7 +59,7 @@ class Solution(object):
             path = []
             l = len(q)
             while l > 0:
-                node = q.pop(0)
+                node = q.pop(0) #it's slow when using pop(0)
                 if node:
                     path.append(node.val)
                 if node.left:    

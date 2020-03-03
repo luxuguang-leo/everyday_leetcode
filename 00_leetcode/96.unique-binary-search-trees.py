@@ -36,10 +36,15 @@ class Solution(object):
         #print(DP)
         return DP[-1]
         '''
+        #@0302,DP,DP[i]标识1,..,i能形成的BST数目
+        #DP[1] 表示以1能形成的数目，1
+        #DP[0] 初始化值，
+        #i应该从2开始计算
         DP = [0]*(n+1)
         DP[0] = DP[1] = 1
         for i in range(2, n+1):
             for j in range(i):
                 DP[i] += DP[j]*DP[i-j-1]
         return DP[-1]
+        
 
