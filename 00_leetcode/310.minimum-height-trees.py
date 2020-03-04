@@ -12,39 +12,33 @@ class Solution(object):
         :type edges: List[List[int]]
         :rtype: List[int]
         """
-        #无向图，BFS，邻接向量表，无向图中的邻接向量表为边数,类似topology算法，一层一层遍历所有顶点
-        #每一层遍历的度相同的结点，最后一层queue就是到所有结点都最小的那一层结点，加入到最终结果即可
-        if n <= 0:
-            return []
+        #无向图，BFS，大概思路是使用邻接表构建图，然后将度为1的节点BFS，遍历过程中
+        #如果度降为1，则继续BFS，每一层度相同的节点保存起来，最后一层的节点应该就是所求的节点
         if n == 1:
             return [0]
-        ret = []
         graph = collections.defaultdict(list)
-        deque = collections.deque()
-        degree = [0]* n
+        queue = collections.deque()
+        indegree = [0]*n
         for pair in edges:
             graph[pair[0]].append(pair[1])
             graph[pair[1]].append(pair[0])
-            degree[pair[0]] +=1
-            degree[pair[1]] +=1
-        for i, deg, in enumerate(degree):
-            if deg == 1:
-                deque.append(i)
-        #print(deque)
-        while deque:
+            indegree[pair[0]] +=1
+            indegree[pair[1]] +=1
+        for i in range(n):
+            if indegree[i] == 1:
+                queue.append(i)
+        while queue:
             path = []
-            for n in range(len(deque)):
-                edge = deque.popleft()
-                path.append(edge)
-                for adj in graph[edge]:
-                    degree[adj] -=1
-                    if degree[adj] == 1:
-                        deque.append(adj)
-            ret = path
-        return ret
+            for _ in range(len(queue)):
+                vertex = queue.popleft()
+                path.append(vertex)
+                for neigh in graph[vertex]:
+                    indegree[neigh] -=1
+                    if indegree[neigh] == 1:
+                        queue.append(neigh)
+        return path
 
-        
-        
+
         
 # @lc code=end
 
