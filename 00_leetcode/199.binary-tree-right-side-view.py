@@ -87,6 +87,7 @@ class Solution(object):
                     q.append((node.left, level+1))
         return ret
         '''
+        '''
         if not root:
             return []
         q = collections.deque()
@@ -102,5 +103,22 @@ class Solution(object):
             if q:
                 ret.append(q[-1].val)
         return ret
+        '''
+        if not root:
+            return []
+        q = collections.deque()
+        q.append(root)
+        ans = [root.val]
+        while q:
+            l = len(q)
+            for _ in range(l):
+                node = q.popleft()
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+            if q:
+                ans.append(q[-1].val)
+        return ans
 # @lc code=end
 

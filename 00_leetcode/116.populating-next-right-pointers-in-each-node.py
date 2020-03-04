@@ -21,6 +21,7 @@ class Solution(object):
         :rtype: Node
         """
         #层次遍历？然后级联
+        '''
         if not root:
             return root
         queue,ret = collections.deque(),[]
@@ -37,6 +38,23 @@ class Solution(object):
                 if node.right:
                     queue.append(node.right)
         return root
+        '''
+        if not root:
+            return root
+        q = collections.deque()
+        q.append(root)
+        while q:
+            node = q.popleft()
+            if node.left and node.right:
+                node.left.next = node.right
+                if node.next:
+                    node.right.next = node.next.left
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+        return root
+
             
                 
                 

@@ -19,29 +19,50 @@ class Solution(object):
         :type key: int
         :rtype: TreeNode
         """
+        #1. find the node
+        '''
+        if not root:
+            return root
+        if root.val > key:
+            root.left = self.deleteNode(root.left, key)
+        elif root.val < key:
+            root.right = self.deleteNode(root.right, key)
+        else:
+            if not root.left:
+                return root.right
+            if not root.right:
+                return root.left
+            tmp = root.right
+            minival = tmp.val
+            while tmp.left:
+                tmp = tmp.left
+                minival = tmp.val
+            root.val = minival
+            root.right = self.deleteNode(root.right, minival)
+        return root
+        '''
+        #@0304, MS's interview
         if not root:
             return None
-        if key > root.val:#should delete in the right subtree 
+        if key > root.val:
             root.right = self.deleteNode(root.right, key)
-        elif key < root.val:#should delete in the left subtree
+        elif key < root.val:
             root.left = self.deleteNode(root.left, key)
         else:
             if not root.left:
                 return root.right
-            elif not root.right:
+            if not root.right:
                 return root.left
-            #find the smallest val in the right subtree
             pre = root
             miniNode = root.right
             while miniNode and miniNode.left:
                 pre = miniNode
                 miniNode = miniNode.left
             root.val = miniNode.val
-            #then delete miniNode, but should take care whether 
-            if pre != root:#if the right subtree have left tree
+            if pre !=root:
                 pre.left = miniNode.right
             else:
-                pre.right = miniNode.right
+                root.right = miniNode.right
         return root
             
                 

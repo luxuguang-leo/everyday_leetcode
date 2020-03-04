@@ -45,6 +45,7 @@ class Solution(object):
         return sum
         '''
         #BFS + queue
+        '''
         if not root:
             return 0
         queue = collections.deque()
@@ -59,6 +60,32 @@ class Solution(object):
             if node.right:
                 queue.append(node.right)
         return sum
+        '''
+        '''
+        if not root:
+            return 0
+        if root.left and not root.left.left and not root.left.right:
+            return root.left.val + self.sumOfLeftLeaves(root.right)
+        return self.sumOfLeftLeaves(root.left) + self.sumOfLeftLeaves(root.right)
+        '''
+        if not root:
+            return 0
+        stack = [(root, False)]
+        sum_val = 0
+        while stack:
+            node, isleft = stack.pop()
+            if node:    
+                if isleft and not node.left and not node.right:
+                    sum_val += node.val
+                else:
+                    if node.left:
+                        stack.append((node.left, True))
+                    if node.right:
+                        stack.append((node.right, False))
+        return sum_val
+
+
+
 
             
 

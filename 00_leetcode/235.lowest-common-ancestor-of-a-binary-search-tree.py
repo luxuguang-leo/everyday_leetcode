@@ -21,8 +21,9 @@ class Solution(object):
         :rtype: TreeNode
         """
         #recrusive
+        #@0304
         '''
-        if not root and not q and not q:
+        if not root or not p or not q:
             return None
         if root.val > p.val and root.val > q.val:
             return self.lowestCommonAncestor(root.left, p, q)
@@ -31,30 +32,7 @@ class Solution(object):
         else:
             return root
         '''
-        #non-recrusive
-        '''
-        if not root or not q or not p:
-            return None
-        while True:
-            if root.val > p.val and root.val > q.val and root.left:
-                root = root.left
-            elif root.val < p.val and root.val < q.val and root.right:
-                root = root.right
-            else:
-                break
-        return root
-        '''
-        '''
-        #1.dfs
-        if not root or not q or not p:
-            return None
-        if p.val < root.val and q.val < root.val:
-            return self.lowestCommonAncestor(root.left, p, q)
-        elif p.val > root.val and q.val > root.val:
-            return self.lowestCommonAncestor(root.right, p, q)
-        else:
-            return root
-        '''
+        #0304,iteratively
         if not root or not p or not q:
             return None
         while root:
@@ -63,9 +41,8 @@ class Solution(object):
             elif p.val > root.val and q.val > root.val:
                 root = root.right
             else:
-                break
-                #return root
-        return root
+                return root
+        return None
         
         
         

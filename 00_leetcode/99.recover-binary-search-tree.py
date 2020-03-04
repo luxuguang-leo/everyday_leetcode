@@ -21,7 +21,8 @@ class Solution(object):
             if not self.first:
                 self.first = self.pre
             #1.不应该用elif判断，因为有可能只存在一对不符合BST的序列，应该每一次都记录second的值
-            #2.记录的是tree的结点而不是值，最终交换的是值
+            #2.记录的是tree的结点而不是值，最终交换的是值, 考虑特殊情况，如果first与second相等,比如只有3 2这种
+            #这样second不会得到更新
             '''
             elif not self.second:
                 self.second = root
