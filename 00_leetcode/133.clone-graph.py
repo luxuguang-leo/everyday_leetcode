@@ -54,10 +54,28 @@ class Solution(object):
         return node_copy
         '''
         #DFS，深搜，然后递归
+        #'''
         if not node:
             return None
-        node_copy = self.dfs(node, dict())
-        return node_copy
+        return self.dfs(node, dict())
+        #'''
+        #@0305
+        '''
+        if not node:
+            return None
+        hashmap = dict()
+        hashmap[node] = Node(node.val, [])
+        q = collections.deque([node])
+        while q:
+            edge = q.popleft()
+            for neigh in edge.neighbors:
+                if neigh not in hashmap:
+                    hashmap[neigh] = Node(neigh.val,[])
+                    q.append(neigh)
+                hashmap[edge].neighbors.append(hashmap[neigh])
+        return hashmap[node]
+        '''
+        
 
 
         
