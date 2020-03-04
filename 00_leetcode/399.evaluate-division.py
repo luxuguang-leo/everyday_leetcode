@@ -34,6 +34,7 @@ class Solution(object):
         # 2.构造graph，使用临界矩阵，邻接矩阵使用python的default(list)来构造,如graph[['a', 'b']]
         #如果使用list来构造邻接矩阵:则graph为 {’b‘:[['a',0.5],['c', 3.0]] , 'a':[['b',2.0]]},表示一个点为graph[x][2]
         #如果使用dict来构造邻接矩阵：则graph为{'b':{'a':0.5, 'c':3.0}, 'a':{'b':2.0}}，表示一个点为graph[x][y],更加容易易于理解
+        '''
         if not queries or not values or not queries:
             return [-1.0]
         graph = collections.defaultdict(dict)
@@ -44,6 +45,43 @@ class Solution(object):
         for (x,y) in queries:
             self.ret.append(self.dfs(x, y, graph, set()))
         return self.ret
+        '''
+        #@0306，参考网上的一个BFS解法
+        if not queries or not values or not queries:
+            return [-1.0]
+        graph = collections.defaultdict(list)
+        for i in range(len(equations)):
+            s, d= equations[i]
+            graph[s].append([d, values[i]])
+            if values[i]:
+                graph[d].append([s, 1.0/values[i]])
+        def bfs(A, B, graph = graph):
+            if A not in graph or B not in graph:
+                return -1
+            queue = collections.deque([(A, 1)])
+            #queue.append([A, 1])
+            visited = set()
+            while queue:
+                currA, accu = queue.popleft()
+                if currA == B:
+                    return accu
+                if currA not in visited:
+                    visited.add(currA)
+                    for neigh in graph[currA]:
+                        next_node, k = neigh
+                        if next_node not in visited:
+                            queue.append((next_node, k*accu))
+            return -1
+        ret = []
+        for query in queries:
+            A, B = query
+            query_ans = bfs(A, B)
+            ret.append(query_ans)
+        return ret
+
+
+
+
     
 
         
