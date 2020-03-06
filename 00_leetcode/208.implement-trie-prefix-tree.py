@@ -7,9 +7,8 @@
 # @lc code=start
 class TrieNode(object):
     def __init__(self):
-        self.end = False
+        self.isleaf = False
         self.children = {}
-
 class Trie(object):
 
     def __init__(self):
@@ -26,15 +25,14 @@ class Trie(object):
         :rtype: None
         """
         if not word:
-            return 
-        cur = self.root
-        for w in word:#可以合并，但是为了方便理解不合并
-            if w in cur.children:
-                cur = cur.children[w]
-            else:
-                cur.children[w] = TrieNode()
-                cur = cur.children[w]
-        cur.end = True
+            return None
+        parent = self.root
+        for ch in word:
+            if ch not in parent.children:
+                parent.children[ch] = TrieNode()
+            parent = parent.children[ch]
+        parent.isleaf = True
+        
 
     def search(self, word):
         """
@@ -44,15 +42,14 @@ class Trie(object):
         """
         if not word:
             return False
-        cur = self.root
-        for w in word:
-            if w not in cur.children:
+        parent = self.root
+        for ch in word:
+            if ch not in parent.children:
                 return False
             else:
-                cur = cur.children[w]
-        #看最后一个节点的标识是否能行程word，true
-        return cur.end
-
+                parent = parent.children[ch]
+        return parent.isleaf
+        
 
     def startsWith(self, prefix):
         """
@@ -60,17 +57,15 @@ class Trie(object):
         :type prefix: str
         :rtype: bool
         """
-        #prefix条件是最终子节点的时候不需要判断是否end,因为如果只是单次的一部分就不end
         if not prefix:
             return False
-        cur = self.root
-        for c in prefix:
-            if c not in cur.children:
-                return False
+        parent = self.root
+        for ch in prefix:
+            if ch in parent.children:
+                parent = parent.children[ch]
             else:
-                cur = cur.children[c]
+                return False
         return True
-        
 
 
 # Your Trie object will be instantiated and called as such:
