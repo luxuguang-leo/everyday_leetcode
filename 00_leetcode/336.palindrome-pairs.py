@@ -50,6 +50,7 @@ class Solution(object):
                         res.append([i, word_map[pre[::-1]]])
         return res
         '''
+        '''
         word_map = {}
         ret, selfPalidrome = [], []
         for idx, w in enumerate(words):
@@ -73,6 +74,45 @@ class Solution(object):
                     if loc != i:
                         ret.append([i, loc])
         return ret
+        '''
+        #使用hashmap
+        #出现左右拼接为回文有以下几种情况:
+        #1.左为palindrome,右为空字符
+        #2.左右倒叙，拼起来就是回文
+        #3.左字符串左半部分为回文，右半部分和右字符串，{右字符串|左字符串回文部分|左字符串右字符串镜像}
+        #4.左字符串右半部分为回文，左半部分与右字符串镜像，{左字符串右字符镜像|左字符回文|右字符串}
+        #algo:将所有的字符和索引加入hashmap
+        def isPalindrome(str):
+            if not str:
+                return True
+            else:
+                return str == str[::-1]
+        hashmap = {}
+        ret = set()
+        for idx, w in enumerate(words):
+            hashmap[w] = idx
+        for idx, w in enumerate(words):
+            #case 1
+            if w and isPalindrome(w) and "" in hashmap:
+                nidx = hashmap[""]
+                ret.add((idx, nidx))
+                ret.add((nidx, idx))
+            #case 2
+            reverseW = w[::-1]
+            if w and reverseW in hashmap:
+                nidx = hashmap[reverseW]
+                if idx != nidx:
+                    ret.add((idx, nidx))
+                    ret.add((nidx, idx))
+            #case 3 & 4
+            for j in range(1, len(w)):
+                leftstr, rightstr = w[:j], w[j:]
+                if isPalindrome(leftstr) and rightstr[::-1] in hashmap:
+                    ret.add((hashmap[rightstr[::-1]], idx))
+                if isPalindrome(rightstr) and leftstr[::-1] in hashmap:
+                    ret.add((idx, hashmap[leftstr[::-1]]))
+        return list(ret)
+                
 
         
 

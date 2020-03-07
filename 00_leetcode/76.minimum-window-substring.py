@@ -59,7 +59,10 @@ class Solution(object):
         if not s or not t:
             return ""
         wanted, count = len(t), 0
-        map_t = collections.Counter(t)
+        #map_t = collections.Counter(t)
+        map_t = collections.defaultdict(int)
+        for ch in t:
+            map_t[ch] +=1
         min_win, left = len(s)+1, 0#初始值选一个比较大，左边界
         ret = ""
         for i in range(len(s)):

@@ -8,7 +8,7 @@ class Solution(object):
         while l >= 0 and r < len(s) and s[l] == s[r]:
             l -= 1
             r += 1
-        return s[l+1:r]
+        return s[l+1:r] #起始位置应该是l+1,由于是开区间，右边界应该是r
 
     def longestPalindrome(self, s):
         """

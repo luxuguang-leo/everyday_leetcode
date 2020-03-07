@@ -9,7 +9,7 @@
 class TrieNode(object):
     def __init__(self):
         self.end = False
-        self.children = {}
+        self.child = {}
 class Trie(object):
     def __init__(self):
         self.root = TrieNode()
@@ -17,9 +17,9 @@ class Trie(object):
     def insert(self, word):
         cur = self.root
         for c in word:
-            if c not in cur.children:
-                cur.children[c] = TrieNode()
-            cur = cur.children[c]
+            if c not in cur.child:
+                cur.child[c] = TrieNode()
+            cur = cur.child[c]
         cur.end = True
 
 class Solution(object):
@@ -36,9 +36,10 @@ class Solution(object):
         if x < 0 or x == len(board) or y < 0 or y == len(board[0]):
             return 
         c = board[x][y]
-        Node = Node.children.get(c)
-        if not Node:
+        if c not in Node.child:
             return 
+        else:
+            Node = Node.child[c]
         board[x][y] = '#'
         self.dfs2(x-1, y, board, Node, ret, path+c) 
         self.dfs2(x+1, y, board, Node, ret, path+c)

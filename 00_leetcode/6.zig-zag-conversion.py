@@ -37,19 +37,15 @@ class Solution(object):
         '''
         if numRows <= 1:
             return s
+        lines = ["" for _ in range(numRows)]
         index, step = 0, 1
-        lines = [""]*numRows
         for ch in s:
             lines[index] += ch
             index += step
-            if index ==0 or index == numRows -1:
-                step *= -1
-            '''
-            if(index == 0):
-                step = 1
-            if(index == numRows - 1):
+            if index == numRows -1:
                 step = -1
-            '''
+            if index == 0:
+                step = 1
         return "".join(lines)
                     
 

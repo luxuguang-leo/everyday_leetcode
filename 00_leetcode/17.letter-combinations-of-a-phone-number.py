@@ -4,16 +4,16 @@
 # [17] Letter Combinations of a Phone Number
 #
 class Solution(object):
-    def dfs(self, digits, index,path, ret):
-        if index == len(digits):
-            ret.append(path)
-            return
-        for letter in self.m[digits[index]]:
-            #choose one and move to next character
-            self.dfs(digits, index+1, path+letter,ret)
 
         
-        
+    def dfs(self, digits, pos, path, ret):
+        if len(digits) == pos:
+            ret.append(path)
+            return
+        #for i in range(pos, len(digits)):
+        for c in self.m[digits[pos]]:
+            self.dfs(digits, pos+1, path+c, ret)
+
     def letterCombinations(self, digits):
         """
         :type digits: str

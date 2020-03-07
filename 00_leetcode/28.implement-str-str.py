@@ -3,6 +3,8 @@
 #
 # [28] Implement strStr()
 #
+
+# @lc code=start
 class Solution(object):
     def strStr(self, haystack, needle):
         """
@@ -10,24 +12,28 @@ class Solution(object):
         :type needle: str
         :rtype: int
         """
+        #method 1
         '''
-        if not haystack and not needle: 
+        if not needle:
             return 0
-        for i in range(len(haystack) - len(needle) + 1):
-            if needle == haystack[i:i+len(needle)]:
+        m, n = len(haystack), len(needle)
+        for i in range(m-n+1):
+            if needle == haystack[i:i+n]:
                 return i
         return -1
         '''
-        if needle == "":
+        #method 2
+        if not needle:
             return 0
         m, n = len(haystack), len(needle)
         for i in range(m-n+1):
             j = 0
-            while j < n and needle[j] == haystack[i+j]:
-                j +=1
+            while j < n and haystack[i+j] == needle[j]:
+                j+=1
             if j == n:
                 return i
         return -1
 
         
+# @lc code=end
 
