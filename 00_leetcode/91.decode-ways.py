@@ -37,25 +37,21 @@ class Solution(object):
                     DP[i] += DP[i-1]
         return DP[-1]
         '''
-        #第一次写的比较啰嗦，其实通项公式是:
-        #DP[i] = DP[i-1] if s[i-1] != '0'
-        #      + DP[i-2] if 9 < s[i-2:i] < 27
-        DP = [0] * (len(s) +1)
-        DP[0] = 1
-        if s[0] == '0':
-            DP[1] = 0
-        else:
-            DP[1] = 1
+        if not s or s[0] == '0':
+            return 0
+        DP = [0]*(len(s)+1)
+        DP[0], DP[1] = 1, 1
         for i in range(2, len(s)+1):
-            if 10 <= int(s[i-2:i]) <= 26 and s[i-1] != '0':
+            num = int(s[i-2:i])
+            if 10 < num <= 26 and s[i-1] != '0':
                 DP[i] = DP[i-1] + DP[i-2]
-            elif int(s[i-2:i]) == 10 or int(s[i-2:i]) == 20:
-                DP[i] += DP[i-2]
+            elif num == 10 or num == 20:
+                DP[i] = DP[i-2]
             elif s[i-1] != '0':
-                DP[i] += DP[i-1]
+                DP[i] = DP[i-1]
             else:
                 return 0
-        return DP[-1] 
+        return DP[-1]
         
 # @lc code=end
 

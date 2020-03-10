@@ -29,9 +29,21 @@ class Solution(object):
         #DFS,大概思路没获取两个或者三个字符就进行一次DFS
         if not s or len(s) > 12:
             return []
-        ret = []
-        self.dfs(s, ret, [])
-        return ret
+        self.ret = []
+        #self.dfs(s, ret, [])
+        def dfs2(s, path):
+            if len(s) > 12-len(path)*3:
+                return
+            if not s and len(path) ==4:
+                self.ret.append(".".join(path))
+            for i in range(1, 4):
+                if len(s) < i:
+                    continue
+                num = int(s[:i])
+                if num < 256 and str(num) == s[:i]:
+                    dfs2(s[i:], path+[s[:i]])
+        dfs2(s, [])
+        return self.ret
         
 # @lc code=end
 

@@ -31,6 +31,7 @@ class Solution(object):
         ## 那么至少保证S[i-1]这个字符没有添加前的状态个数
         #b. DP[i][j] = DP[i][j-1] + DP[i-1][j-1]， 如果S[j-1]和T[i-1]相等，有两个选择
         # 要么用之前的匹配DP[i][j-1],要么这个S新增加的字符和T新增加的字符作为匹配的一部分，DP[i-1][j-1]
+        '''
         M, N = len(s), len(t)
         DP = [[0]*(M+1) for _ in range(N+1)]
         for j in range(M+1):
@@ -42,6 +43,31 @@ class Solution(object):
                 else:
                     DP[i][j] = DP[i][j-1] + DP[i-1][j-1]
         return DP[-1][-1]
+        '''
+        #@0310，之前的解释有误，重新绘制DP表,选取纵坐标为S,横坐标为T
+        '''
+          Ø r a b b i t
+        Ø 1 0 0 0 0 0 0
+        r 1 1 0 0 0 0 0
+        a 1 1 1 0 0 0 0
+        b 1 1 1 1 0 0 0
+        b 1 1 1 2 1 0 0
+        b 1 1 1 3 3 0 0
+        i 1 1 1 3 3 3 0
+        t 1 1 1 3 3 3 3
+        '''
+        M, N = len(s), len(t)
+        DP = [[0]*(N+1) for _ in range(M+1)]
+        for i in range(M+1):
+            DP[i][0] = 1
+        for i in range(1, M+1):
+            for j in range(1, N+1):
+                if s[i-1] != t[j-1]:
+                    DP[i][j] = DP[i-1][j]
+                else:
+                    DP[i][j] = DP[i-1][j] + DP[i-1][j-1]
+        return DP[M][N]
+
         
 # @lc code=end
 

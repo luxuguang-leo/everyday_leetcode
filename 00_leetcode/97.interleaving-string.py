@@ -20,6 +20,7 @@ class Solution(object):
         #DP[i][j] = DP[i-1][j] if s1[i-1] = s3[i+j-1]
         #DP[i][j] = DP[i][j-1] if s2[j-1] = s3[i+j-1]
         #结果DP[-1][-1]
+        '''
         if len(s1) + len(s2) != len(s3):
             return False
         M, N = len(s1), len(s2)
@@ -37,6 +38,22 @@ class Solution(object):
                 else:
                     DP[i][j] = False
         return DP[M][N]
+        '''
+        m, n = len(s1), len(s2)
+        if len(s3) != m+n:
+            return False
+        DP = [[False]*(n+1) for _ in range(m+1)]
+        for i in range(m+1):
+            for j in range(n+1):
+                if i ==0 and j == 0:
+                    DP[i][j] = True
+                elif DP[i][j-1] and s2[j-1] == s3[i+j-1]:
+                    DP[i][j] = True
+                elif DP[i-1][j] and s1[i-1] == s3[i+j-1]:
+                    DP[i][j] = True
+                else:
+                    DP[i][j] = False
+        return DP[-1][-1]
         
         
 # @lc code=end
