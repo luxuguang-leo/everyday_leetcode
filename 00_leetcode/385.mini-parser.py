@@ -54,6 +54,7 @@ class Solution(object):
         :type s: str
         :rtype: NestedInteger
         """
+        '''
         def nestedInteger():
             num = ''
             while s[-1] in '1234567890-':
@@ -70,6 +71,32 @@ class Solution(object):
             return lst
         s = list(' ' + s[::-1])
         return nestedInteger()
+        '''
+        cur = None
+        stack, num, sign = [], 0, 1
+        for c in s:
+            if c.isdigit():
+                if cur == None:
+                    cur = NestedInteger(0)
+                cur.setInteger(cur.getInteger() * 10 + int(c) * sign)
+            elif c == ',':
+                stack[-1].add(cur)
+                cur = None
+                sign = 1
+            elif c == '[':
+                cur = NestedInteger([])
+                stack.append(cur)
+                cur = None
+            elif c == ']':
+                if cur != None:
+                    stack[-1].add(cur)
+                cur = stack.pop()
+            elif c == '-':
+                sign = -1
         
+        return cur
+
+
+
 # @lc code=end
 
