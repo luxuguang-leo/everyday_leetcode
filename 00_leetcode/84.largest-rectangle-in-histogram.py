@@ -56,6 +56,7 @@ class Solution(object):
         return ret
         '''
         #可不可以先在栈加入一个-1值，这样就不会为空
+        '''
         if not heights:
             return 0
         s, ret = [-1], 0
@@ -72,6 +73,22 @@ class Solution(object):
             #所以while之外的分支有两种情况进入，1.stack只有一个元素，或者stack内不止一个元素，不过栈顶元素要小于要插入的值
             s.append(i)
         return ret
+        '''
+        if not heights:
+            return 0
+        heights.append(0)
+        stack, ans = [], 0
+        for i in range(len(heights)):
+            while stack and heights[i] <= heights[stack[-1]]:
+                tmp = stack.pop()
+                h = heights[tmp]
+                if not stack:
+                    w = i
+                else:
+                    w = i - stack[-1] -1
+                ans = max(ans, h*w)
+            stack.append(i)
+        return ans
             
         
         

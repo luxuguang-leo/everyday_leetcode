@@ -28,6 +28,7 @@ class Solution(object):
         #[1, -1, 3, 4]
         #nums[i] = i+1
         #理想排列应该是[1, 2, ,3, 4, 5] nums[i] = nums[nums[i]-1]
+        '''
         for i in range(len(nums)):
             while  0 < nums[i] <= len(nums) and nums[nums[i]-1] != nums[i]:
                 nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
@@ -36,6 +37,7 @@ class Solution(object):
             if nums[i] != i +1:
                 return i+1
         return len(nums)+1
+        '''
         '''
         i = 0
         while i < len(nums):
@@ -48,6 +50,13 @@ class Solution(object):
                 return i+1
         return len(nums)+1
         '''
+        for i in range(len(nums)):
+            while 0 < nums[i] <= len(nums) and nums[nums[i]-1] != nums[i]:
+                nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
+        for i in range(len(nums)):
+            if nums[i] != i+1:
+                return i+1
+        return len(nums)+1
         
 # @lc code=end
 

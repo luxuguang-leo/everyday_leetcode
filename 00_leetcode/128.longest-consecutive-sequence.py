@@ -96,21 +96,21 @@ class Solution(object):
             ret_max = max(tmp_len, ret_max)
         return ret_max 
         '''
-        if len(nums) <=1:
+        if len(nums) <= 1:
             return len(nums)
-        m, ret_max = {}, 1
+        hashmap = collections.defaultdict()
+        ret = 0
         for n in nums:
-            m[n] = False
+            hashmap[n] = False
         for n in nums:
-            if n-1 not in m:
-                tmp_len = 1
-                nxt = n +1
-                while nxt in m and m[nxt] == False:
-                    m[nxt] = True
-                    nxt +=1
-                    tmp_len += 1
-                ret_max = max(ret_max, tmp_len)
-        return ret_max
+            if n-1 not in hashmap:
+                cnt = 1
+                next = n+1
+                while next in hashmap and hashmap[next] == False:
+                    next +=1
+                    cnt +=1
+                ret = max(ret, cnt)
+        return ret
 
         
 
