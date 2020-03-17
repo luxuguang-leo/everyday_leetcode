@@ -27,6 +27,7 @@ class Solution(object):
         return l
         '''
         #linked-list cycle
+        '''
         slow = nums[0]
         if nums[0] < len(nums):
             fast = nums[nums[0]]
@@ -40,6 +41,15 @@ class Solution(object):
             slow = nums[slow]
             fast = nums[fast]
         return slow
+        '''
+        if not nums:
+            return nums
+        for n in nums:
+            idx = abs(n)
+            if nums[idx] < 0:
+                return idx
+            nums[idx] = -nums[idx]
+        return None
 
         
         
