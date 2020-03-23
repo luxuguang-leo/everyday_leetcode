@@ -14,6 +14,7 @@ class Solution(object):
         if not s and len(path) == 4:
             ret.append(".".join(path))
             return ret
+        #选择路径是尝试选1个，2个，3个加到选择路径中
         for i in range(1, 4):
             if len(s) < i:
                 continue#如果剩余的字符长度小于取得子串，证明取的太长了，不可以

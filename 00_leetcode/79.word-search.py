@@ -15,6 +15,7 @@ class Solution(object):
             return True
         tmp = board[x][y]
         board[x][y] = '#'
+        #if one direction satify DFS condation, continue DFS till end
         ret = self.dfs(board, x+1, y, pos+1, word) or self.dfs(board, x, y+1, pos+1, word) or \
               self.dfs(board, x-1, y, pos+1, word) or self.dfs(board, x, y-1, pos+1, word)
         board[x][y] = tmp

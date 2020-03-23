@@ -22,6 +22,7 @@ class Solution(object):
             if self.isSafe(board, level, i):
                 board[level] = i
                 s = '.'*len(board)
+                #append each row in the path list
                 self.dfs(level+1, board, path+[s[:i]+'Q'+s[i+1:]], res)
 
 

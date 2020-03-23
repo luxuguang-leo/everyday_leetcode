@@ -11,6 +11,8 @@ class Solution(object):
             ret.append(path)
             return
         #for i in range(pos, len(digits)):
+        #choose each character in num map, 
+        #the end is to we have checked all the characters
         for c in self.m[digits[pos]]:
             self.dfs(digits, pos+1, path+c, ret)
 

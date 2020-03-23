@@ -32,7 +32,7 @@ class Solution(object):
         #   101         {ac}
         #   110         {ab}
         #   111         {abc}
-        #是不是很容易写出来呢？时间复杂度为？
+        #是不是很容易写出来呢？时间复杂度为2^N * len(nums)
         ret = []
         for i in range(1<<len(nums)):#一共有2^N种组合
             tmp = []

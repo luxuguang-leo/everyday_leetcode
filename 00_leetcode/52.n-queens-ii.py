@@ -6,30 +6,33 @@
 
 # @lc code=start
 class Solution(object):
-    def isSafe(self, board, k, j):
-        for i in range(k):
-            if board[i] == j or abs(k-i) == abs(board[i] - j):
-                return False
+    def isSafe(self, r, c, board):
+        for i in range(r):
+            #there are 2 cases:in the same columu or in the diagonal line
+            if board[i] == c or abs(r-i) == abs(board[i] - c):
+               return False
         return True
 
-    def dfs(self, level, board):
-        if level == len(board):
-            self.res_cnt +=1
-            return self.res_cnt
+    def dfs(self, depth, board):
+        if depth == len(board):
+           self.cnt +=1
+           return self.cnt
         for i in range(len(board)):
-            if self.isSafe(board, level, i):
-                board[level] = i
-                self.dfs(level+1, board)
+            if self.isSafe(depth, i, board):
+                board[depth] = i
+                self.dfs(depth+1, board)
 
+
+   
     def totalNQueens(self, n):
         """
         :type n: int
         :rtype: int
         """
-        self.res_cnt = 0
+        self.cnt = 0
         board = [-1 for i in range(n)]
         self.dfs(0, board)
-        return self.res_cnt
+        return self.cnt
 
 
 

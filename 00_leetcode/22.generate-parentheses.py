@@ -4,14 +4,16 @@
 # [22] Generate Parentheses
 #
 class Solution(object):
-    def dfs(self, left_remain, right_remain, path, ret):
-        if left_remain == 0 and right_remain == 0:
+    def dfs(self, remain_left, remain_right, ret, path):
+        if remain_left == 0 and remain_right == 0:
             ret.append(path)
-        if left_remain > 0:
-            self.dfs(left_remain-1, right_remain, path+'(', ret)
-        if right_remain > left_remain:
-            self.dfs(left_remain, right_remain-1, path+')', ret) 
-
+            return
+        #if remain_left > 0 and remain_left >= remain_right:
+        #Add left parenthesis if possible
+        if remain_left > 0:
+            self.dfs(remain_left-1, remain_right, ret, path+'(')
+        if remain_right > 0 and remain_right > remain_left:
+            self.dfs(remain_left, remain_right-1, ret, path+')')
 
     def generateParenthesis(self, n):
         """
@@ -25,20 +27,23 @@ class Solution(object):
         self.dfs(n, n, "", ans)
         return ans
         '''
+        '''
         if n == 0:
-		    return []
+            return []
+        ret = []
+        self.dfs(n, n, ret, "")
+        return ret
+        '''
+        #another way is to insert pair of parentheses in (n-1)
+        if n == 0:
+            return []
         ans = ["()"]
         for i in range(1, n):
-		    tmp = set()
-		    for x in ans:
-			    for j in range(len(x)):
-				    tmp.add(x[:j] + "()" + x[j:])
-		    ans = list(tmp)
+            tmp = []
+            for x in ans:
+                for y in range(len(x)):
+                    tmp.append(x[:y]+"()"+x[y:])
+            ans = list(set(tmp))
         return ans
-                
-        
 
-
-
-        
 

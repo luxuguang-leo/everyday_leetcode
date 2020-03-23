@@ -17,6 +17,7 @@ class Solution(object):
     def dfs2(self, nums, res, path):
         if not nums:
             res.append(path)
+        #every level we reduce the original nums
         for i in range(len(nums)):
             self.dfs2(nums[:i]+nums[i+1:], res, path+[nums[i]])
 
