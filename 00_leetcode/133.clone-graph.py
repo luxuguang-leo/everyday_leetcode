@@ -70,8 +70,12 @@ class Solution(object):
             edge = q.popleft()
             for neigh in edge.neighbors:
                 if neigh not in hashmap:
+                    #two main usage of hashmap:
+                    #1. check it node is visted or not
+                    #2.record connection between original and copied graph
                     hashmap[neigh] = Node(neigh.val,[])
                     q.append(neigh)
+                #careful, should be edge's copied node
                 hashmap[edge].neighbors.append(hashmap[neigh])
         return hashmap[node]
         '''

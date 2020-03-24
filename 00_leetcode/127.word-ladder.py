@@ -69,28 +69,32 @@ class Solution(object):
         # 优化avarage 时间复杂度
         #这里有个关键点，如果从后端开始搜索，那么搜索的目标已经不是endWord了，目标要变成前一个q中的存在的元素，这样才能交替进行
         #这时候使用queue这种数据结构就不太合适，因为从队列中搜索一个元素效率比较低，我们可以改成set这种
-        if not beginWord or not endWord or not wordList or endWord not in wordList:
+        if not wordList or not beginWord or not endWord:
+            return 0
+        if endWord not in wordList:
             return 0
         wordSet = set(wordList)
-        s_front, s_end = {beginWord}, {endWord}
-        chars, depth = string.ascii_lowercase, 0
-        while len(s_front) > 0 and len(s_end) > 0:
-            depth +=1
-            if len(s_front) > len(s_end):
-               s_front, s_end = s_end, s_front
-            s_tmp = set()
-            for w in s_front:
+        charSet = string.ascii_lowercase
+        q_front, q_end = {beginWord}, {endWord}
+        depth = 0
+        while len(q_front)>0 and len(q_end)>0:
+            depth+=1
+            if len(q_front) > len(q_end):
+                q_front, q_end = q_end, q_front
+            q_tmp = set()
+            for w in q_front:
                 for i in range(len(w)):
-                    for j in chars:
+                    for j in charSet:
                         if j != w[i]:
-                            newWord = w[:i]+j+w[i+1:]
-                            if newWord in s_end:
+                            newW = w[:i]+j+w[i+1:]
+                            if newW in q_end:
                                 return depth+1
-                            if newWord in wordSet:
-                                wordSet.remove(newWord)
-                                s_tmp.add(newWord)
-            s_front = s_tmp
+                            if newW in wordSet:
+                                wordSet.remove(newW)
+                                q_tmp.add(newW)
+            q_front = q_tmp
         return 0
+                
 
             
        

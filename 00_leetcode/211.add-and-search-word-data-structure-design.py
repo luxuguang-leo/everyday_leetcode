@@ -8,7 +8,6 @@
 
 class TrieNode(object):
     def __init__(self):
-        #使用hashmap
         self.end = False
         self.children = dict()
 

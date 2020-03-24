@@ -10,11 +10,14 @@ class TrieNode(object):
     def __init__(self):
         self.end = False
         self.child = {}
-class Trie(object):
+
+class Solution(object):
     def __init__(self):
         self.root = TrieNode()
-
-    def insert(self, word):
+    
+    def addWord(self, word):
+        if not word:
+            return
         cur = self.root
         for c in word:
             if c not in cur.child:
@@ -22,10 +25,10 @@ class Trie(object):
             cur = cur.child[c]
         cur.end = True
 
-class Solution(object):
-    def dfs2(self, x, y, board,Node, ret, path):
+    def dfs2(self, x, y, board, Node, ret, path):
         if Node.end == True:
             ret.append(path)
+            #mark it as already visited!!! Or you will found duplicate result
             Node.end = False
             #到此节点已经有单词？证明结果中的word已经搜索到了！！！所以将结果保存起来
             #别的解法里面有删除此word,但是有相同prefix的证明处理呢？
@@ -33,13 +36,12 @@ class Solution(object):
         #p.s.最后一个参数可以改成TrieNode，因为只有node里面含有当前字符，
         #才会进行下一个递归，当然下一个字符也在Trie的下一个节点中
         #用Trie则显得很复杂,另外不需要传递word单词了因为已经有了Trie参数
-        if x < 0 or x == len(board) or y < 0 or y == len(board[0]):
+        if x < 0 or x >= len(board) or y < 0 or y >= len(board[0]):
             return 
         c = board[x][y]
         if c not in Node.child:
             return 
-        else:
-            Node = Node.child[c]
+        Node = Node.child[c]
         board[x][y] = '#'
         self.dfs2(x-1, y, board, Node, ret, path+c) 
         self.dfs2(x+1, y, board, Node, ret, path+c)
@@ -86,15 +88,14 @@ class Solution(object):
         #所以需要首先根据words创建Trie树
         if not words or not board:
             return []
-        MyTrie = Trie()
         for w in words:
-            MyTrie.insert(w)
+            self.addWord(w)
         row, col = len(board), len(board[0])
         ret = []
         for i in range(row):
             for j in range(col):
                 #for word in words,不需要遍历word的list,只需要遍历矩阵即可
-                self.dfs2(i, j, board, MyTrie.root, ret, "")
+                self.dfs2(i, j, board, self.root, ret, "")
         return ret
 
 # @lc code=end

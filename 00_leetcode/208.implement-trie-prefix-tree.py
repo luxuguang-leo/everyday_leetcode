@@ -24,8 +24,6 @@ class Trie(object):
         :type word: str
         :rtype: None
         """
-        if not word:
-            return None
         parent = self.root
         for ch in word:
             if ch not in parent.children:
