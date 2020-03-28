@@ -84,6 +84,7 @@ class Solution(object):
             oldNode = oldNode.next
         return dummy.next
         '''
+        '''
         if not head:
             return None
         m = {}
@@ -99,6 +100,34 @@ class Solution(object):
             m[cur].next = m[cur.next]
             cur = cur.next
         return m[head]
+        '''
+        #another solution with O(1) space
+        if not head:
+            return
+        cur = head
+        #add copy node
+        while cur:
+            nxt = cur.next
+            NewNode = Node(cur.val)
+            cur.next = NewNode
+            NewNode.next = nxt
+            cur = nxt
+        #update random node
+        cur = head
+        while cur:
+            if cur.random:
+                cur.next.random = cur.random.next
+            if cur.next:
+                cur = cur.next.next
+        #split node into two part
+        second = cur = head.next
+        while cur and cur.next:
+            head.next = cur.next
+            head = head.next
+            cur.next = head.next
+            cur = cur.next
+        head.next = None
+        return second
         
 
 
