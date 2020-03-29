@@ -33,6 +33,7 @@ class Solution(object):
             return root
         '''
         #0304,iteratively
+        '''
         if not root or not p or not q:
             return None
         while root:
@@ -43,6 +44,16 @@ class Solution(object):
             else:
                 return root
         return None
+        '''
+        if not root or not q or not q:
+            return None
+        if root.val < p.val and root.val < q.val:
+            return self.lowestCommonAncestor(root.right, p, q)
+        elif root.val > p.val and root.val > q.val:
+            return self.lowestCommonAncestor(root.left, p, q)
+        else:
+            return root
+        
         
         
         

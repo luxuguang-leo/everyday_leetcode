@@ -11,12 +11,6 @@
 #         self.right = None
 
 class Solution(object):
-    def dfs(self, root, sum):
-        if not root:
-            return False
-        if root.val == sum and not root.left and not root.right:
-            return True
-        return self.dfs(root.left, sum-root.val) or self.dfs(root.right, sum-root.val)
 
     def hasPathSum(self, root, sum):
         """
@@ -26,9 +20,11 @@ class Solution(object):
         """
         #DFS, revrusatively
         '''
-        return self.dfs(root, sum)
-        '''
-        #DFS, interavtively
+        if not root:
+            return False
+        if not root.left and not root.right and sum == root.val:
+            return True
+        return self.hasPathSum(root.left, sum-root.val) or self.hasPathSum(root.right, sum-root.val)
         '''
         if not root:
             return False

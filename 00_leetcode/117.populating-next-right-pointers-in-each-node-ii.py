@@ -49,6 +49,7 @@ class Solution(object):
         #algo. travel from top to bottom
         #algo, travel from left to right for parent level, and connect 
         #move node to childHead
+        '''
         if not root:
             return
         parent = root
@@ -74,6 +75,23 @@ class Solution(object):
             parent = childHead
             childHead = childHead = None
         return root
+        '''
+        if not root:
+            return None
+        q = collections.deque([root])
+        subq = collections.deque()
+        while q:
+            node = q.popleft()
+            if q:
+                node.next = q[0]
+            if node.left:
+                subq.append(node.left)
+            if node.right:
+                subq.append(node.right)
+            if not q:
+                q, subq = subq, q
+        return root
+        
 
 
         
