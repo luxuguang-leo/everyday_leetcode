@@ -13,11 +13,11 @@
 #         self.right = None
 
 class Solution(object):
-    def isSame(self, s, t):
+    def isSameTree(self, s, t):
         if not s and not t:
             return True
         if s and t and s.val == t.val:
-            return self.isSame(s.left, t.left) and self.isSame(s.right, t.right)
+            return self.isSameTree(s.left, t.left) and self.isSameTree(s.right, t.right)
         return False
 
     def isSubtree(self, s, t):
@@ -26,12 +26,9 @@ class Solution(object):
         :type t: TreeNode
         :rtype: bool
         """
-        if self.isSame(s, t):
-            return True
         if not s:
             return False
-        return self.isSubtree(s.left, t) or self.isSubtree(s.right, t)
-        
+        return self.isSameTree(s, t) or self.isSubtree(s.left, t) or self.isSubtree(s.right, t)
         
 # @lc code=end
 
