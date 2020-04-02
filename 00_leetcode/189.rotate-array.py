@@ -15,7 +15,6 @@ class Solution(object):
         :type k: int
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        #method 1
         '''
         if not nums:
             return
@@ -26,40 +25,37 @@ class Solution(object):
         nums[:] = self.helper(nums[:])
         return nums
         '''
-        #method 2, cyclic replacement
         '''
-        k, l = k % len(nums), len(nums)
-        cnt = 0#total in all we need to move l steps
-        for i in range(l):
-            cur_idx = i
-            cur_val = nums[i]
-            loop_start = False
-            while not loop_start or i != cur_idx:
-                loop_start = True
-                next_idx = (cur_idx + k) % l
-                next_val = nums[next_idx]
-                nums[next_idx] = cur_val
-                cur_idx = next_idx
-                cur_val = next_val
-                cnt += 1
-                if cnt == l:
-                    return
-        '''
-        k, l = k % len(nums), len(nums)
-        cnt = 0
-        for i in range(l):
-            cur_idx = i
-            cur_val = nums[i]
+        #method 2, cyclic swap
+        k = k % len(nums)
+        for i in range(len(nums)):
+            start = i
             while True:
-                next_idx = (cur_idx + k) % l
-                next_val = nums[next_idx]
-                nums[next_idx] = cur_val
-                cur_idx = next_idx
-                cur_val = next_val
-                cnt += 1
-                if cur_idx == i:
+                next = (start + k) % len(nums)
+                nums[next], nums[start] = nums[start], nums[next]
+                start = next
+                if start == i:
                     break
-            if cnt == l:
-                return
-     
+        start += 1
+        '''
+        #https://www.cnblogs.com/grandyang/p/4298711.html
+        if not nums or k%(len(nums)) == 0:
+            return nums
+        idx, start, cur =0, 0, nums[0]
+        for _ in range(len(nums)):
+            pre = cur
+            idx = (idx+k)%len(nums)
+            cur = nums[idx]
+            nums[idx] = pre
+            if idx == start:
+                start +=1
+                idx = start
+                cur = nums[idx]
+        return nums
+
+
+
+        
+
+        
 
