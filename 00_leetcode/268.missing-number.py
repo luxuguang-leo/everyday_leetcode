@@ -12,15 +12,12 @@ class Solution(object):
         :rtype: int
         """
         '''
-        sum = 0
-        for i in nums:
-            sum +=i
-        return (len(nums)+1)*len(nums)/2-sum
-        '''
         ret = 0
         for i in range(len(nums)):
             ret ^= (nums[i] ^ (i+1))
         return ret
+        '''
+        return len(nums)*(len(nums)+1)/2 - sum(nums)
 
 # @lc code=end
 

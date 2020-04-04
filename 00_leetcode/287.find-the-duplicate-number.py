@@ -9,11 +9,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        #binary search
+        #binary search, O(nlgn) time, O(1) space
         #确定mid,然后扫描所有数组，寻找小于mid的数字的数目，如果cnt小于mid则证明重复数字在[mid,r]内
         '''
-        l = 0
-        r = len(nums)-1
+        l, r =0, len(nums)-1
         while l <= r:
             mid = (r-l)//2 + l
             cnt = 0
@@ -42,6 +41,7 @@ class Solution(object):
             fast = nums[fast]
         return slow
         '''
+        '''
         if not nums:
             return nums
         for n in nums:
@@ -50,6 +50,7 @@ class Solution(object):
                 return idx
             nums[idx] = -nums[idx]
         return None
+        '''
 
         
         

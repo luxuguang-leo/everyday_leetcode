@@ -43,6 +43,7 @@ class Solution(object):
         #2.如果大于second小于first，可能是第二大的数，更新second, third
         #3.如果大于third小于second,可能能是第三大的数，只更新third
         #返回third
+        #有点类似
         nums = list(set(nums))
         if len(nums) < 3:
             return max(nums)

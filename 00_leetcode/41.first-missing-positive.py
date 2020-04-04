@@ -11,7 +11,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-
         #桶排序，大概思路是让对应的index都有对应的值，要不然swap
         #3，4，-1，1按照排序应该是1，-1，3，4，暗含A[A[i]-1]=i
         #如:A[A[0]-1] = A[0]=i+1, A[A[2]-1] = i+1=3
@@ -28,16 +27,15 @@ class Solution(object):
         #[1, -1, 3, 4]
         #nums[i] = i+1
         #理想排列应该是[1, 2, ,3, 4, 5] nums[i] = nums[nums[i]-1]
-        '''
+        if not nums:
+            return 1
         for i in range(len(nums)):
             while  0 < nums[i] <= len(nums) and nums[nums[i]-1] != nums[i]:
                 nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
-        print(nums)
         for i in range(len(nums)):
             if nums[i] != i +1:
                 return i+1
         return len(nums)+1
-        '''
         '''
         i = 0
         while i < len(nums):
@@ -50,13 +48,6 @@ class Solution(object):
                 return i+1
         return len(nums)+1
         '''
-        for i in range(len(nums)):
-            while 0 < nums[i] <= len(nums) and nums[nums[i]-1] != nums[i]:
-                nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
-        for i in range(len(nums)):
-            if nums[i] != i+1:
-                return i+1
-        return len(nums)+1
         
 # @lc code=end
 

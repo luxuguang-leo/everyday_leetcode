@@ -10,7 +10,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        #大概思路就是欢滑动窗口，小于s的时候向右滑动,一边累计sum值
+        #@0405,更新窗口应该在while循环满足大于累加值的时候，而不是循环条件破坏之后！！！
+        # 大概思路就是欢滑动窗口，小于s的时候向右滑动,一边累计sum值
         #当sum大于s的时候就停止滑动，然后左边界收缩，知道小于s
         #如果中间等于s则更新窗口长度
         #不知道为啥打上binary-search标签
@@ -22,6 +23,7 @@ class Solution(object):
         while r < len(nums):
             sum_val += nums[r]
             while sum_val >= s:
+                #更新窗口应该在while循环满足大于累加值的时候，而不是循环条件破坏之后！！！
                 min_len = min(min_len, r-l+1)
                 sum_val -=nums[l]
                 l +=1
@@ -30,6 +32,7 @@ class Solution(object):
             return 0
         else:
             return min_len
+        '''
         '''
         if not nums:
             return 0
@@ -45,4 +48,5 @@ class Solution(object):
             return 0
         else:
             return window
+        '''
 
