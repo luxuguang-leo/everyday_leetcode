@@ -11,14 +11,24 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        #1. O(nlgN), 44ms, sort and check every two elements
         '''
-        tmp = set(nums)
-        for x in nums:
-            c = set(x)
-        c = set(x for x in range(1, max(tmp)+1))
-        return c & tmp
+        if not nums:
+            return 0
+        nums.sort()
+        ret = cnt = 1
+        for i in range(1, len(nums)):
+            if nums[i] == nums[i-1]+1:
+                cnt+=1
+            #skip if equal to pre val
+            elif nums[i] == nums[i-1]:
+                continue
+            else:
+                cnt = 1
+            ret = max(ret, cnt)
+        return ret
         '''
-        #method 1,朴素想法，按照每个数+1,
+        #method 2,朴素想法，按照每个数+1,
         #继续递归找下一个数，如果在则继续迭代知道最大值, 即使用hashmap也会TLE
         #算法复杂度time:O(N^3) Space:O(1)
         '''
@@ -96,6 +106,9 @@ class Solution(object):
             ret_max = max(tmp_len, ret_max)
         return ret_max 
         '''
+
+        '''
+        #@4 使用hashmap
         if len(nums) <= 1:
             return len(nums)
         hashmap = collections.defaultdict()
@@ -110,6 +123,19 @@ class Solution(object):
                     next +=1
                     cnt +=1
                 ret = max(ret, cnt)
+        return ret
+        '''
+        #@5, 使用set也很快
+        s = set(nums)
+        ret = 0
+        for n in nums:
+            cnt = 1
+            if n-1 not in s:
+                nxt = n+1
+                while nxt in s:
+                    nxt +=1
+                    cnt +=1
+            ret = max(ret, cnt)
         return ret
 
         
