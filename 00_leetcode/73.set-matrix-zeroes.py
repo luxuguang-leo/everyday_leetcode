@@ -11,8 +11,16 @@ class Solution(object):
         :type matrix: List[List[int]]
         :rtype: None Do not return anything, modify matrix in-place instead.
         """
+
+
+        #使用第一行，第一列来标志对应的这一行需要是否需要被清零
+        m, n = len(matrix), len(matrix[0])
+        firstRowZero = 0
+        firsetColZeros = 0
+        for i in range(m):
+            
         '''
-        #使用两个数组来记录需要更新的行，列
+        #O(M+N), 使用两个数组来记录需要更新的行，列
         m, n = len(matrix), len(matrix[0])
         m_rows, n_cols = set(), set()
         for i in range(m):
@@ -27,6 +35,7 @@ class Solution(object):
             #for i in range(m):
                 #matrix[i][col] = 0
         return matrix
+        '''
         '''
         #使用第一行，第一列来用作之前的m， n的数组，使用两个变量标记第一行，第一列需不需要更新为0
         m, n = len(matrix), len(matrix[0])
@@ -55,5 +64,6 @@ class Solution(object):
             for i in range(n):
                 matrix[0][i] = 0
         return matrix
+        '''
 # @lc code=end
 

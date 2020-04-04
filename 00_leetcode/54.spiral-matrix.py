@@ -11,6 +11,8 @@ class Solution(object):
         :type matrix: List[List[int]]
         :rtype: List[int]
         """
+        #注意控制整个循环直接使用ret数量，最终应该是m*n,在不满足条件的时候再循环内部，
+        #因为直接判断终止条件比较困难
         if len(matrix) == 0:
             return []
         m, n = len(matrix), len(matrix[0])

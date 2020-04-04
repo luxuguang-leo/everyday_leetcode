@@ -84,18 +84,16 @@ class Solution(object):
         #1.如果在右边，直接插入
         #2.如果在中间，则替换比它稍大的那个数,原因是如果需要找到一个较长的序列，则应该取较小的哪一个
         #3.如果比最小的都要小，则？？？
-        #'''
         if not nums:
             return 0
         array = []
-        for i in range(len(nums)):
-            index = bisect.bisect_left(array, nums[i])
+        for n in nums:
+            index = bisect.bisect_left(array, n)
             if index == len(array):
-                array.append(nums[i])
+                array.append(n)
             else:
-                array[index] = nums[i]
+                array[index] = n
         return len(array)
-        #'''
 
 
 

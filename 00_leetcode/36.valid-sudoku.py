@@ -41,6 +41,7 @@ class Solution(object):
         :type board: List[List[str]]
         :rtype: bool
         """
+        #主要利用数独性质，没有太多技巧性
         return self.isValidColumn(board) and self.isValidRow(board) and self.isValidGrid(board)
         
 # @lc code=end

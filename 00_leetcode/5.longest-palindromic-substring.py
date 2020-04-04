@@ -5,6 +5,7 @@
 #
 class Solution(object):
     def helper(self, s, l, r):
+        #注意区间边界
         while l >= 0 and r < len(s) and s[l] == s[r]:
             l -= 1
             r += 1
