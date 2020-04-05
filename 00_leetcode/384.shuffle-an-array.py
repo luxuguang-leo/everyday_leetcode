@@ -38,7 +38,9 @@ class Solution(object):
         _nums = self.nums[:]
         l = len(_nums)
         for i in range(l):
-            m = random.randrange(i, l)
+            #randint和randrange区别在于randint右边界是包含的，randrange是可以增加步长的
+            m = random.randint(i, l-1)
+            #m = random.randrange(i, l)
             _nums[i], _nums[m] = _nums[m], _nums[i]
         return _nums
         

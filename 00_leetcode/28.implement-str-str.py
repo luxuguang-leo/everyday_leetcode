@@ -12,6 +12,19 @@ class Solution(object):
         :type needle: str
         :rtype: int
         """
+        if not needle:
+            return 0
+        i = 0
+        m, n = len(haystack), len(needle)
+        while i < m-n+1:
+            j = 0
+            while j < n and haystack[i+j] == needle[j]:
+                j+=1
+            if j == n:
+                return i
+            i+=1
+        return -1
+
         #method 1
         '''
         if not needle:
@@ -23,6 +36,7 @@ class Solution(object):
         return -1
         '''
         #method 2
+        '''
         if not needle:
             return 0
         m, n = len(haystack), len(needle)
@@ -33,6 +47,7 @@ class Solution(object):
             if j == n:
                 return i
         return -1
+        '''
 
         
 # @lc code=end

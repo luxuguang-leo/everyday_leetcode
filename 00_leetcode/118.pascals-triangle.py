@@ -21,7 +21,7 @@ class Solution(object):
         for row in range(2, numRows):
             path = [1]*(row+1)
             ret.append(path)
-            print(ret)
+            #print(ret)
             for i in range(1,row):
                 ret[row][i] = ret[row-1][i] + ret[row-1][i-1]
         return ret

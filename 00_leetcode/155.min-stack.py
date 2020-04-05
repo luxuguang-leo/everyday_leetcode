@@ -94,6 +94,8 @@ class MinStack(object):
             return self.stack[-1][1]
         else:
             return None
+        #min stack本质是单调栈，在雨水问题都可以使用，比较难掌握思想，但是时间复杂度是O(N)
+        #因为每一个元素只进栈，出栈一次
 
 
 # Your MinStack object will be instantiated and called as such:
