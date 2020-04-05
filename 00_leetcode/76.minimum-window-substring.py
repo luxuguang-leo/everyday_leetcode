@@ -56,6 +56,7 @@ class Solution(object):
         '''
         #@0301,滑动窗口，首先达到右边界，如何判断右边界满足条件呢？具体问题具体分析，这里应该使用计数来巧妙判断
         #使用一个hashmap，而不是两个hashmap
+        '''
         if not s or not t:
             return ""
         wanted, count = len(t), 0
@@ -80,6 +81,31 @@ class Solution(object):
                             count -=1
                     left +=1
         return ret
+        '''
+        #0405更加简洁的写法
+        if not s or not t:
+            return ""
+        wanted = len(t)
+        found = 0
+        t_map = collections.defaultdict(int)
+        for ch in t:
+            t_map[ch]+=1
+        ret, min_win = "", len(s)+1
+        l = 0
+        for idx, ch in enumerate(s):
+            if t_map[ch] > 0:
+                found +=1
+            t_map[ch] -=1
+            while found == wanted:
+                if idx - l + 1 < min_win:
+                    min_win = idx - l + 1
+                    ret = s[l:idx+1]
+                t_map[s[l]] +=1 
+                if t_map[s[l]]>0:
+                    found -=1
+                l+=1
+        return ret
+
 
 
 
