@@ -9,6 +9,7 @@ class Solution(object):
     def dfs(self, grid, x, y):
         if x < 0 or x >= len(grid) or y < 0 or y >= len(grid[0]) or grid[x][y] == '0':
             return 0
+        #直接标记为0防止重复访问，但是会改变原有的值
         grid[x][y] = '0'
         self.dfs(grid, x+1, y)
         self.dfs(grid, x, y+1)

@@ -18,22 +18,21 @@ class Solution(object):
         :rtype: TreeNode
         """
         #take the index carefully
-        #@0303
+        #@0303,三处可以优化
         '''
         if not preorder and not inorder:
             return None
         rootVal = preorder[0]
         root = TreeNode(rootVal)
-        partion = inorder.index(rootVal)
-        root.left = self.buildTree(preorder[1:partion+1],inorder[:partion])
-        root.right = self.buildTree(preorder[partion+1:],inorder[partion+1:])
+        partion = inorder.index(rootVal)#O(n) -> use hashmap instead O(1)
+        root.left = self.buildTree(preorder[1:partion+1],inorder[:partion]) #slicing space O(N)
+        root.right = self.buildTree(preorder[partion+1:],inorder[partion+1:]) #slicing  spcae O(N)
         return root
         '''
+        #优化的方法就是1.使用hashmap 2.使用索引而不是切片 但是一下方法会破坏原有的preorder数组
         if not preorder or not inorder:
             return None
-        hash_map = {}
-        for i, node in enumerate(inorder):
-            hash_map[node] = i
+        hash_map = {inorder[i]:i for i in range(len(inorder))}
         def recv(start, end):
             if start > end:
                 return None

@@ -10,6 +10,8 @@ class Solution(object):
             return
         #if remain_left > 0 and remain_left >= remain_right:
         #Add left parenthesis if possible
+        #这里有两条选择路径1.如果左边括弧还有剩余，可以直接添加
+        #2.如果右边括弧数目大于左边括弧，那么添加有括弧是安全的，添加有括弧
         if remain_left > 0:
             self.dfs(remain_left-1, remain_right, ret, path+'(')
         if remain_right > 0 and remain_right > remain_left:
@@ -37,6 +39,8 @@ class Solution(object):
         #another way is to insert pair of parentheses in (n-1)
         if n == 0:
             return []
+        #ans保存的是上一次n-1能形成的结果列表
+        #n==2, ans = ["(())", "()()"]
         ans = ["()"]
         for i in range(1, n):
             tmp = []
@@ -45,5 +49,6 @@ class Solution(object):
                     tmp.append(x[:y]+"()"+x[y:])
             ans = list(set(tmp))
         return ans
+
 
 

@@ -28,6 +28,31 @@ class Solution(object):
         root.right = self.buildTree(inorder[partion+1:], postorder[partion:])
         return root
         '''
+        if not inorder or not postorder:
+            return None
+        m = {inorder[i]:i for i in range(len(inorder))}
+        def iterative(start, end):
+            if start > end:
+                return None
+            rootVal = postorder.pop()
+            root = TreeNode(rootVal)
+            idx = m[rootVal]
+            #注意顺序，先递归左子树会出问题，因为持续的从postorder弹出这个最后一个值，
+            root.right = iterative(idx+1, end)
+            root.left = iterative(start, idx-1)
+            return root
+        return iterative(0, len(inorder)-1)
+
+
+
+
+
+
+
+
+
+
+        '''
         #recr with optimization
         if not inorder or not postorder:
             return None
@@ -44,3 +69,4 @@ class Solution(object):
             root.left = recr(start, index-1)
             return root
         return recr(0, len(inorder)-1)
+        '''
