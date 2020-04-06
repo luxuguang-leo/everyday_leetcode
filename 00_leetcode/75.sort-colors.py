@@ -81,7 +81,10 @@ class Solution(object):
             i +=1
         return nums
         '''
-        #@0301,
+        #@0301,https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/
+        #难点在于将整个数组分为四部分，红色(0),白色(1),未排序，蓝色(2)
+        #遇到蓝色和红色交互后要不要索引+1?对于红色，交互后当前位置已经就位，要么是1，要么是所以已经排序，+1
+        #但对于蓝色，交互后的那个值不确定，所以不能+1
         if not nums:
             return nums
         red = mid = 0

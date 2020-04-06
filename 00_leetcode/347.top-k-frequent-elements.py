@@ -26,16 +26,25 @@ class Solution(object):
                     #heapq.heapreplace(ret_list, (cnt, key))
         return [x[1] for x in ret_list]
         '''
+        #时间复杂度计算
+        #heappush O(log(N))
+        #heappop O(log(N))
+
         if not nums:
             return []
-        m = collections.Counter(nums)
+        #m = collections.Counter(nums)
+        m = collections.defaultdict(int)
+        for n in nums:
+            m[n] +=1
         heap = []
         for key, cnt in m.items():
             if len(heap) < k:
-                heapq.heappush(heap, (cnt, key))
+                heapq.heappush(heap, (cnt, key)) #log(K)
             else:
                 if cnt > heap[0][0]:#need update if cur cnt is larger
-                    heapq.heappushpop(heap, (cnt, key))
+                    heapq.heappop(heap)
+                    heapq.heappush(heap, (cnt, key))
+                    #heapq.heappushpop(heap, (cnt, key)) #(n-k)log(K)
         return [x[1] for x in heap]
 
 

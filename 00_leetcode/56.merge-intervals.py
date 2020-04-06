@@ -15,18 +15,16 @@ class Solution(object):
         #1.有重合，并且后一个尾比较长，则更新交集区间为前pair的头和后pair的尾
         #2.有重合，但前一个尾比较长，则前一个保持
         #3.无重合， 将后一个pair入结果
-        if len(intervals) <= 1:
+        if len(intervals) <=1:
             return intervals
-        ret = []
         intervals.sort()
-        ret.append(intervals[0])
-        for i in range(1, len(intervals)):
-            if intervals[i][0] <= ret[-1][1]:
-                #这里只需要取最大值即可，不需要再判断新加入的尾部是否比之前的要大的情况
-                ret[-1][-1] = max(ret[-1][-1], intervals[i][1])
-            else:
+        ret = [intervals[0]]
+        for i in range(1,len(intervals)):
+            #3 cases
+            if intervals[i][0] > ret[-1][1]:
                 ret.append(intervals[i])
+            else:
+                ret[-1][1] = max(intervals[i][1], ret[-1][1])
         return ret
-        
 # @lc code=end
 
