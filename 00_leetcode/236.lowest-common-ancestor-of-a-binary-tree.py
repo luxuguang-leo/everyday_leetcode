@@ -20,6 +20,17 @@ class Solution(object):
         :type q: TreeNode
         :rtype: TreeNode
         """
+        #@0306,递归
+        if not root:
+            return root
+        if root == p or root == q:
+            return root
+        L = self.lowestCommonAncestor(root.left, p, q)
+        R = self.lowestCommonAncestor(root.right, p, q)
+        if L and R:
+            return root
+        else:
+            return L or R
         #递归方式,好难啊，总体思想是bool类型左中友三个标志，
         #如果其中一个为true，则父节点为true，如果L M R都是true，那么就是LCA节点
         #DFS
@@ -41,10 +52,10 @@ class Solution(object):
         '''
         #DFS，利用map保存父节点，等找到p,q后分别从一个(p)往回退到最终节点
         #这时候用另外一个q在结果中找，出现的话就是LCA，否则q回溯，知道在p的回溯列表中
-        '''
+        #'''
         parent = {root:None}
         stack = [root]
-        #退出的条件是p和q都放到parent中
+        #三者都不满足才退出，也就是p, q已经在parent中，并且p为空
         while p not in parent or q not in parent:
             node = stack.pop()
             if node.left:
@@ -60,7 +71,7 @@ class Solution(object):
         while q not in ancester:
             q = parent[q]
         return q     
-        '''
+        #'''
 
         
 # @lc code=end
