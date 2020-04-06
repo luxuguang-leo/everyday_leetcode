@@ -119,6 +119,7 @@ class Solution(object):
                 cur.next.random = cur.random.next
             if cur.next:
                 cur = cur.next.next
+        '''
         #split node into two part
         second = cur = head.next
         while cur and cur.next:
@@ -128,6 +129,24 @@ class Solution(object):
             cur = cur.next
         head.next = None
         return second
+        '''
+        #@0306,和奇偶链表比较类似
+        #split two list
+        dummy1 = odd = Node(-1)
+        dummy2 = even = Node(-1)
+        cnt = 0
+        while head:
+            cnt+=1
+            if cnt&0x01:
+                odd.next = head
+                odd = odd.next
+            else:
+                even.next = head
+                even = even.next
+            head = head.next
+        even.next = None
+        odd.next = None
+        return dummy2.next
         
 
 

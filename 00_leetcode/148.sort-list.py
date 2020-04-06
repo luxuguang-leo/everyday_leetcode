@@ -23,7 +23,8 @@ class Solution(object):
             cur = cur.next
         cur.next = l or r
         return dummy.next
-        
+
+
     def sortList(self, head):
         """
         :type head: ListNode
@@ -46,4 +47,6 @@ class Solution(object):
         right = self.sortList(secondHead)
         #merge the sorted list
         return self.mergeCore(left, right)
+
+
 

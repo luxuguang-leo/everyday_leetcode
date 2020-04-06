@@ -20,7 +20,6 @@ class Solution(object):
         intervals.sort()
         ret = [intervals[0]]
         for i in range(1,len(intervals)):
-            #3 cases
             if intervals[i][0] > ret[-1][1]:
                 ret.append(intervals[i])
             else:

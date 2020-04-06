@@ -17,6 +17,7 @@ class Solution(object):
         :type lists: List[ListNode]
         :rtype: ListNode
         """
+        '''
         minheap = []
         for i in range(len(lists)):
             if lists[i]:
@@ -35,6 +36,25 @@ class Solution(object):
             if curNext:
                 lists[curIdx] = curNext
                 heapq.heappush(minheap, (curNext.val, curIdx))
+        return dummy.next
+        '''
+        #@0406可以更加简单一些
+        if not lists:
+            return None
+        heap = []
+        for i in range(len(lists)):
+            if lists[i]:
+                heapq.heappush(heap, (lists[i].val, i) )
+        dummy = ListNode(-1)
+        cur = dummy
+        while heap:
+            headVal, idx = heapq.heappop(heap)
+            cur.next = lists[idx]
+            cur = cur.next
+            nextHead = lists[idx].next
+            if nextHead:
+                lists[idx] = nextHead
+                heapq.heappush(heap, (nextHead.val, idx))
         return dummy.next
 # @lc code=end
 
