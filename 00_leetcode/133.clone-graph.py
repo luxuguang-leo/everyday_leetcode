@@ -54,13 +54,12 @@ class Solution(object):
         return node_copy
         '''
         #DFS，深搜，然后递归
-        #'''
+        '''
         if not node:
             return None
         return self.dfs(node, dict())
-        #'''
-        #@0305
         '''
+        #@0305
         if not node:
             return None
         hashmap = dict()
@@ -69,17 +68,15 @@ class Solution(object):
         while q:
             edge = q.popleft()
             for neigh in edge.neighbors:
+                #寻找1的邻居，如2，3
                 if neigh not in hashmap:
-                    #two main usage of hashmap:
-                    #1. check it node is visted or not
-                    #2.record connection between original and copied graph
+                    #将2’ 映射到原有2节点
                     hashmap[neigh] = Node(neigh.val,[])
+                    #继续原有图的BFS
                     q.append(neigh)
-                #careful, should be edge's copied node
+                #建立1‘和2’的映射关系
                 hashmap[edge].neighbors.append(hashmap[neigh])
         return hashmap[node]
-        '''
-        
 
 
         
