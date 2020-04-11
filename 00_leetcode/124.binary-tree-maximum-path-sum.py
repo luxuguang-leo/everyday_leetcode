@@ -11,6 +11,9 @@
 #         self.right = None
 
 class Solution(object):
+    #rootMax表示root为终点的path的和
+    #以root为终点的和，当前的值加上左右两个子树较大的正值，如果小于0不增加
+    #最终的结果却是整条路径应该是左+当前+友
     def rootMax(self, root):
         if not root:
             return float('-inf')
