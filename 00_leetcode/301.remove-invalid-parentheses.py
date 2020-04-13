@@ -11,29 +11,71 @@ class Solution(object):
         :type s: str
         :rtype: List[str]
         """
-        self.ans = set()
-        self.min_removed = float('inf')
+        #1.如果有效加入结果
+        #2.如果无效，计算不平衡的左右括弧个数l, r
+        #3.尝试DFS，逐渐减小l, r,直到l = r = 0 and s有效括弧平衡，递归结束
+        def isValid(s):
+            cnt = 0
+            for ch in s:
+                if ch == '(':
+                    cnt +=1
+                elif ch == ')':
+                    cnt -=1
+                if cnt < 0:
+                    return False    
+            return cnt == 0
+        def dfs(s, start, l, r):
+            if l ==0 and r ==0 and isValid(s):
+                self.ans.append(s)
+                return 
+            for i in range(start, len(s)):
+                if i>= start+1 and s[i] == s[i-1]:
+                    continue
+                if r > 0 and s[i] == ')':
+                    dfs(s[:i] + s[i+1:], i, l, r-1)
+                if l > 0 and s[i] == '(':
+                    dfs(s[:i] + s[i+1:], i, l-1, r)
         
-        def dfs(index, left, right, removed, cur):
-            if index == len(s):
-                if left == right:
-                    if removed < self.min_removed:
-                        self.min_removed = removed
-                        self.ans = {cur}
-                    elif removed == self.min_removed:
-                        self.ans.add(cur)
-            else:
-                if s[index] != '(' and s[index] != ')':
-                    dfs(index+1, left, right,removed, cur+s[index])
-                else:
-                    dfs(index+1, left, right, removed+1, cur)
-                    if s[index] == '(':
-                        dfs(index+1, left+1, right, removed, cur+'(')
-                    elif s[index] == ')' and right < left:
-                        dfs(index+1, left, right+1, removed, cur+')')
-        dfs(0,0,0,0, "")
-        return list(self.ans)
+        def bfs(s, l, r):
+            self.visited = set()
+            q = collections.deque()
+            q.append((s, l, r))
+            minFound = False
+            while q:
+                s, l, r = q.popleft()
+                if l == 0 and r == 0 and isValid(s):
+                    self.ans.append(s)
+                    minFound = True
+                if minFound:
+                    continue
+                for i in range(len(s)):
+                    nxt = s[:i]+s[i+1:]
+                    if nxt not in self.visited:
+                        if s[i] == '(' and l > 0:
+                            self.visited.add(nxt)
+                            q.append((nxt, l-1, r))
+                        if s[i] == ')' and r > 0:
+                            self.visited.add(nxt)
+                            q.append((nxt, l, r-1))
 
+
+        #计算不平衡的左右括弧数目
+        if not s:
+            return [""]
+        l, r = 0, 0
+        for ch in s:
+            if ch == '(':
+                l+=1
+            elif ch == ')':
+                if l == 0:
+                    r +=1
+                else:
+                    l -=1
+        
+        self.ans = []
+        #dfs(s, 0, l, r)
+        bfs(s, l, r)
+        return self.ans
         
 # @lc code=end
 

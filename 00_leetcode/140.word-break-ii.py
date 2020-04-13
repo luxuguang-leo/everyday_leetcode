@@ -12,23 +12,21 @@ class Solution(object):
         :type wordDict: List[str]
         :rtype: List[str]
         """
-        words = set(wordDict)
-        mem = dict()
+        hashmap = {}
+        wordSet = set(wordDict)
         def dfs(s):
-            if s in mem:
-                return mem[s]
+            if s in hashmap:
+                return hashmap[s]
             path = []
-            if s in words:
+            if s in wordSet:
                 path.append(s)
             for i in range(1, len(s)):
                 r = s[i:]
-                if r in words:
-                    path += [l + " " + r for l in dfs(s[:i])]
-                #print(path)
-            mem[s] = path
-            return mem[s]
+                if r in wordSet:
+                    path += [l +" "+ r for l in dfs(s[:i])]
+            hashmap[s] = path
+            return hashmap[s]
         return dfs(s)
-
         
 # @lc code=end
 
