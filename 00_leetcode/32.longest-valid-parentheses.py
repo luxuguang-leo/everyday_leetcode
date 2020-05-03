@@ -134,8 +134,22 @@ class Solution(object):
                         stack.append(i)
         return max_win
         '''
-
-
+        if not s:
+            return 0
+        DP = [0]*len(s)
+        for i in range(1, len(s)):
+            if s[i] == ')':
+                #()(), 比较容易理解，前面一个左括弧可以匹配
+                if s[i-1] == '(':
+                    DP[i] = DP[i-2]+2
+                #(()), 前面一个也是右括弧，检查前面一个括弧形成的连续括弧的左边界，也就是第一个'(' idx为0
+                #3-1-2=0, 如果可以形成，必须是则应该是这个做
+                elif i-1-DP[i-1] >= 0:
+                    if s[i-1-DP[i-1]] == '(':
+                        DP[i] = DP[i-2-DP[i-1]] + 2 + DP[i-1]
+                    else:
+                        DP[i] = 0
+        return max(DP)
 
 
         
